@@ -1,0 +1,30 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import ProtectedRoute from "./components/ProtectedRoute";
+import HomePage from "./pages/HomePage";
+import DashboardPage from "./pages/DashboardPage";
+import LoginPage from "./auth/LoginPage";
+import RegistrationPage from "./auth/RegistrationPage";
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <NavBar />
+      <main className="app-main">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegistrationPage />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <DashboardPage />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </main>
+    </BrowserRouter>
+  );
+}
