@@ -32,7 +32,7 @@ export default function LoginPage() {
       await signInWithEmailAndPassword(auth, form.email.trim().toLowerCase(), form.password);
 
       // Login succeeded — redirect to dashboard/home.
-      NavigateEvent("/dashboard");
+      navigate("/dashboard");
     } catch (err) {
       // Collapses "no such user" and "wrong password" into one generic
       // message — see authErrors.js.
