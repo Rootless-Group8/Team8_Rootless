@@ -9,12 +9,12 @@ import { getFirestore } from 'firebase/firestore';
 // REACT_APP_ prefixed variables (Create React App) or VITE_ prefixed
 // variables (Vite) and reference them as process.env.REACT_APP_... / import.meta.env.VITE_...
 const firebaseConfig = {
-  apiKey: 'YOUR_API_KEY',
-  authDomain: 'YOUR_PROJECT_ID.firebaseapp.com',
-  projectId: 'YOUR_PROJECT_ID',
-  storageBucket: 'YOUR_PROJECT_ID.appspot.com',
-  messagingSenderId: 'YOUR_SENDER_ID',
-  appId: 'YOUR_APP_ID',
+  apiKey: "AIzaSyB0yBxKSNizer44pH-NMNjfOoHmK2cCeFU",
+  authDomain: "daab-fcc5c.firebaseapp.com",
+  projectId: "daab-fcc5c",
+  storageBucket: "daab-fcc5c.firebasestorage.app",
+  messagingSenderId: "727254900547",
+  appId: "1:727254900547:web:82bec65c1086e5c66659f6"
 };
 
 const app = initializeApp(firebaseConfig);

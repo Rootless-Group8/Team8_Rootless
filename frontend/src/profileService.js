@@ -1,5 +1,5 @@
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
-import { db, auth } from '../firebaseConfig';
+import { db, auth } from "./firebaseConfig";
 
 // Profiles are stored as one document per user, keyed by their Firebase
 // Auth uid, in a top-level "profiles" collection: profiles/{uid}.
