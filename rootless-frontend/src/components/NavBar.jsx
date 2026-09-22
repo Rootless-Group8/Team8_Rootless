@@ -8,6 +8,7 @@ export default function NavBar() {
   return (
     <nav className="nav-bar">
       <Link to="/" className="nav-brand">Rootless</Link>
+      <Link to="/visa-explorer">Visa Explorer</Link>
       <div className="nav-links">
         {!loading && user ? (
           <>

@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import DashboardPage from "./pages/DashboardPage";
 import LoginPage from "./auth/LoginPage";
 import RegistrationPage from "./auth/RegistrationPage";
+import VisaExplorerPage from "./pages/VisaExplorerPage";
 
 export default function App() {
   return (
@@ -20,6 +21,14 @@ export default function App() {
             element={
               <ProtectedRoute>
                 <DashboardPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/visa-explorer"
+            element={
+              <ProtectedRoute>
+                <VisaExplorerPage />
               </ProtectedRoute>
             }
           />
