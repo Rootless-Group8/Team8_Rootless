@@ -1,0 +1,45 @@
+.ui-btn {
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size-base);
+  font-weight: var(--ui-font-weight-medium);
+  padding: var(--ui-space-2) var(--ui-space-4);
+  border-radius: var(--ui-radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--ui-transition), border-color var(--ui-transition), color var(--ui-transition);
+}
+
+.ui-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--ui-focus-ring);
+}
+
+/* Primary: solid fill */
+.ui-btn--primary {
+  background-color: var(--ui-color-primary);
+  color: #ffffff;
+}
+.ui-btn--primary:hover:not(:disabled) {
+  background-color: var(--ui-color-primary-hover);
+}
+.ui-btn--primary:active:not(:disabled) {
+  background-color: var(--ui-color-primary-active);
+}
+
+/* Secondary: outline */
+.ui-btn--secondary {
+  background-color: var(--ui-color-secondary-bg);
+  color: var(--ui-color-primary);
+  border-color: var(--ui-color-secondary-border);
+}
+.ui-btn--secondary:hover:not(:disabled) {
+  background-color: var(--ui-color-secondary-hover-bg);
+}
+
+/* Disabled: same rule for both variants */
+.ui-btn:disabled {
+  background-color: var(--ui-color-disabled-bg);
+  color: var(--ui-color-disabled-text);
+  border-color: var(--ui-color-disabled-border);
+  cursor: not-allowed;
+}

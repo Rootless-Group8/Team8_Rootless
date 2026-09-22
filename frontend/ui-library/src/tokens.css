@@ -1,0 +1,57 @@
+/**
+ * Design tokens for the shared UI component library.
+ * Every component reads from these CSS variables instead of
+ * hardcoding colors/fonts/spacing, so the whole library stays
+ * visually consistent from one place.
+ *
+ * Import this file ONCE at the root of your app (e.g. in index.js):
+ *   import './ui-library/src/tokens.css';
+ */
+
+:root {
+  /* Color */
+  --ui-color-primary: #2f6f5e;
+  --ui-color-primary-hover: #265b4d;
+  --ui-color-primary-active: #1e4a3f;
+
+  --ui-color-secondary-bg: #ffffff;
+  --ui-color-secondary-border: #2f6f5e;
+  --ui-color-secondary-hover-bg: #eaf3f0;
+
+  --ui-color-error: #c0392b;
+  --ui-color-error-bg: #fdecea;
+
+  --ui-color-text: #1a1a1a;
+  --ui-color-text-muted: #6b7280;
+  --ui-color-border: #d0d5dd;
+  --ui-color-border-focus: #2f6f5e;
+  --ui-color-disabled-bg: #f2f3f4;
+  --ui-color-disabled-text: #a0a4a8;
+  --ui-color-disabled-border: #e2e4e7;
+  --ui-color-bg: #ffffff;
+
+  /* Type */
+  --ui-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  --ui-font-size-sm: 13px;
+  --ui-font-size-base: 15px;
+  --ui-font-size-lg: 17px;
+  --ui-font-weight-normal: 400;
+  --ui-font-weight-medium: 500;
+  --ui-font-weight-bold: 600;
+  --ui-line-height: 1.45;
+
+  /* Spacing scale */
+  --ui-space-1: 4px;
+  --ui-space-2: 8px;
+  --ui-space-3: 12px;
+  --ui-space-4: 16px;
+  --ui-space-5: 24px;
+  --ui-space-6: 32px;
+
+  /* Shape / effects */
+  --ui-radius: 8px;
+  --ui-radius-sm: 6px;
+  --ui-focus-ring: 0 0 0 3px rgba(47, 111, 94, 0.25);
+  --ui-error-ring: 0 0 0 3px rgba(192, 57, 43, 0.2);
+  --ui-transition: 120ms ease-in-out;
+}
