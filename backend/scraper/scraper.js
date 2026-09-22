@@ -14,6 +14,7 @@ const path = require("path");
 const { findAdapterFor } = require("./sources");
 const { createVisaRequirement, RecordStatus, toDbRow } = require("./models");
 const { logger, logPairError } = require("./logger");
+const { writeToFirestore } = require("./firestoreWriter");
 
 /**
  * Runs the scraper for every {origin, destination} pair given.
@@ -68,25 +69,32 @@ async function runScrape(pairs) {
 }
 
 /**
- * Stand-in for "write to database." Right now this just writes a
- * timestamped JSON file to output/, in the exact shape toDbRow()
- * produces. Once Dani's schema is finalized, replace the inside of
- * this function with real INSERT/UPSERT calls against her .db file --
- * the rest of the pipeline (runScrape, adapters, models) doesn't
- * need to change at all.
+ * Writes results to two places:
+ *   1. A timestamped local JSON file in output/ (useful for local
+ *      debugging, and works even without Firebase credentials set up)
+ *   2. Firestore, so the whole team can see results without running
+ *      the scraper themselves (skipped automatically if
+ *      FIREBASE_SERVICE_ACCOUNT isn't set -- see firestoreWriter.js)
  */
-function writeResults(results) {
+async function writeResults(results) {
   const rows = results.map(toDbRow);
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const outPath = path.join(__dirname, "output", `visa_data_${timestamp}.json`);
+  const outputDir = path.join(__dirname, "output");
+  const outPath = path.join(outputDir, `visa_data_${timestamp}.json`);
 
+  // Empty folders don't survive git clones/manual copies, so make sure
+  // this exists rather than assuming it does.
+  fs.mkdirSync(outputDir, { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(rows, null, 2));
   logger.info(`Wrote ${rows.length} record(s) to ${outPath}`);
 
-  // TODO (post-meeting, once Dani's schema exists):
-  //   const db = require('better-sqlite3')('path/to/dani/schema.db');
-  //   const stmt = db.prepare(`INSERT OR REPLACE INTO visa_requirements (...) VALUES (...)`);
-  //   for (const row of rows) stmt.run(row);
+  try {
+    await writeToFirestore(rows);
+  } catch (err) {
+    // Don't let a Firestore hiccup erase the local JSON output that
+    // already succeeded -- log it and move on.
+    logger.error("Firestore write failed -- local JSON output is still saved", { error: err.message });
+  }
 
   return outPath;
 }

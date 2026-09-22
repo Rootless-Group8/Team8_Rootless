@@ -11,8 +11,12 @@
 const govUkAdapter = require("./govUk");
 const canadaAdapter = require("./canada");
 const newZealandAdapter = require("./newZealand");
+const japanAdapter = require("./japan");
+const australiaAdapter = require("./australia");
+const schengenAdapter = require("./schengen");
+const mexicoAdapter = require("./mexico");
 
-const adapters = [govUkAdapter, canadaAdapter, newZealandAdapter];
+const adapters = [govUkAdapter, canadaAdapter, newZealandAdapter, japanAdapter, australiaAdapter, schengenAdapter, mexicoAdapter];
 
 /**
  * Finds the first adapter that supports scraping data for a given

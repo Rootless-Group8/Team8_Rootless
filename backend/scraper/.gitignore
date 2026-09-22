@@ -2,3 +2,5 @@ node_modules/
 output/
 logs/
 .DS_Store
+eng.traineddata
+spa.traineddata

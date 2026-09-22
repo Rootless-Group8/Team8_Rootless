@@ -46,7 +46,7 @@ async function main() {
   const job = async () => {
     logger.info("Starting scrape run", { pairs: args.pairs });
     const results = await runScrape(args.pairs);
-    writeResults(results);
+    await writeResults(results);
     logger.info("Scrape run complete", {
       total: results.length,
       ok: results.filter((r) => r.status === "ok").length,
