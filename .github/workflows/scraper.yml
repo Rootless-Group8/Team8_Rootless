@@ -1,0 +1,58 @@
+name: Visa Scraper
+
+# Runs the scraper automatically on a schedule, and lets anyone on
+# the team trigger it manually from the GitHub Actions tab.
+#
+# SETUP (do this once, see firestoreWriter.js for full instructions):
+#   1. Generate a Firebase service account key (Firebase Console >
+#      Project Settings > Service Accounts > Generate new private key)
+#   2. In this repo: Settings > Secrets and variables > Actions >
+#      New repository secret, named FIREBASE_SERVICE_ACCOUNT,
+#      containing the full contents of that downloaded JSON file.
+#
+# Without that secret set, the scraper still runs and saves results
+# as a downloadable file (see the "upload-artifact" step below) --
+# it just skips the Firestore write.
+
+on:
+  schedule:
+    # Runs once a day at 06:00 UTC. Adjust as the team prefers --
+    # cron syntax: minute hour day month weekday.
+    - cron: "0 6 * * *"
+  workflow_dispatch: {} # adds a "Run workflow" button in the GitHub Actions tab
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend/scraper
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: backend/scraper/package-lock.json
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run the scraper (full phase-1 matrix)
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          node run.js --pairs CA:GB,NZ:GB,JP:GB,AU:GB,DE:GB,ES:GB,PT:GB,NL:GB,MX:GB,GB:CA,NZ:CA,JP:CA,AU:CA,DE:CA,ES:CA,PT:CA,NL:CA,MX:CA,GB:NZ,CA:NZ,JP:NZ,AU:NZ,DE:NZ,ES:NZ,PT:NZ,NL:NZ,MX:NZ,GB:JP,CA:JP,NZ:JP,AU:JP,DE:JP,ES:JP,PT:JP,NL:JP,MX:JP,GB:AU,CA:AU,NZ:AU,JP:AU,DE:AU,ES:AU,PT:AU,NL:AU,MX:AU,GB:DE,CA:DE,NZ:DE,JP:DE,AU:DE,ES:DE,PT:DE,NL:DE,MX:DE,GB:ES,CA:ES,NZ:ES,JP:ES,AU:ES,DE:ES,PT:ES,NL:ES,MX:ES,GB:PT,CA:PT,NZ:PT,JP:PT,AU:PT,DE:PT,ES:PT,NL:PT,MX:PT,GB:NL,CA:NL,NZ:NL,JP:NL,AU:NL,DE:NL,ES:NL,PT:NL,MX:NL,GB:MX,CA:MX,NZ:MX,JP:MX,AU:MX,DE:MX,ES:MX,PT:MX,NL:MX
+
+      - name: Upload scrape output as a downloadable artifact
+        # Backup copy of results, viewable/downloadable from the
+        # Actions run page even if Firestore isn't set up yet.
+        uses: actions/upload-artifact@v4
+        with:
+          name: visa-scrape-results
+          path: backend/scraper/output/*.json
+          retention-days: 30
