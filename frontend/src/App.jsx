@@ -7,6 +7,7 @@ import DashboardPage from "./pages/DashboardPage";
 import LoginPage from "./auth/LoginPage";
 import RegistrationPage from "./auth/RegistrationPage";
 import VisaExplorerPage from "./pages/VisaExplorerPage";
+import DocumentUploadPage from "./pages/DocumentUploadPage";
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="/upload-test" element={<DocumentUploadPage />} />
         </Routes>
       </main>
       <Footer />
