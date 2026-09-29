@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../auth/useAuth";
 
 const sidebarLinks = [
@@ -16,20 +16,30 @@ const sidebarLinks = [
 // these sections without restructuring this layout.
 export default function DashboardPage() {
   const { user } = useAuth();
+  const location = useLocation();
 
   return (
     <div className="dashboard-shell">
       <div className="dashboard-grid">
         <nav className="dashboard-sidebar" aria-label="Dashboard navigation">
-          {sidebarLinks.map((link) => (
-            <Link key={link.to} to={link.to} className="dashboard-sidebar-link">
-              {link.label}
-            </Link>
-          ))}
+          {sidebarLinks.map((link) => {
+            const isActive = location.pathname === link.to;
+            return (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`dashboard-sidebar-link${isActive ? " dashboard-sidebar-link--active" : ""}`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="dashboard-main">
           <h1>Welcome{user?.displayName ? `, ${user.displayName}` : ""}.</h1>
+          {user?.email && <p className="dashboard-signed-in-as">Signed in as {user.email}</p>}
 
           <div className="dashboard-cards">
             <section className="dashboard-card">
@@ -38,6 +48,9 @@ export default function DashboardPage() {
                 No relocation checklist started yet. Progress tracking gets built here in a
                 later sprint.
               </p>
+              <Link to="/visa-explorer" className="dashboard-card-cta">
+                Find your visa →
+              </Link>
             </section>
 
             <section className="dashboard-card">
@@ -45,6 +58,9 @@ export default function DashboardPage() {
               <p className="placeholder-note">
                 Your visa checklist will show up here once you pick a pathway in Visa Explorer.
               </p>
+              <Link to="/visa-comparison" className="dashboard-card-cta">
+                Compare your options →
+              </Link>
             </section>
 
             <section className="dashboard-card">
@@ -52,6 +68,9 @@ export default function DashboardPage() {
               <p className="placeholder-note">
                 Document expiration alerts will appear here once documents are on file.
               </p>
+              <Link to="/documents" className="dashboard-card-cta">
+                Add a document →
+              </Link>
             </section>
           </div>
         </div>

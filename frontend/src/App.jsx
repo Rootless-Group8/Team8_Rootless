@@ -11,6 +11,7 @@ import VisaComparisonPage from "./pages/VisaComparisonPage";
 import AccountPage from "./pages/AccountPage";
 import DocumentsPage from "./pages/DocumentsPage";
 import SettingsPage from "./pages/SettingsPage";
+import DocumentUploadPage from "./pages/DocumentUploadPage";
 
 export default function App() {
   return (
@@ -68,6 +69,14 @@ export default function App() {
                 <SettingsPage />
               </ProtectedRoute>
             }
+          />
+          <Route 
+            path="/upload-test" 
+            element={
+              <ProtectedRoute>
+                <DocumentUploadPage />
+              </ProtectedRoute>
+            } 
           />
         </Routes>
       </main>

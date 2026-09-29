@@ -530,6 +530,35 @@ button:disabled {
   color: var(--ui-color-primary);
 }
 
+.dashboard-sidebar-link--active {
+  background: var(--ui-color-primary);
+  color: var(--ui-color-primary-text-on);
+}
+
+.dashboard-sidebar-link--active:hover {
+  background: var(--ui-color-primary-hover);
+  color: var(--ui-color-primary-text-on);
+}
+
+.dashboard-signed-in-as {
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-font-size-sm);
+  margin: calc(-1 * var(--ui-space-3)) 0 var(--ui-space-5);
+}
+
+.dashboard-card-cta {
+  display: inline-block;
+  margin-top: var(--ui-space-3);
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-bold);
+  color: var(--ui-color-primary);
+  text-decoration: none;
+}
+
+.dashboard-card-cta:hover {
+  text-decoration: underline;
+}
+
 .dashboard-main h1 {
   margin-bottom: var(--ui-space-5);
 }
@@ -587,6 +616,70 @@ button:disabled {
   font-size: var(--ui-font-size-lg);
   margin: 0 0 var(--ui-space-3);
   color: var(--ui-color-text);
+}
+
+.comparison-slot-field {
+  min-width: 0;
+}
+
+.comparison-slot-input-row {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-1);
+}
+
+.comparison-slot-input-row select {
+  flex: 1;
+  min-width: 0;
+}
+
+.comparison-slot-clear {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: var(--ui-radius-pill);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--ui-color-text);
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comparison-slot-clear:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.comparison-column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ui-space-2);
+  margin-bottom: var(--ui-space-3);
+}
+
+.comparison-column-header h2 {
+  margin: 0;
+}
+
+.comparison-column--best {
+  border: 1px solid var(--ui-color-aurora-green);
+}
+
+.comparison-best-badge {
+  background: var(--ui-color-aurora-green);
+  color: #16321f;
+  font-size: 11px;
+  font-weight: var(--ui-font-weight-bold);
+  padding: 3px 10px;
+  border-radius: var(--ui-radius-pill);
+  white-space: nowrap;
+}
+
+.comparison-start-over {
+  margin-top: var(--ui-space-4);
 }
 
 .comparison-fields {
