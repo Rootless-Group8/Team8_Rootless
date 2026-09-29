@@ -79,11 +79,17 @@ a {
 
 .login-page,
 .registration-page,
-.dashboard-page,
 .visa-explorer-page {
   max-width: 480px;
   margin: 0 auto;
   padding: var(--ui-space-7) var(--ui-space-3);
+}
+
+.dashboard-shell,
+.visa-comparison-page {
+  max-width: var(--ui-max-content-width);
+  margin: 0 auto;
+  padding: var(--ui-space-6) var(--ui-space-4);
 }
 
 h1 {
@@ -490,6 +496,119 @@ button:disabled {
   margin: var(--ui-space-2) 0;
 }
 
+/* ============ Dashboard shell ============ */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--ui-space-6);
+  align-items: start;
+}
+
+.dashboard-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-1);
+  background: var(--ui-color-bg-surface);
+  border-radius: var(--ui-radius);
+  padding: var(--ui-space-3);
+  position: sticky;
+  top: var(--ui-space-4);
+}
+
+.dashboard-sidebar-link {
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border-radius: var(--ui-radius-sm);
+  color: var(--ui-color-text);
+  text-decoration: none;
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-medium);
+}
+
+.dashboard-sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ui-color-primary);
+}
+
+.dashboard-main h1 {
+  margin-bottom: var(--ui-space-5);
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ui-space-4);
+}
+
+.dashboard-card {
+  background: var(--ui-color-bg-surface);
+  border-radius: var(--ui-radius);
+  padding: var(--ui-space-4);
+}
+
+.dashboard-card h2 {
+  font-family: var(--ui-font-family-display);
+  font-size: var(--ui-font-size-lg);
+  margin: 0 0 var(--ui-space-2);
+  color: var(--ui-color-text);
+}
+
+/* ============ Visa comparison ============ */
+
+.visa-comparison-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-3);
+  margin-bottom: var(--ui-space-5);
+  max-width: 480px;
+}
+
+.comparison-slot-pickers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ui-space-3);
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--comparison-columns, 3), 1fr);
+  gap: var(--ui-space-4);
+  align-items: start;
+}
+
+.comparison-column {
+  background: var(--ui-color-bg-surface);
+  border-radius: var(--ui-radius);
+  padding: var(--ui-space-4);
+}
+
+.comparison-column h2 {
+  font-family: var(--ui-font-family-display);
+  font-size: var(--ui-font-size-lg);
+  margin: 0 0 var(--ui-space-3);
+  color: var(--ui-color-text);
+}
+
+.comparison-fields {
+  margin: var(--ui-space-3) 0 0;
+}
+
+.comparison-fields dt {
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-bold);
+  color: var(--ui-color-text-muted);
+  margin-top: var(--ui-space-3);
+}
+
+.comparison-fields dt:first-child {
+  margin-top: 0;
+}
+
+.comparison-fields dd {
+  margin: var(--ui-space-1) 0 0;
+  font-size: var(--ui-font-size-base);
+}
+
 /* ============ Responsive ============ */
 
 @media (max-width: 860px) {
@@ -501,5 +620,20 @@ button:disabled {
   }
   .nav-links {
     gap: var(--ui-space-3);
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-sidebar {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+  .comparison-slot-pickers,
+  .comparison-grid {
+    grid-template-columns: 1fr;
   }
 }

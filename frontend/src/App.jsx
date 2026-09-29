@@ -7,6 +7,10 @@ import DashboardPage from "./pages/DashboardPage";
 import LoginPage from "./auth/LoginPage";
 import RegistrationPage from "./auth/RegistrationPage";
 import VisaExplorerPage from "./pages/VisaExplorerPage";
+import VisaComparisonPage from "./pages/VisaComparisonPage";
+import AccountPage from "./pages/AccountPage";
+import DocumentsPage from "./pages/DocumentsPage";
+import SettingsPage from "./pages/SettingsPage";
 
 export default function App() {
   return (
@@ -30,6 +34,38 @@ export default function App() {
             element={
               <ProtectedRoute>
                 <VisaExplorerPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/visa-comparison"
+            element={
+              <ProtectedRoute>
+                <VisaComparisonPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/documents"
+            element={
+              <ProtectedRoute>
+                <DocumentsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/account"
+            element={
+              <ProtectedRoute>
+                <AccountPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <ProtectedRoute>
+                <SettingsPage />
               </ProtectedRoute>
             }
           />
