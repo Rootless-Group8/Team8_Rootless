@@ -7,6 +7,10 @@ import DashboardPage from "./pages/DashboardPage";
 import LoginPage from "./auth/LoginPage";
 import RegistrationPage from "./auth/RegistrationPage";
 import VisaExplorerPage from "./pages/VisaExplorerPage";
+import VisaComparisonPage from "./pages/VisaComparisonPage";
+import AccountPage from "./pages/AccountPage";
+import DocumentsPage from "./pages/DocumentsPage";
+import SettingsPage from "./pages/SettingsPage";
 import DocumentUploadPage from "./pages/DocumentUploadPage";
 
 export default function App() {
@@ -34,7 +38,46 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/upload-test" element={<DocumentUploadPage />} />
+          <Route
+            path="/visa-comparison"
+            element={
+              <ProtectedRoute>
+                <VisaComparisonPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/documents"
+            element={
+              <ProtectedRoute>
+                <DocumentsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/account"
+            element={
+              <ProtectedRoute>
+                <AccountPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <ProtectedRoute>
+                <SettingsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route 
+            path="/upload-test" 
+            element={
+              <ProtectedRoute>
+                <DocumentUploadPage />
+              </ProtectedRoute>
+            } 
+          />
         </Routes>
       </main>
       <Footer />

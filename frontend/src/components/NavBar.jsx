@@ -14,6 +14,7 @@ export default function NavBar() {
       <div className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/visa-explorer">Visa Explorer</Link>
+        {!loading && user && <Link to="/visa-comparison">Compare Visas</Link>}
         {!loading && user && <Link to="/dashboard">Dashboard</Link>}
       </div>
 
