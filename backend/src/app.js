@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
 const profileRoutes = require('./routes/profileRoutes');
+const documentRoutes = require('./routes/documentRoutes');
 
 function createApp() {
   const app = express();
@@ -12,6 +13,7 @@ function createApp() {
 
   app.use('/api', userRoutes);
   app.use('/api/profile', profileRoutes);
+  app.use('/api/documents', documentRoutes);
 
   // Central error handler - never leak stack traces or internals to clients.
   // eslint-disable-next-line no-unused-vars
