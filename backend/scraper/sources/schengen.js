@@ -7,31 +7,29 @@
  * Netherlands don't each have their own separate visa-requirement
  * list; they all follow this one EU-wide list.
  *
- * Source (confirmed via direct fetch -- plain static HTML, not a
- * headless-browser-requiring page): the full regulation text,
- * including Annex I (visa-required countries) and Annex II
- * (visa-exempt countries), at:
+ * Source: the full regulation text, including Annex I (visa-required
+ * countries) and Annex II (visa-exempt countries), at:
  * https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1806
+ *
+ * UPDATE (confirmed via live debugging): this URL now sits behind an
+ * AWS WAF JavaScript challenge (awswaf.com) -- it was NOT there when
+ * this adapter was first built, and a plain axios request now gets a
+ * 202 response containing only a "verify you're not a robot" page
+ * that requires executing JavaScript to pass. A plain HTTP client
+ * cannot get past this; switched to Puppeteer (same approach as
+ * japan.js and australia.js) since a real browser executes the
+ * challenge automatically.
  *
  * SPECIAL CASE: the United Kingdom is NOT listed by name in either
  * Annex of this regulation (it's covered by a separate post-Brexit
  * UK-EU agreement, not this Regulation). UK citizens are, in
  * practice, visa-exempt for short Schengen stays -- handled as a
  * special case below rather than via the Annex lookup.
- *
- * ⚠️ UNVERIFIED PARSING: this sandbox can't run the adapter live, so
- * the extraction logic (slicing the raw HTML between "ANNEX I" /
- * "ANNEX II" / "ANNEX III" markers, then pulling <p> tag text) is a
- * best-effort guess at the real page's HTML structure, similar to
- * the Canada.ca situation we hit before. Test locally; if the counts
- * look wrong (e.g. suspiciously low), inspect the real HTML and
- * adjust the extraction logic in loadLists() below.
  */
 
-const axios = require("axios");
-const cheerio = require("cheerio");
 const { SourceAdapter } = require("./base");
 const { createVisaRequirement, RecordStatus } = require("../models");
+const { fetchRenderedHtml } = require("./browserFetch");
 
 const PAGE_URL = "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1806";
 
@@ -62,12 +60,10 @@ function sliceBetween(html, startMarker, endMarker) {
 }
 
 function extractCountryNames(htmlSlice) {
-  // The tag-based approach (looking for <p>/<td>/<li>) found nothing,
-  // even though the text is confirmed present -- EUR-Lex uses a
-  // specialized legal-document HTML converter with unknown custom
-  // tag/class names, not plain semantic HTML. This sidesteps that
-  // entirely: treat ANY tag boundary as a line break, strip all tags,
-  // then filter the resulting plain-text lines.
+  // EUR-Lex uses a specialized legal-document HTML converter with
+  // unknown custom tag/class names, not plain semantic HTML. This
+  // treats ANY tag boundary as a line break, strips all tags, then
+  // filters the resulting plain-text lines.
   const textOnly = htmlSlice
     .replace(/<\/?(p|div|li|td|tr|br|span)[^>]*>/gi, "\n")
     .replace(/<[^>]+>/g, " ")
@@ -93,18 +89,39 @@ function extractCountryNames(htmlSlice) {
 async function loadLists() {
   if (cachedLists) return cachedLists;
 
-  const response = await axios.get(PAGE_URL, { timeout: 15000 });
-  const html = response.data;
+  // The AWS WAF challenge page auto-reloads itself once verification
+  // passes (observed directly in its script: getToken().then(() =>
+  // window.location.reload(true))). Our content read sometimes races
+  // that reload and throws "Execution context was destroyed" -- an
+  // intermittent timing issue, not a logic bug (confirmed: retrying
+  // the same request succeeds). Retry a few times before giving up.
+  const MAX_ATTEMPTS = 3;
+  let lastError;
 
-  const annexISlice = sliceBetween(html, "ANNEX I", "ANNEX II");
-  const annexIISlice = sliceBetween(html, "ANNEX II", "ANNEX III");
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    try {
+      const html = await fetchRenderedHtml(PAGE_URL, { timeout: 45000 });
 
-  cachedLists = {
-    visaRequired: extractCountryNames(annexISlice),
-    visaExempt: extractCountryNames(annexIISlice),
-  };
+      const annexISlice = sliceBetween(html, "ANNEX I", "ANNEX II");
+      const annexIISlice = sliceBetween(html, "ANNEX II", "ANNEX III");
 
-  return cachedLists;
+      cachedLists = {
+        visaRequired: extractCountryNames(annexISlice),
+        visaExempt: extractCountryNames(annexIISlice),
+      };
+
+      return cachedLists;
+    } catch (err) {
+      lastError = err;
+      if (attempt < MAX_ATTEMPTS) {
+        // Brief pause before retrying -- gives the WAF's own reload
+        // time to settle rather than immediately re-racing it.
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+      }
+    }
+  }
+
+  throw lastError;
 }
 
 function normalize(text) {
@@ -182,7 +199,7 @@ const schengenAdapter = new (class extends SourceAdapter {
     try {
       lists = await loadLists();
     } catch (err) {
-      throw new Error(`Request to ${PAGE_URL} failed: ${err.message}`);
+      throw new Error(`Request to ${PAGE_URL} (via headless browser) failed: ${err.message}`);
     }
 
     const exemptMatch = findMatch(countryName, lists.visaExempt);
