@@ -1,0 +1,43 @@
+.checklist-page {
+  font-family: var(--ui-font-family);
+  max-width: 560px;
+  margin: 0 auto;
+  padding: var(--ui-space-5);
+}
+
+.checklist-page__title {
+  font-size: var(--ui-font-size-lg);
+  font-weight: var(--ui-font-weight-bold);
+  color: var(--ui-color-text);
+  margin: 0 0 var(--ui-space-1) 0;
+}
+
+.checklist-page__description {
+  font-size: var(--ui-font-size-sm);
+  color: var(--ui-color-text-muted);
+  margin: 0 0 var(--ui-space-4) 0;
+}
+
+.checklist-page__progress {
+  margin-bottom: var(--ui-space-4);
+}
+
+.checklist-page__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-2);
+}
+
+.checklist-page__state {
+  padding: var(--ui-space-5) 0;
+  text-align: center;
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-font-size-base);
+}
+
+.checklist-page__state--error {
+  color: var(--ui-color-error);
+}
