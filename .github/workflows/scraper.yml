@@ -39,6 +39,15 @@ jobs:
           cache: "npm"
           cache-dependency-path: backend/scraper/package-lock.json
 
+      - name: Install Chromium system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libnss3 libatk-bridge2.0-0 libdrm2 libxkbcommon0 libxcomposite1 \
+            libxdamage1 libxfixes3 libxrandr2 libgbm1 libpango-1.0-0 \
+            libcairo2 libatspi2.0-0
+          sudo apt-get install -y libasound2t64 || sudo apt-get install -y libasound2
+
       - name: Install dependencies
         run: npm install
 
