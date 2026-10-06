@@ -8,6 +8,7 @@ import LoginPage from "./auth/LoginPage";
 import RegistrationPage from "./auth/RegistrationPage";
 import VisaExplorerPage from "./pages/VisaExplorerPage";
 import VisaComparisonPage from "./pages/VisaComparisonPage";
+import CostOfLivingPage from "./pages/CostOfLivingPage";
 import AccountPage from "./pages/AccountPage";
 import DocumentsPage from "./pages/DocumentsPage";
 import SettingsPage from "./pages/SettingsPage";
@@ -47,6 +48,14 @@ export default function App() {
             }
           />
           <Route
+            path="/cost-of-living"
+            element={
+              <ProtectedRoute>
+                <CostOfLivingPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
             path="/documents"
             element={
               <ProtectedRoute>
@@ -69,14 +78,6 @@ export default function App() {
                 <SettingsPage />
               </ProtectedRoute>
             }
-          />
-          <Route 
-            path="/upload-test" 
-            element={
-              <ProtectedRoute>
-                <DocumentUploadPage />
-              </ProtectedRoute>
-            } 
           />
         </Routes>
       </main>

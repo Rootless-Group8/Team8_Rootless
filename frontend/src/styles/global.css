@@ -79,7 +79,8 @@ a {
 
 .login-page,
 .registration-page,
-.visa-explorer-page {
+.visa-explorer-page,
+.cost-of-living-page {
   max-width: 480px;
   margin: 0 auto;
   padding: var(--ui-space-7) var(--ui-space-3);
@@ -580,6 +581,64 @@ button:disabled {
   margin: var(--ui-space-2) 0 0;
   font-size: var(--ui-font-size-sm);
   color: var(--ui-color-text-muted);
+}
+
+/* ============ Cost of living ============ */
+
+.cost-of-living-select {
+  margin-bottom: var(--ui-space-5);
+}
+
+.cost-of-living-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-5);
+}
+
+.cost-of-living-row-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--ui-space-1);
+  font-weight: var(--ui-font-weight-bold);
+}
+
+.cost-of-living-amount {
+  font-weight: var(--ui-font-weight-normal);
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-font-size-sm);
+}
+
+.cost-of-living-bar-track {
+  width: 100%;
+  height: 10px;
+  border-radius: var(--ui-radius-pill);
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.cost-of-living-bar-fill {
+  height: 100%;
+  background: var(--ui-color-aurora-gold);
+  border-radius: var(--ui-radius-pill);
+}
+
+.cost-of-living-note {
+  margin: var(--ui-space-1) 0 0;
+  font-size: var(--ui-font-size-sm);
+  color: var(--ui-color-text-muted);
+}
+
+.cost-of-living-na-note {
+  margin: 0;
+}
+
+.cost-of-living-source {
+  display: inline-block;
+  margin-top: var(--ui-space-1);
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-bold);
+  color: var(--ui-color-primary);
 }
 
 .dashboard-main h1 {
