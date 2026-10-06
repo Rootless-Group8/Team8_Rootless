@@ -1,0 +1,2835 @@
+{
+  "meta": {
+    "source": "Rootless Realtime Database export",
+    "programsLastVerified": "2026-09-16",
+    "passportCountriesWithRequirements": [
+      "CA",
+      "US"
+    ],
+    "destinationsWithPrograms": [
+      "CA",
+      "GB"
+    ]
+  },
+  "countries": {
+    "AD": {
+      "name": "Andorra",
+      "iso3": "AND"
+    },
+    "AE": {
+      "name": "United Arab Emirates",
+      "iso3": "ARE"
+    },
+    "AF": {
+      "name": "Afghanistan",
+      "iso3": "AFG"
+    },
+    "AG": {
+      "name": "Antigua and Barbuda",
+      "iso3": "ATG"
+    },
+    "AL": {
+      "name": "Albania",
+      "iso3": "ALB"
+    },
+    "AM": {
+      "name": "Armenia",
+      "iso3": "ARM"
+    },
+    "AO": {
+      "name": "Angola",
+      "iso3": "AGO"
+    },
+    "AR": {
+      "name": "Argentina",
+      "iso3": "ARG"
+    },
+    "AT": {
+      "name": "Austria",
+      "iso3": "AUT"
+    },
+    "AU": {
+      "name": "Australia",
+      "iso3": "AUS"
+    },
+    "AZ": {
+      "name": "Azerbaijan",
+      "iso3": "AZE"
+    },
+    "BA": {
+      "name": "Bosnia and Herzegovina",
+      "iso3": "BIH"
+    },
+    "BB": {
+      "name": "Barbados",
+      "iso3": "BRB"
+    },
+    "BD": {
+      "name": "Bangladesh",
+      "iso3": "BGD"
+    },
+    "BE": {
+      "name": "Belgium",
+      "iso3": "BEL"
+    },
+    "BF": {
+      "name": "Burkina Faso",
+      "iso3": "BFA"
+    },
+    "BG": {
+      "name": "Bulgaria",
+      "iso3": "BGR"
+    },
+    "BH": {
+      "name": "Bahrain",
+      "iso3": "BHR"
+    },
+    "BI": {
+      "name": "Burundi",
+      "iso3": "BDI"
+    },
+    "BJ": {
+      "name": "Benin",
+      "iso3": "BEN"
+    },
+    "BN": {
+      "name": "Brunei",
+      "iso3": "BRN"
+    },
+    "BO": {
+      "name": "Bolivia",
+      "iso3": "BOL"
+    },
+    "BR": {
+      "name": "Brazil",
+      "iso3": "BRA"
+    },
+    "BS": {
+      "name": "Bahamas",
+      "iso3": "BHS"
+    },
+    "BT": {
+      "name": "Bhutan",
+      "iso3": "BTN"
+    },
+    "BW": {
+      "name": "Botswana",
+      "iso3": "BWA"
+    },
+    "BY": {
+      "name": "Belarus",
+      "iso3": "BLR"
+    },
+    "BZ": {
+      "name": "Belize",
+      "iso3": "BLZ"
+    },
+    "CA": {
+      "name": "Canada",
+      "iso3": "CAN"
+    },
+    "CD": {
+      "name": "Democratic Republic of the Congo",
+      "iso3": "COD"
+    },
+    "CF": {
+      "name": "Central African Republic",
+      "iso3": "CAF"
+    },
+    "CG": {
+      "name": "Congo, Republic of the",
+      "iso3": "COG"
+    },
+    "CH": {
+      "name": "Switzerland",
+      "iso3": "CHE"
+    },
+    "CI": {
+      "name": "Cote d'Ivoire",
+      "iso3": "CIV"
+    },
+    "CL": {
+      "name": "Chile",
+      "iso3": "CHL"
+    },
+    "CM": {
+      "name": "Cameroon",
+      "iso3": "CMR"
+    },
+    "CN": {
+      "name": "China",
+      "iso3": "CHN"
+    },
+    "CO": {
+      "name": "Colombia",
+      "iso3": "COL"
+    },
+    "CR": {
+      "name": "Costa Rica",
+      "iso3": "CRI"
+    },
+    "CU": {
+      "name": "Cuba",
+      "iso3": "CUB"
+    },
+    "CV": {
+      "name": "Cabo Verde",
+      "iso3": "CPV"
+    },
+    "CY": {
+      "name": "Cyprus",
+      "iso3": "CYP"
+    },
+    "CZ": {
+      "name": "Czechia",
+      "iso3": "CZE"
+    },
+    "DE": {
+      "name": "Germany",
+      "iso3": "DEU"
+    },
+    "DJ": {
+      "name": "Djibouti",
+      "iso3": "DJI"
+    },
+    "DK": {
+      "name": "Denmark",
+      "iso3": "DNK"
+    },
+    "DM": {
+      "name": "Dominica",
+      "iso3": "DMA"
+    },
+    "DO": {
+      "name": "Dominican Republic",
+      "iso3": "DOM"
+    },
+    "DZ": {
+      "name": "Algeria",
+      "iso3": "DZA"
+    },
+    "EC": {
+      "name": "Ecuador",
+      "iso3": "ECU"
+    },
+    "EE": {
+      "name": "Estonia",
+      "iso3": "EST"
+    },
+    "EG": {
+      "name": "Egypt",
+      "iso3": "EGY"
+    },
+    "ER": {
+      "name": "Eritrea",
+      "iso3": "ERI"
+    },
+    "ES": {
+      "name": "Spain",
+      "iso3": "ESP"
+    },
+    "ET": {
+      "name": "Ethiopia",
+      "iso3": "ETH"
+    },
+    "FI": {
+      "name": "Finland",
+      "iso3": "FIN"
+    },
+    "FJ": {
+      "name": "Fiji",
+      "iso3": "FJI"
+    },
+    "FM": {
+      "name": "Micronesia",
+      "iso3": "FSM"
+    },
+    "FR": {
+      "name": "France",
+      "iso3": "FRA"
+    },
+    "GA": {
+      "name": "Gabon",
+      "iso3": "GAB"
+    },
+    "GB": {
+      "name": "United Kingdom",
+      "iso3": "GBR"
+    },
+    "GD": {
+      "name": "Grenada",
+      "iso3": "GRD"
+    },
+    "GE": {
+      "name": "Georgia",
+      "iso3": "GEO"
+    },
+    "GH": {
+      "name": "Ghana",
+      "iso3": "GHA"
+    },
+    "GM": {
+      "name": "Gambia",
+      "iso3": "GMB"
+    },
+    "GN": {
+      "name": "Guinea",
+      "iso3": "GIN"
+    },
+    "GQ": {
+      "name": "Equatorial Guinea",
+      "iso3": "GNQ"
+    },
+    "GR": {
+      "name": "Greece",
+      "iso3": "GRC"
+    },
+    "GT": {
+      "name": "Guatemala",
+      "iso3": "GTM"
+    },
+    "GW": {
+      "name": "Guinea-Bissau",
+      "iso3": "GNB"
+    },
+    "GY": {
+      "name": "Guyana",
+      "iso3": "GUY"
+    },
+    "HN": {
+      "name": "Honduras",
+      "iso3": "HND"
+    },
+    "HR": {
+      "name": "Croatia",
+      "iso3": "HRV"
+    },
+    "HT": {
+      "name": "Haiti",
+      "iso3": "HTI"
+    },
+    "HU": {
+      "name": "Hungary",
+      "iso3": "HUN"
+    },
+    "ID": {
+      "name": "Indonesia",
+      "iso3": "IDN"
+    },
+    "IE": {
+      "name": "Ireland",
+      "iso3": "IRL"
+    },
+    "IL": {
+      "name": "Israel",
+      "iso3": "ISR"
+    },
+    "IN": {
+      "name": "India",
+      "iso3": "IND"
+    },
+    "IQ": {
+      "name": "Iraq",
+      "iso3": "IRQ"
+    },
+    "IR": {
+      "name": "Iran",
+      "iso3": "IRN"
+    },
+    "IS": {
+      "name": "Iceland",
+      "iso3": "ISL"
+    },
+    "IT": {
+      "name": "Italy",
+      "iso3": "ITA"
+    },
+    "JM": {
+      "name": "Jamaica",
+      "iso3": "JAM"
+    },
+    "JO": {
+      "name": "Jordan",
+      "iso3": "JOR"
+    },
+    "JP": {
+      "name": "Japan",
+      "iso3": "JPN"
+    },
+    "KE": {
+      "name": "Kenya",
+      "iso3": "KEN"
+    },
+    "KG": {
+      "name": "Kyrgyzstan",
+      "iso3": "KGZ"
+    },
+    "KH": {
+      "name": "Cambodia",
+      "iso3": "KHM"
+    },
+    "KI": {
+      "name": "Kiribati",
+      "iso3": "KIR"
+    },
+    "KM": {
+      "name": "Comoros",
+      "iso3": "COM"
+    },
+    "KN": {
+      "name": "Saint Kitts and Nevis",
+      "iso3": "KNA"
+    },
+    "KP": {
+      "name": "North Korea",
+      "iso3": "PRK"
+    },
+    "KR": {
+      "name": "South Korea",
+      "iso3": "KOR"
+    },
+    "KW": {
+      "name": "Kuwait",
+      "iso3": "KWT"
+    },
+    "KZ": {
+      "name": "Kazakhstan",
+      "iso3": "KAZ"
+    },
+    "LA": {
+      "name": "Laos",
+      "iso3": "LAO"
+    },
+    "LB": {
+      "name": "Lebanon",
+      "iso3": "LBN"
+    },
+    "LC": {
+      "name": "Saint Lucia",
+      "iso3": "LCA"
+    },
+    "LI": {
+      "name": "Liechtenstein",
+      "iso3": "LIE"
+    },
+    "LK": {
+      "name": "Sri Lanka",
+      "iso3": "LKA"
+    },
+    "LR": {
+      "name": "Liberia",
+      "iso3": "LBR"
+    },
+    "LS": {
+      "name": "Lesotho",
+      "iso3": "LSO"
+    },
+    "LT": {
+      "name": "Lithuania",
+      "iso3": "LTU"
+    },
+    "LU": {
+      "name": "Luxembourg",
+      "iso3": "LUX"
+    },
+    "LV": {
+      "name": "Latvia",
+      "iso3": "LVA"
+    },
+    "LY": {
+      "name": "Libya",
+      "iso3": "LBY"
+    },
+    "MA": {
+      "name": "Morocco",
+      "iso3": "MAR"
+    },
+    "MC": {
+      "name": "Monaco",
+      "iso3": "MCO"
+    },
+    "MD": {
+      "name": "Moldova",
+      "iso3": "MDA"
+    },
+    "ME": {
+      "name": "Montenegro",
+      "iso3": "MNE"
+    },
+    "MG": {
+      "name": "Madagascar",
+      "iso3": "MDG"
+    },
+    "MH": {
+      "name": "Marshall Islands",
+      "iso3": "MHL"
+    },
+    "MK": {
+      "name": "North Macedonia",
+      "iso3": "MKD"
+    },
+    "ML": {
+      "name": "Mali",
+      "iso3": "MLI"
+    },
+    "MM": {
+      "name": "Myanmar",
+      "iso3": "MMR"
+    },
+    "MN": {
+      "name": "Mongolia",
+      "iso3": "MNG"
+    },
+    "MR": {
+      "name": "Mauritania",
+      "iso3": "MRT"
+    },
+    "MT": {
+      "name": "Malta",
+      "iso3": "MLT"
+    },
+    "MU": {
+      "name": "Mauritius",
+      "iso3": "MUS"
+    },
+    "MV": {
+      "name": "Maldives",
+      "iso3": "MDV"
+    },
+    "MW": {
+      "name": "Malawi",
+      "iso3": "MWI"
+    },
+    "MX": {
+      "name": "Mexico",
+      "iso3": "MEX"
+    },
+    "MY": {
+      "name": "Malaysia",
+      "iso3": "MYS"
+    },
+    "MZ": {
+      "name": "Mozambique",
+      "iso3": "MOZ"
+    },
+    "NA": {
+      "name": "Namibia",
+      "iso3": "NAM"
+    },
+    "NE": {
+      "name": "Niger",
+      "iso3": "NER"
+    },
+    "NG": {
+      "name": "Nigeria",
+      "iso3": "NGA"
+    },
+    "NI": {
+      "name": "Nicaragua",
+      "iso3": "NIC"
+    },
+    "NL": {
+      "name": "Netherlands",
+      "iso3": "NLD"
+    },
+    "NO": {
+      "name": "Norway",
+      "iso3": "NOR"
+    },
+    "NP": {
+      "name": "Nepal",
+      "iso3": "NPL"
+    },
+    "NR": {
+      "name": "Nauru",
+      "iso3": "NRU"
+    },
+    "NZ": {
+      "name": "New Zealand",
+      "iso3": "NZL"
+    },
+    "OM": {
+      "name": "Oman",
+      "iso3": "OMN"
+    },
+    "PA": {
+      "name": "Panama",
+      "iso3": "PAN"
+    },
+    "PE": {
+      "name": "Peru",
+      "iso3": "PER"
+    },
+    "PG": {
+      "name": "Papua New Guinea",
+      "iso3": "PNG"
+    },
+    "PH": {
+      "name": "Philippines",
+      "iso3": "PHL"
+    },
+    "PK": {
+      "name": "Pakistan",
+      "iso3": "PAK"
+    },
+    "PL": {
+      "name": "Poland",
+      "iso3": "POL"
+    },
+    "PT": {
+      "name": "Portugal",
+      "iso3": "PRT"
+    },
+    "PW": {
+      "name": "Palau",
+      "iso3": "PLW"
+    },
+    "PY": {
+      "name": "Paraguay",
+      "iso3": "PRY"
+    },
+    "QA": {
+      "name": "Qatar",
+      "iso3": "QAT"
+    },
+    "RO": {
+      "name": "Romania",
+      "iso3": "ROU"
+    },
+    "RS": {
+      "name": "Serbia",
+      "iso3": "SRB"
+    },
+    "RU": {
+      "name": "Russia",
+      "iso3": "RUS"
+    },
+    "RW": {
+      "name": "Rwanda",
+      "iso3": "RWA"
+    },
+    "SA": {
+      "name": "Saudi Arabia",
+      "iso3": "SAU"
+    },
+    "SB": {
+      "name": "Solomon Islands",
+      "iso3": "SLB"
+    },
+    "SC": {
+      "name": "Seychelles",
+      "iso3": "SYC"
+    },
+    "SD": {
+      "name": "Sudan",
+      "iso3": "SDN"
+    },
+    "SE": {
+      "name": "Sweden",
+      "iso3": "SWE"
+    },
+    "SG": {
+      "name": "Singapore",
+      "iso3": "SGP"
+    },
+    "SI": {
+      "name": "Slovenia",
+      "iso3": "SVN"
+    },
+    "SK": {
+      "name": "Slovakia",
+      "iso3": "SVK"
+    },
+    "SL": {
+      "name": "Sierra Leone",
+      "iso3": "SLE"
+    },
+    "SM": {
+      "name": "San Marino",
+      "iso3": "SMR"
+    },
+    "SN": {
+      "name": "Senegal",
+      "iso3": "SEN"
+    },
+    "SO": {
+      "name": "Somalia",
+      "iso3": "SOM"
+    },
+    "SR": {
+      "name": "Suriname",
+      "iso3": "SUR"
+    },
+    "SS": {
+      "name": "South Sudan",
+      "iso3": "SSD"
+    },
+    "ST": {
+      "name": "Sao Tome and Principe",
+      "iso3": "STP"
+    },
+    "SV": {
+      "name": "El Salvador",
+      "iso3": "SLV"
+    },
+    "SY": {
+      "name": "Syria",
+      "iso3": "SYR"
+    },
+    "SZ": {
+      "name": "Eswatini",
+      "iso3": "SWZ"
+    },
+    "TD": {
+      "name": "Chad",
+      "iso3": "TCD"
+    },
+    "TG": {
+      "name": "Togo",
+      "iso3": "TGO"
+    },
+    "TH": {
+      "name": "Thailand",
+      "iso3": "THA"
+    },
+    "TJ": {
+      "name": "Tajikistan",
+      "iso3": "TJK"
+    },
+    "TL": {
+      "name": "Timor-Leste",
+      "iso3": "TLS"
+    },
+    "TM": {
+      "name": "Turkmenistan",
+      "iso3": "TKM"
+    },
+    "TN": {
+      "name": "Tunisia",
+      "iso3": "TUN"
+    },
+    "TO": {
+      "name": "Tonga",
+      "iso3": "TON"
+    },
+    "TR": {
+      "name": "Turkey",
+      "iso3": "TUR"
+    },
+    "TT": {
+      "name": "Trinidad and Tobago",
+      "iso3": "TTO"
+    },
+    "TV": {
+      "name": "Tuvalu",
+      "iso3": "TUV"
+    },
+    "TZ": {
+      "name": "Tanzania",
+      "iso3": "TZA"
+    },
+    "UA": {
+      "name": "Ukraine",
+      "iso3": "UKR"
+    },
+    "UG": {
+      "name": "Uganda",
+      "iso3": "UGA"
+    },
+    "US": {
+      "name": "United States",
+      "iso3": "USA"
+    },
+    "UY": {
+      "name": "Uruguay",
+      "iso3": "URY"
+    },
+    "UZ": {
+      "name": "Uzbekistan",
+      "iso3": "UZB"
+    },
+    "VC": {
+      "name": "Saint Vincent and the Grenadines",
+      "iso3": "VCT"
+    },
+    "VE": {
+      "name": "Venezuela",
+      "iso3": "VEN"
+    },
+    "VN": {
+      "name": "Vietnam",
+      "iso3": "VNM"
+    },
+    "VU": {
+      "name": "Vanuatu",
+      "iso3": "VUT"
+    },
+    "WS": {
+      "name": "Samoa",
+      "iso3": "WSM"
+    },
+    "YE": {
+      "name": "Yemen",
+      "iso3": "YEM"
+    },
+    "ZA": {
+      "name": "South Africa",
+      "iso3": "ZAF"
+    },
+    "ZM": {
+      "name": "Zambia",
+      "iso3": "ZMB"
+    },
+    "ZW": {
+      "name": "Zimbabwe",
+      "iso3": "ZWE"
+    }
+  },
+  "requirementTypes": {
+    "admission_refused": "Admission Refused",
+    "eta": "Electronic Travel Authorization",
+    "evisa": "e-Visa",
+    "evisa_or_voa": "e-Visa or Visa on Arrival",
+    "special_privilege": "Special Privilege",
+    "unknown": "Unspecified",
+    "visa_free": "Visa Free",
+    "visa_required": "Visa Required",
+    "voa": "Visa on Arrival"
+  },
+  "requirements": {
+    "CA": {
+      "AD": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "AE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "AF": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Fingerprinting required on arrival; high-risk travel advisory in effect."
+      },
+      "AG": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "Digital arrival form encouraged before travel."
+      },
+      "AL": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "AM": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 120,
+        "notes": "On-arrival visa costs roughly 15,000 AMD."
+      },
+      "AO": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "AR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Fingerprinting and photo taken on entry."
+      },
+      "AT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "AU": {
+        "requirementType": "eta",
+        "maxStayDays": 90,
+        "notes": "Same eTA system; SmartGate available for eligible travelers."
+      },
+      "AZ": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "On-arrival visa possible with a GCC residence permit."
+      },
+      "BA": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Within any 6-month period."
+      },
+      "BB": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "Immigration/customs form required."
+      },
+      "BD": {
+        "requirementType": "voa",
+        "maxStayDays": 30,
+        "notes": "Available at Dhaka, Chittagong and Sylhet airports only."
+      },
+      "BE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "BF": {
+        "requirementType": "evisa",
+        "maxStayDays": null,
+        "notes": "Canadian government advises against travel due to security situation."
+      },
+      "BG": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "BH": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": "Extension of about 2 weeks possible."
+      },
+      "BI": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Available at Bujumbura airport and land borders."
+      },
+      "BJ": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Free 72-hour visa for cruise passengers."
+      },
+      "BN": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "e-arrival card required before or on arrival."
+      },
+      "BO": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "BR": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "Visa requirement reinstated for Canadian citizens in April 2025."
+      },
+      "BS": {
+        "requirementType": "visa_free",
+        "maxStayDays": 240,
+        "notes": "Customs declaration form required."
+      },
+      "BT": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "Sustainable Development Fee applies per person per night."
+      },
+      "BW": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Within any 1-year period."
+      },
+      "BY": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Visa-free only via specific airports/rail if not connecting to Russia."
+      },
+      "BZ": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Arrival and customs form required."
+      },
+      "CD": {
+        "requirementType": "evisa",
+        "maxStayDays": 7,
+        "notes": "On-arrival visa possible with a letter of invitation."
+      },
+      "CF": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Canadian government advises against all travel due to conflict."
+      },
+      "CG": {
+        "requirementType": "evisa",
+        "maxStayDays": null,
+        "notes": "Must be arranged through a tour operator except for VIP invitations."
+      },
+      "CH": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "CI": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "Must arrive via Port Bouet Airport."
+      },
+      "CL": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "CM": {
+        "requirementType": "evisa",
+        "maxStayDays": null,
+        "notes": "Additional tax for internal flights collected on arrival."
+      },
+      "CN": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Temporary visa-free program in effect through 2026."
+      },
+      "CO": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Entry fee of roughly CAD $85 payable on arrival."
+      },
+      "CR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": ""
+      },
+      "CU": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "eVisa often bundled with airfare on direct flights from Canada."
+      },
+      "CV": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Online pre-registration required at least 5 days ahead."
+      },
+      "CY": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen-style 90/180-day rule applies."
+      },
+      "CZ": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "DE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "DJ": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "DK": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "DM": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "Landing card required before arrival."
+      },
+      "DO": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "DZ": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "On-arrival visa possible for approved tour groups at Algiers or Djanet only."
+      },
+      "EC": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "EE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "EG": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": "Sinai resort airports allow visa-free entry for up to 15 days."
+      },
+      "ER": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Visa covers Asmara only; separate permit needed elsewhere."
+      },
+      "ES": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "ET": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": "Available only via Addis Ababa Bole airport."
+      },
+      "FI": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "FJ": {
+        "requirementType": "visa_free",
+        "maxStayDays": 120,
+        "notes": ""
+      },
+      "FM": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "FR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "GA": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "Must arrive via Libreville International Airport."
+      },
+      "GB": {
+        "requirementType": "eta",
+        "maxStayDays": 180,
+        "notes": "ETA valid for 2 years."
+      },
+      "GD": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Embarkation/disembarkation form required."
+      },
+      "GE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 365,
+        "notes": ""
+      },
+      "GH": {
+        "requirementType": "evisa",
+        "maxStayDays": null,
+        "notes": "Extension required at Ghana Immigration Service past 60 days."
+      },
+      "GM": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "30-day extension available; residence permit needed past 56 days."
+      },
+      "GN": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "eVisa can permit stays up to 5 years for Canadians."
+      },
+      "GQ": {
+        "requirementType": "evisa",
+        "maxStayDays": null,
+        "notes": "Processing fee about 75 USD."
+      },
+      "GR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "GT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Part of the CA-4 Free Mobility Agreement."
+      },
+      "GW": {
+        "requirementType": "voa",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "GY": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Online customs/immigration declaration required."
+      },
+      "HN": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Part of the CA-4 Free Mobility Agreement."
+      },
+      "HR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "HT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Travel advisory in effect due to crime and unrest."
+      },
+      "HU": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "ID": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": "Online arrival card required for all visitors."
+      },
+      "IE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "IL": {
+        "requirementType": "eta",
+        "maxStayDays": 90,
+        "notes": "Travel advisory in effect due to regional security situation."
+      },
+      "IN": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Stricter process for applicants with Pakistani ancestry or diplomatic passports."
+      },
+      "IQ": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "eVisa/VOA available for Kurdistan Region separately."
+      },
+      "IR": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Must travel with a fully organized tour."
+      },
+      "IS": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "IT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "JM": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "90 days for business, 6 months for tourism; customs form required."
+      },
+      "JO": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": "On-arrival visa fee about 40 JOD."
+      },
+      "JP": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "KE": {
+        "requirementType": "eta",
+        "maxStayDays": 90,
+        "notes": "Apply at least 3 days ahead; fee about USD 32.50."
+      },
+      "KG": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Separate eVisa allows up to 90 days."
+      },
+      "KH": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": "New v-Pass arrival system introduced mid-2025."
+      },
+      "KI": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Within any 12-month period."
+      },
+      "KM": {
+        "requirementType": "voa",
+        "maxStayDays": 45,
+        "notes": "Fee of about 30 EUR/50 USD on arrival."
+      },
+      "KN": {
+        "requirementType": "eta",
+        "maxStayDays": 180,
+        "notes": ""
+      },
+      "KP": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Independent travel not allowed; guided tours mandatory."
+      },
+      "KR": {
+        "requirementType": "eta",
+        "maxStayDays": 180,
+        "notes": "K-ETA exemption extended for Canadians through 2026."
+      },
+      "KW": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "KZ": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "LA": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": "Some border crossings only accept full embassy visas."
+      },
+      "LB": {
+        "requirementType": "voa",
+        "maxStayDays": 30,
+        "notes": "Extendable by 2 more months; travel advisory in effect."
+      },
+      "LC": {
+        "requirementType": "visa_free",
+        "maxStayDays": 42,
+        "notes": "Immigration form required."
+      },
+      "LI": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "LK": {
+        "requirementType": "eta",
+        "maxStayDays": 30,
+        "notes": "Free ETA introduced for Canadians in mid-2026."
+      },
+      "LR": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": "On-arrival option only via Roberts International Airport."
+      },
+      "LS": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "LT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "LU": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "LV": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "LY": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Travel advisory in effect; ongoing conflict risk."
+      },
+      "MA": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "MC": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Follows the Schengen visa policy."
+      },
+      "MD": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "ME": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "MG": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": "Fee scales with length of stay."
+      },
+      "MH": {
+        "requirementType": "voa",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "MK": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "ML": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Canadian government advises against travel due to terrorism risk."
+      },
+      "MM": {
+        "requirementType": "evisa",
+        "maxStayDays": 28,
+        "notes": "Travel advisory in effect due to armed conflict."
+      },
+      "MN": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "MR": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "eVisa duration options up to 720 days."
+      },
+      "MT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "MU": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "180 days/year for tourism, 120 days/year for business."
+      },
+      "MV": {
+        "requirementType": "voa",
+        "maxStayDays": 30,
+        "notes": "Extendable stay possible."
+      },
+      "MW": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "MX": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "Actual duration set by border officer on arrival."
+      },
+      "MY": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Digital arrival card required before entry."
+      },
+      "MZ": {
+        "requirementType": "eta",
+        "maxStayDays": 30,
+        "notes": "Apply at least 48 hours ahead; fee about USD 48."
+      },
+      "NA": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": "On-arrival option at main airports and land borders."
+      },
+      "NE": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "On-arrival option only with pre-approved invitation letter."
+      },
+      "NG": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Visa-free for Nigerian-born citizens."
+      },
+      "NI": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Part of the CA-4 Free Mobility Agreement; cash entry fee applies."
+      },
+      "NL": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "NO": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Counts toward the wider Nordic Schengen limit."
+      },
+      "NP": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "On-arrival visa can also be limited to 15 or 30 days."
+      },
+      "NR": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "No medical or criminal-record certificate required for Canadians."
+      },
+      "NZ": {
+        "requirementType": "eta",
+        "maxStayDays": 90,
+        "notes": "eTA plus a Visitor Levy fee required."
+      },
+      "OM": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Visa exemption 14 days; eVisa extends to 30 days."
+      },
+      "PA": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": ""
+      },
+      "PE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "PG": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 60,
+        "notes": "On-arrival option only at Port Moresby Airport."
+      },
+      "PH": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Extension available from the Bureau of Immigration."
+      },
+      "PK": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "PL": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "PT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "PW": {
+        "requirementType": "voa",
+        "maxStayDays": 30,
+        "notes": "Extendable twice with a fee."
+      },
+      "PY": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "QA": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "RO": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen-style 90/180-day rule applies."
+      },
+      "RS": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "RU": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Canadian government advises against all travel."
+      },
+      "RW": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Can also enter on an East Africa tourist visa."
+      },
+      "SA": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": "Non-Muslims restricted from Mecca and Medina."
+      },
+      "SB": {
+        "requirementType": "voa",
+        "maxStayDays": 90,
+        "notes": "Within any 12-month period."
+      },
+      "SC": {
+        "requirementType": "eta",
+        "maxStayDays": 90,
+        "notes": "Fee about EUR 10; reservation proof required."
+      },
+      "SD": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Canadian government advises against all travel; main airport currently closed."
+      },
+      "SE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "SG": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "SG Arrival Card required before entry."
+      },
+      "SI": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "SK": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "SL": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "SM": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "SN": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "SO": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Travel advisory in effect including Somaliland."
+      },
+      "SR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Online entrance fee of about USD 50 required."
+      },
+      "SS": {
+        "requirementType": "evisa",
+        "maxStayDays": null,
+        "notes": "Travel advisory in effect due to armed conflict."
+      },
+      "ST": {
+        "requirementType": "visa_free",
+        "maxStayDays": 15,
+        "notes": ""
+      },
+      "SV": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "Part of the CA-4 Free Mobility Agreement (90 days combined in the zone)."
+      },
+      "SY": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Travel advisory in effect due to ongoing conflict."
+      },
+      "SZ": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "TD": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "Newly introduced electronic visa system."
+      },
+      "TG": {
+        "requirementType": "evisa",
+        "maxStayDays": 15,
+        "notes": ""
+      },
+      "TH": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Max 2 land/sea entries per year without a full visa."
+      },
+      "TJ": {
+        "requirementType": "evisa",
+        "maxStayDays": 60,
+        "notes": "Special permit needed for the Gorno-Badakhshan region."
+      },
+      "TL": {
+        "requirementType": "voa",
+        "maxStayDays": 30,
+        "notes": "Fees vary by purpose of visit."
+      },
+      "TM": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Visa-free transit allowed through Ashgabat airport's transit area."
+      },
+      "TN": {
+        "requirementType": "visa_free",
+        "maxStayDays": 120,
+        "notes": ""
+      },
+      "TO": {
+        "requirementType": "voa",
+        "maxStayDays": 30,
+        "notes": "Extendable up to 6 months."
+      },
+      "TR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "TT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Online arrival/departure card required."
+      },
+      "TV": {
+        "requirementType": "voa",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "TZ": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "UA": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Travel advisory in effect due to war."
+      },
+      "UG": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "Can also enter on an East Africa Tourist Visa."
+      },
+      "US": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "ESTA not required; NEXUS available for frequent travelers."
+      },
+      "UY": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "UZ": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "VC": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Extendable up to 1 year at officer discretion."
+      },
+      "VE": {
+        "requirementType": "evisa",
+        "maxStayDays": null,
+        "notes": "Canadian government advises against travel due to crime and instability."
+      },
+      "VN": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "30-day visa-free option specifically for Phu Quoc island."
+      },
+      "VU": {
+        "requirementType": "visa_free",
+        "maxStayDays": 120,
+        "notes": ""
+      },
+      "WS": {
+        "requirementType": "voa",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "YE": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Travel advisory in effect due to conflict."
+      },
+      "ZA": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "New ETA portal is not yet operational."
+      },
+      "ZM": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Also covered by the shared KAZA visa with Zimbabwe."
+      },
+      "ZW": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": "Also covered by the shared KAZA visa with Zambia."
+      }
+    },
+    "US": {
+      "AD": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "AE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Iris scan taken on arrival."
+      },
+      "AF": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Register with Foreign Ministry on arrival; high-risk travel advisory in effect."
+      },
+      "AG": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "Proof of funds, return ticket and lodging may be checked closely."
+      },
+      "AL": {
+        "requirementType": "visa_free",
+        "maxStayDays": 365,
+        "notes": "Must exit for 90 days to reset the visa-free clock."
+      },
+      "AM": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": ""
+      },
+      "AO": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Max 90 days/year; proof of return ticket and lodging required."
+      },
+      "AR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Extendable to 180 days; health insurance required since mid-2025."
+      },
+      "AT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "AU": {
+        "requirementType": "eta",
+        "maxStayDays": 90,
+        "notes": "eTA required, about AUD $20, valid for repeated 90-day visits over 12 months."
+      },
+      "AZ": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Registration required if staying over 10 days."
+      },
+      "BA": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Within any 6-month period."
+      },
+      "BB": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": ""
+      },
+      "BD": {
+        "requirementType": "voa",
+        "maxStayDays": 30,
+        "notes": "Available at Dhaka, Chittagong and Sylhet airports only."
+      },
+      "BE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "BF": {
+        "requirementType": "admission_refused",
+        "maxStayDays": null,
+        "notes": "US government advises against travel; visa services suspended for US citizens."
+      },
+      "BG": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "BH": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 14,
+        "notes": ""
+      },
+      "BI": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Available at Bujumbura airport and land borders."
+      },
+      "BJ": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Vaccination certificate required; multiple eVisa tiers available."
+      },
+      "BN": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "BO": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "BR": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "Visa requirement reinstated for US citizens in April 2025."
+      },
+      "BS": {
+        "requirementType": "visa_free",
+        "maxStayDays": 240,
+        "notes": ""
+      },
+      "BT": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "Sustainable Development Fee applies per person per night."
+      },
+      "BW": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Within any 1-year period."
+      },
+      "BY": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Advisory against travel due to regional conflict."
+      },
+      "BZ": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "Mandatory vehicle disinfection at the border."
+      },
+      "CA": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "Criminal records (even minor) can block entry without special permit."
+      },
+      "CD": {
+        "requirementType": "evisa",
+        "maxStayDays": 7,
+        "notes": ""
+      },
+      "CF": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "US government advises against all travel due to conflict."
+      },
+      "CG": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Online application available via embassy website."
+      },
+      "CH": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "CI": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "Must arrive via Port Bouet Airport."
+      },
+      "CL": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "No reciprocity fee currently charged."
+      },
+      "CM": {
+        "requirementType": "evisa",
+        "maxStayDays": null,
+        "notes": "Vaccination record required."
+      },
+      "CN": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Short visa-free transit options exist at approved ports."
+      },
+      "CO": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Extendable to 180 days within a year."
+      },
+      "CR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Within any 12-month period."
+      },
+      "CU": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "US law restricts tourist travel; licensed categories of travel apply."
+      },
+      "CV": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Online pre-registration and airport security fee required."
+      },
+      "CY": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "CZ": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "DE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "DJ": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "DK": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "DM": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": ""
+      },
+      "DO": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Extendable up to 90 days."
+      },
+      "DZ": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Tourist visa needs accommodation certificate; entry may be refused with Israeli stamps."
+      },
+      "EC": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Extendable by another 90 days per year."
+      },
+      "EE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "EG": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": "Sinai resort areas allow visa-free entry for up to 15 days."
+      },
+      "ER": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Permit needed to travel outside the capital."
+      },
+      "ES": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "ET": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": "Available only via Addis Ababa Bole airport."
+      },
+      "FI": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "FJ": {
+        "requirementType": "visa_free",
+        "maxStayDays": 120,
+        "notes": ""
+      },
+      "FM": {
+        "requirementType": "special_privilege",
+        "maxStayDays": null,
+        "notes": "Right to reside, work and do business without added paperwork under FSM law."
+      },
+      "FR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "GA": {
+        "requirementType": "admission_refused",
+        "maxStayDays": 90,
+        "notes": "Gabon imposed a reciprocal visa ban on US citizens effective January 2026."
+      },
+      "GB": {
+        "requirementType": "eta",
+        "maxStayDays": 180,
+        "notes": "ETA fee about GBP 16; longer stay allowed via Ireland."
+      },
+      "GD": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "GE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 365,
+        "notes": ""
+      },
+      "GH": {
+        "requirementType": "evisa",
+        "maxStayDays": null,
+        "notes": "Visas valid up to 5 years for single/multiple entry."
+      },
+      "GM": {
+        "requirementType": "voa",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "GN": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "GQ": {
+        "requirementType": "evisa",
+        "maxStayDays": null,
+        "notes": "Yellow fever vaccination required if arriving from at-risk country."
+      },
+      "GR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "GT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Part of the CA-4 Free Mobility Agreement."
+      },
+      "GW": {
+        "requirementType": "voa",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "GY": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "HN": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Part of the CA-4 Free Mobility Agreement."
+      },
+      "HR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "HT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Travel advisory in effect; access limited by unrest."
+      },
+      "HU": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "ID": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": "Costs about USD 35."
+      },
+      "IE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "IL": {
+        "requirementType": "eta",
+        "maxStayDays": 90,
+        "notes": "ETA-IL fee about 25 NIS."
+      },
+      "IN": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "US citizens also eligible for 10-year multi-entry visa."
+      },
+      "IQ": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "IR": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Independent travel not permitted; guided tours required."
+      },
+      "IS": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "IT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "JM": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "Departure tax collected by airline."
+      },
+      "JO": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": null,
+        "notes": "Fee can be waived with a Jordan Pass and 3-night hotel stay."
+      },
+      "JP": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "eVisa also available."
+      },
+      "KE": {
+        "requirementType": "eta",
+        "maxStayDays": 90,
+        "notes": "Apply at least 3 days ahead; fee about USD 32.50."
+      },
+      "KG": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Within any 60-day period."
+      },
+      "KH": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "KI": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Within any 12-month period."
+      },
+      "KM": {
+        "requirementType": "voa",
+        "maxStayDays": 45,
+        "notes": ""
+      },
+      "KN": {
+        "requirementType": "eta",
+        "maxStayDays": 90,
+        "notes": "Fee about USD 17."
+      },
+      "KP": {
+        "requirementType": "admission_refused",
+        "maxStayDays": null,
+        "notes": "US passport validation required in advance; travel discouraged by US government."
+      },
+      "KR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "K-ETA exemption extended for many nationalities through 2026."
+      },
+      "KW": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": "Fee about 10 KWD."
+      },
+      "KZ": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "LA": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": "Some border crossings only accept full embassy visas."
+      },
+      "LB": {
+        "requirementType": "voa",
+        "maxStayDays": 30,
+        "notes": "Travel advisory in effect due to regional conflict."
+      },
+      "LC": {
+        "requirementType": "visa_free",
+        "maxStayDays": 42,
+        "notes": ""
+      },
+      "LI": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "LK": {
+        "requirementType": "voa",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "LR": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "3-year multiple-entry visa is the standard option."
+      },
+      "LS": {
+        "requirementType": "visa_free",
+        "maxStayDays": 14,
+        "notes": "Extendable to 180 days."
+      },
+      "LT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "LU": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "LV": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "Bilateral deal adds 90 days beyond the Schengen limit."
+      },
+      "LY": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Travel advisory in effect; independent travel not permitted."
+      },
+      "MA": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "MC": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "MD": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "ME": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Police registration required within 24 hours."
+      },
+      "MG": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": "Fee scales with length of stay."
+      },
+      "MH": {
+        "requirementType": "visa_free",
+        "maxStayDays": null,
+        "notes": "Special entry privileges under the Compact of Free Association."
+      },
+      "MK": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Police registration required within 24 hours."
+      },
+      "ML": {
+        "requirementType": "admission_refused",
+        "maxStayDays": null,
+        "notes": "Mali has suspended visa services for US citizens."
+      },
+      "MM": {
+        "requirementType": "evisa",
+        "maxStayDays": 28,
+        "notes": "Business eVisa allows 70 days; travel advisory in effect."
+      },
+      "MN": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Registration required after 30 days."
+      },
+      "MR": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "MT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "MU": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "MV": {
+        "requirementType": "voa",
+        "maxStayDays": 30,
+        "notes": "Extendable to 90 days."
+      },
+      "MW": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "MX": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "Multiple Immigration Form (FMM) required."
+      },
+      "MY": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Overstaying can be punished by caning."
+      },
+      "MZ": {
+        "requirementType": "eta",
+        "maxStayDays": 30,
+        "notes": "Apply at least 48 hours ahead; fee about USD 48."
+      },
+      "NA": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": "Visa requirement introduced for US citizens in April 2025."
+      },
+      "NE": {
+        "requirementType": "admission_refused",
+        "maxStayDays": null,
+        "notes": "Niger has suspended visa issuance and barred US citizens from entry."
+      },
+      "NG": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Vaccination certificate required from at-risk countries."
+      },
+      "NI": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Part of the CA-4 Free Mobility Agreement; tourist card fee applies."
+      },
+      "NL": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "NO": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Counts toward the wider Nordic Schengen limit."
+      },
+      "NP": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "Total annual stay capped at 150 days."
+      },
+      "NR": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Fixed 30-day validity."
+      },
+      "NZ": {
+        "requirementType": "eta",
+        "maxStayDays": 90,
+        "notes": "eTA plus a Visitor Levy fee required."
+      },
+      "OM": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Visa exemption 14 days; eVisa extends to 30 days."
+      },
+      "PA": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "Entry can be denied for prior criminal convictions."
+      },
+      "PE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "PG": {
+        "requirementType": "evisa",
+        "maxStayDays": 60,
+        "notes": "Extendable by 30 days."
+      },
+      "PH": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Extended stay possible for former Filipino citizens and family."
+      },
+      "PK": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "PL": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "PT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "PW": {
+        "requirementType": "visa_free",
+        "maxStayDays": 365,
+        "notes": "Cash amounts over USD 10,000 must be declared."
+      },
+      "PY": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "QA": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Entry fee about QAR 76."
+      },
+      "RO": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen-style 90/180-day rule applies."
+      },
+      "RS": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "RU": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "US government advises against all travel."
+      },
+      "RW": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": ""
+      },
+      "SA": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": "Alcohol import strictly prohibited."
+      },
+      "SB": {
+        "requirementType": "voa",
+        "maxStayDays": 90,
+        "notes": "Within any 12-month period."
+      },
+      "SC": {
+        "requirementType": "eta",
+        "maxStayDays": 90,
+        "notes": "Fee about EUR 10; reservation proof required."
+      },
+      "SD": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "US government advises against all travel; main airport currently closed."
+      },
+      "SE": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Schengen 90/180-day rule applies."
+      },
+      "SG": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "SI": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Police registration required within 72 hours."
+      },
+      "SK": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Medical insurance and daily funds may be checked."
+      },
+      "SL": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": "Vaccination certificate required."
+      },
+      "SM": {
+        "requirementType": "visa_free",
+        "maxStayDays": null,
+        "notes": ""
+      },
+      "SN": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Vaccination certificate required."
+      },
+      "SO": {
+        "requirementType": "evisa",
+        "maxStayDays": 30,
+        "notes": "Travel advisory in effect due to security risks."
+      },
+      "SR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Online entrance fee of about USD 50 required."
+      },
+      "SS": {
+        "requirementType": "evisa",
+        "maxStayDays": null,
+        "notes": "Vaccination certificate required; travel advisory in effect."
+      },
+      "ST": {
+        "requirementType": "visa_free",
+        "maxStayDays": 15,
+        "notes": "Vaccination certificate required."
+      },
+      "SV": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": "Part of the CA-4 Free Mobility Agreement (90 days combined in the zone)."
+      },
+      "SY": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": "eVisa portal currently suspended; travel advisory in effect."
+      },
+      "SZ": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Extendable to 60 days."
+      },
+      "TD": {
+        "requirementType": "admission_refused",
+        "maxStayDays": null,
+        "notes": "Chad suspended visa issuance to US citizens in mid-2025 in response to US travel restrictions."
+      },
+      "TG": {
+        "requirementType": "evisa",
+        "maxStayDays": 15,
+        "notes": ""
+      },
+      "TH": {
+        "requirementType": "visa_free",
+        "maxStayDays": 60,
+        "notes": "Digital arrival card required."
+      },
+      "TJ": {
+        "requirementType": "evisa",
+        "maxStayDays": 60,
+        "notes": "Registration required within 3 days."
+      },
+      "TL": {
+        "requirementType": "voa",
+        "maxStayDays": 30,
+        "notes": "Air arrivals only."
+      },
+      "TM": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "10-day on-arrival visa possible with prior approval."
+      },
+      "TN": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "TO": {
+        "requirementType": "voa",
+        "maxStayDays": 31,
+        "notes": "No charge on arrival."
+      },
+      "TR": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Tourism purposes only."
+      },
+      "TT": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "TV": {
+        "requirementType": "voa",
+        "maxStayDays": 30,
+        "notes": "Extendable to 3 months."
+      },
+      "TZ": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "UA": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "Travel advisory in effect due to war; land/sea entry only."
+      },
+      "UG": {
+        "requirementType": "evisa",
+        "maxStayDays": 90,
+        "notes": "Vaccination certificate required."
+      },
+      "UY": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "UZ": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Fully visa-free for US citizens starting January 2026."
+      },
+      "VC": {
+        "requirementType": "visa_free",
+        "maxStayDays": 180,
+        "notes": ""
+      },
+      "VE": {
+        "requirementType": "evisa",
+        "maxStayDays": null,
+        "notes": "Electronic visa system introduced for tourists and business travelers."
+      },
+      "VN": {
+        "requirementType": "evisa",
+        "maxStayDays": null,
+        "notes": "Up to 90 days, single or multiple entry."
+      },
+      "VU": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Extendable to 120 days."
+      },
+      "WS": {
+        "requirementType": "voa",
+        "maxStayDays": 90,
+        "notes": ""
+      },
+      "YE": {
+        "requirementType": "visa_required",
+        "maxStayDays": null,
+        "notes": "Travel advisory in effect due to conflict."
+      },
+      "ZA": {
+        "requirementType": "visa_free",
+        "maxStayDays": 90,
+        "notes": "At least 2 blank passport pages required."
+      },
+      "ZM": {
+        "requirementType": "visa_free",
+        "maxStayDays": 30,
+        "notes": "Also covered by the shared KAZA visa with Zimbabwe."
+      },
+      "ZW": {
+        "requirementType": "evisa_or_voa",
+        "maxStayDays": 30,
+        "notes": "Also covered by the shared KAZA visa with Zambia."
+      }
+    }
+  },
+  "programs": {
+    "CA": {
+      "student": [
+        {
+          "key": "study_permit",
+          "name": "Study Permit",
+          "eligibilityCriteria": [
+            "Have an acceptance letter from a Designated Learning Institution (DLI)",
+            "Prove sufficient funds for tuition, living costs, and return transportation",
+            "Have no criminal record; a police certificate may be required",
+            "Be in good health; a medical exam may be required",
+            "Satisfy an officer that you will leave Canada when your permit expires",
+            "A Provincial or Territorial Attestation Letter (PAL/TAL) is required for most applicants under the study-permit cap; certain doctoral and master's research programs are exempt as of January 2026"
+          ],
+          "requiredDocuments": [
+            "Letter of acceptance from a DLI",
+            "Valid passport",
+            "Proof of financial support",
+            "PAL/TAL, where required",
+            "Digital photo",
+            "Biometrics"
+          ],
+          "fees": "CAD $150 study permit fee + CAD $85 biometrics fee, where required",
+          "processingTime": "Varies by country of application; check IRCC's processing-times tool for the current estimate",
+          "validityDuration": "Length of the study program plus 90 days",
+          "sourceUrl": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html",
+          "lastVerified": "2026-09-16"
+        }
+      ],
+      "tourist_visitor": [
+        {
+          "key": "visitor_visa",
+          "name": "Visitor Visa (Temporary Resident Visa)",
+          "eligibilityCriteria": [
+            "Hold a valid travel document (passport)",
+            "Be in good health; a medical exam may be required",
+            "Have no criminal or immigration-related convictions",
+            "Demonstrate ties to your home country (job, home, financial assets, family)",
+            "Convince an immigration officer you will leave Canada at the end of your visit",
+            "Have enough money to support your stay"
+          ],
+          "requiredDocuments": [
+            "Valid passport or travel document",
+            "Proof of financial support (bank statements, pay stubs)",
+            "Letter of invitation from a Canadian host, if applicable",
+            "Travel itinerary",
+            "Digital photo meeting IRCC specifications",
+            "Biometrics (fingerprints and photo) at a Visa Application Centre"
+          ],
+          "fees": "CAD $100 visa fee + CAD $85 biometrics fee (approx. CAD $185 total per adult); capped at CAD $500 for a family of 5 or more applying together",
+          "processingTime": "Varies by country of application. IRCC publishes current estimates by country on its processing-times tool; recent published figures include roughly 22 days for applicants from the United States and 27 days for applicants from India (as of April 2026).",
+          "validityDuration": "Up to 10 years or until passport expiry, whichever comes first; usually multiple-entry",
+          "sourceUrl": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/visitor-visa.html",
+          "lastVerified": "2026-09-16"
+        }
+      ]
+    },
+    "GB": {
+      "tourist_visitor": [
+        {
+          "key": "standard_visitor_visa",
+          "name": "Standard Visitor Visa",
+          "eligibilityCriteria": [
+            "Hold a valid passport or travel document for the whole stay",
+            "Show you will leave the UK at the end of your visit",
+            "Show you can support yourself and any dependants during the trip",
+            "Show you can pay for your return or onward journey",
+            "Show you will not live in the UK for extended periods through frequent or successive visits"
+          ],
+          "requiredDocuments": [
+            "Valid passport or travel document",
+            "Evidence of funds to support the visit",
+            "Evidence of ties to home country / return travel plans",
+            "Biometric information (fingerprints and photo) at a UKVCAS appointment"
+          ],
+          "fees": "£135 for up to 6 months; long-term options available (2, 5, or 10 years) for frequent visitors",
+          "processingTime": "Standard service aims for a decision within 3 weeks; priority and super-priority services are available for an extra fee",
+          "validityDuration": "Up to 6 months per visit; long-term visas allow repeat visits within a 2/5/10-year window",
+          "sourceUrl": "https://www.gov.uk/standard-visitor",
+          "lastVerified": "2026-09-16"
+        }
+      ],
+      "student": [
+        {
+          "key": "student_visa",
+          "name": "Student Visa",
+          "eligibilityCriteria": [
+            "Be 16 or over",
+            "Have an unconditional offer and Confirmation of Acceptance for Studies (CAS) from a licensed student sponsor",
+            "Show you have enough money to support yourself and pay for your course",
+            "Meet the required knowledge of English",
+            "Have parental consent if you are 16 or 17"
+          ],
+          "requiredDocuments": [
+            "Valid passport",
+            "CAS reference number",
+            "Proof of funds (tuition and living costs, held for 28 consecutive days)",
+            "Proof of knowledge of English",
+            "TB test certificate, if applicable to your country",
+            "ATAS certificate, for certain postgraduate courses"
+          ],
+          "fees": "£558 to apply from outside the UK (same fee to extend or switch from inside the UK), plus the Immigration Health Surcharge",
+          "processingTime": "3 weeks if applying from outside the UK; 8 weeks if applying from inside the UK",
+          "validityDuration": "Up to 5 years for degree-level courses if you're 18 or over; up to 2 years for below-degree-level courses",
+          "sourceUrl": "https://www.gov.uk/student-visa",
+          "lastVerified": "2026-09-16"
+        }
+      ]
+    }
+  }
+}
