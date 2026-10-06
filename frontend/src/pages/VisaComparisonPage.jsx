@@ -15,6 +15,11 @@ import { rtdb } from "../firebase/config";
 
 const EMPTY_SLOT = { destination: "", status: "idle", result: null };
 
+// Requirement types that count as "no visa needed" for the best-option
+// badge. Anything not in this list just shows its normal badge with no
+// extra callout.
+const NO_VISA_NEEDED_TYPES = new Set(["visa_free"]);
+
 export default function VisaComparisonPage() {
   const [countries, setCountries] = useState({});
   const [visaTypes, setVisaTypes] = useState({});
@@ -22,6 +27,7 @@ export default function VisaComparisonPage() {
   const [nationality, setNationality] = useState("");
   const [slots, setSlots] = useState([{ ...EMPTY_SLOT }, { ...EMPTY_SLOT }, { ...EMPTY_SLOT }]);
   const [hasCompared, setHasCompared] = useState(false);
+  const [duplicateWarning, setDuplicateWarning] = useState("");
 
   useEffect(() => {
     async function loadReferenceData() {
@@ -74,12 +80,26 @@ export default function VisaComparisonPage() {
   }
 
   function handleSlotChange(index, destinationCode) {
+    setDuplicateWarning("");
+
     if (!destinationCode) {
       setSlots((prev) => {
         const next = [...prev];
         next[index] = { ...EMPTY_SLOT };
         return next;
       });
+      return;
+    }
+
+    // Prevent comparing a destination against itself in two columns —
+    // catch it before fetching anything, not after.
+    const alreadyChosenElsewhere = slots.some(
+      (slot, i) => i !== index && slot.destination === destinationCode,
+    );
+    if (alreadyChosenElsewhere) {
+      setDuplicateWarning(
+        `${countries[destinationCode]?.name || destinationCode} is already in another column. Pick a different destination.`,
+      );
       return;
     }
 
@@ -95,6 +115,15 @@ export default function VisaComparisonPage() {
         return next;
       });
     }
+  }
+
+  function handleClearSlot(index) {
+    setDuplicateWarning("");
+    setSlots((prev) => {
+      const next = [...prev];
+      next[index] = { ...EMPTY_SLOT };
+      return next;
+    });
   }
 
   async function handleCompareSubmit(e) {
@@ -113,8 +142,33 @@ export default function VisaComparisonPage() {
     );
   }
 
+  function handleStartOver() {
+    setNationality("");
+    setSlots([{ ...EMPTY_SLOT }, { ...EMPTY_SLOT }, { ...EMPTY_SLOT }]);
+    setHasCompared(false);
+    setDuplicateWarning("");
+  }
+
   const activeSlots = slots.filter((s) => s.destination);
   const canSubmit = nationality && activeSlots.length >= 2;
+
+  // Once every filled slot has resolved (found or not_found — not still
+  // loading), figure out whether any column is a clear "easiest" pick, so
+  // we can badge it. Only bothers once there's more than one result to
+  // actually compare.
+  const resolvedFoundSlots = slots.filter((s) => s.destination && s.status === "found");
+  const bestSlotIndexes = new Set();
+  if (resolvedFoundSlots.length >= 2) {
+    slots.forEach((slot, index) => {
+      if (
+        slot.status === "found" &&
+        slot.result &&
+        NO_VISA_NEEDED_TYPES.has(slot.result.requirementType)
+      ) {
+        bestSlotIndexes.add(index);
+      }
+    });
+  }
 
   if (loadingReference) {
     return <p className="loading-message">Loading country data...</p>;
@@ -134,6 +188,7 @@ export default function VisaComparisonPage() {
             onChange={(e) => {
               setNationality(e.target.value);
               setHasCompared(false);
+              setDuplicateWarning("");
               setSlots([{ ...EMPTY_SLOT }, { ...EMPTY_SLOT }, { ...EMPTY_SLOT }]);
             }}
           >
@@ -148,26 +203,44 @@ export default function VisaComparisonPage() {
 
         <div className="comparison-slot-pickers">
           {slots.map((slot, index) => (
-            <div className="form-field" key={index}>
+            <div className="form-field comparison-slot-field" key={index}>
               <label htmlFor={`destination-${index}`}>Destination {index + 1}</label>
-              <select
-                id={`destination-${index}`}
-                value={slot.destination}
-                onChange={(e) => handleSlotChange(index, e.target.value)}
-                disabled={!nationality}
-              >
-                <option value="">{index < 2 ? "Select a country" : "Optional"}</option>
-                {countryOptions
-                  .filter((c) => c.code !== nationality)
-                  .map((c) => (
-                    <option key={c.code} value={c.code}>
-                      {c.name}
-                    </option>
-                  ))}
-              </select>
+              <div className="comparison-slot-input-row">
+                <select
+                  id={`destination-${index}`}
+                  value={slot.destination}
+                  onChange={(e) => handleSlotChange(index, e.target.value)}
+                  disabled={!nationality}
+                >
+                  <option value="">{index < 2 ? "Select a country" : "Optional"}</option>
+                  {countryOptions
+                    .filter((c) => c.code !== nationality)
+                    .map((c) => (
+                      <option key={c.code} value={c.code}>
+                        {c.name}
+                      </option>
+                    ))}
+                </select>
+                {slot.destination && (
+                  <button
+                    type="button"
+                    className="comparison-slot-clear"
+                    onClick={() => handleClearSlot(index)}
+                    aria-label={`Clear destination ${index + 1}`}
+                  >
+                    ×
+                  </button>
+                )}
+              </div>
             </div>
           ))}
         </div>
+
+        {duplicateWarning && (
+          <p role="alert" className="error-message">
+            {duplicateWarning}
+          </p>
+        )}
 
         {!hasCompared && (
           <button type="submit" disabled={!canSubmit}>
@@ -177,68 +250,85 @@ export default function VisaComparisonPage() {
       </form>
 
       {hasCompared && (
-        <div className="comparison-grid" style={{ "--comparison-columns": activeSlots.length }}>
-          {slots.map((slot, index) => {
-            if (!slot.destination) return null;
-            const destName = countries[slot.destination]?.name || slot.destination;
+        <>
+          <div
+            className="comparison-grid"
+            style={{ "--comparison-columns": activeSlots.length }}
+            aria-live="polite"
+          >
+            {slots.map((slot, index) => {
+              if (!slot.destination) return null;
+              const destName = countries[slot.destination]?.name || slot.destination;
+              const isBest = bestSlotIndexes.has(index);
 
-            return (
-              <div className="comparison-column" key={index}>
-                <h2>{destName}</h2>
+              return (
+                <div
+                  className={`comparison-column${isBest ? " comparison-column--best" : ""}`}
+                  key={index}
+                >
+                  <div className="comparison-column-header">
+                    <h2>{destName}</h2>
+                    {isBest && <span className="comparison-best-badge">Easiest option</span>}
+                  </div>
 
-                {slot.status === "loading" && <p className="loading-message">Checking...</p>}
+                  {slot.status === "loading" && <p className="loading-message">Checking...</p>}
 
-                {slot.status === "not_found" && (
-                  <p className="placeholder-note">
-                    No requirement data seeded yet for this pair. Phase 1 only covers a small
-                    set of passport countries so far.
-                  </p>
-                )}
-
-                {slot.status === "error" && (
-                  <p className="error-message" role="alert">
-                    Couldn't load this comparison. Try again.
-                  </p>
-                )}
-
-                {slot.status === "found" && slot.result && (
-                  <>
-                    <p className="visa-requirement-badge">
-                      {visaTypes[slot.result.requirementType]?.label ||
-                        slot.result.requirementType}
+                  {slot.status === "not_found" && (
+                    <p className="placeholder-note">
+                      No requirement data seeded yet for this pair. Phase 1 only covers a small
+                      set of passport countries so far.
                     </p>
-                    <dl className="comparison-fields">
-                      <dt>Max stay</dt>
-                      <dd>
-                        {slot.result.maxStayDays != null
-                          ? slot.result.maxStayRaw || `${slot.result.maxStayDays} days`
-                          : "—"}
-                      </dd>
-                      <dt>Notes</dt>
-                      <dd>{slot.result.notes || "—"}</dd>
-                      <dt>Last verified</dt>
-                      <dd>
-                        {slot.result.lastVerifiedAt
-                          ? new Date(slot.result.lastVerifiedAt).toLocaleDateString()
-                          : "unknown"}
-                      </dd>
-                      <dt>Source</dt>
-                      <dd>
-                        {slot.result.sourceUrl ? (
-                          <a href={slot.result.sourceUrl} target="_blank" rel="noreferrer">
-                            Link
-                          </a>
-                        ) : (
-                          "—"
-                        )}
-                      </dd>
-                    </dl>
-                  </>
-                )}
-              </div>
-            );
-          })}
-        </div>
+                  )}
+
+                  {slot.status === "error" && (
+                    <p className="error-message" role="alert">
+                      Couldn't load this comparison. Try again.
+                    </p>
+                  )}
+
+                  {slot.status === "found" && slot.result && (
+                    <>
+                      <p className="visa-requirement-badge">
+                        {visaTypes[slot.result.requirementType]?.label ||
+                          slot.result.requirementType}
+                      </p>
+                      <dl className="comparison-fields">
+                        <dt>Max stay</dt>
+                        <dd>
+                          {slot.result.maxStayDays != null
+                            ? slot.result.maxStayRaw || `${slot.result.maxStayDays} days`
+                            : "—"}
+                        </dd>
+                        <dt>Notes</dt>
+                        <dd>{slot.result.notes || "—"}</dd>
+                        <dt>Last verified</dt>
+                        <dd>
+                          {slot.result.lastVerifiedAt
+                            ? new Date(slot.result.lastVerifiedAt).toLocaleDateString()
+                            : "unknown"}
+                        </dd>
+                        <dt>Source</dt>
+                        <dd>
+                          {slot.result.sourceUrl ? (
+                            <a href={slot.result.sourceUrl} target="_blank" rel="noreferrer">
+                              Link
+                            </a>
+                          ) : (
+                            "—"
+                          )}
+                        </dd>
+                      </dl>
+                    </>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          <button type="button" className="button-link-secondary comparison-start-over" onClick={handleStartOver}>
+            Start over
+          </button>
+        </>
       )}
     </div>
   );
