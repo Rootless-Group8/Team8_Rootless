@@ -1,0 +1,121 @@
+{
+  "_meta": {
+    "researchedFrom": "Germany: auswaertiges-amt.de (Federal Foreign Office), make-it-in-germany.com, and German embassy information sheets. Portugal: vistos.mne.gov.pt checklists as published by Portuguese consulates and VFS Global; 2026 fee and income figures cross-checked against secondary sources because vistos.mne.gov.pt blocked automated access.",
+    "lastVerified": "2026-10-05"
+  },
+  "DE": {
+    "schengen_visitor_visa": {
+      "name": "Schengen Visitor Visa (Short Stay)",
+      "category": "tourist_visitor",
+      "eligibilityCriteria": [
+        "Nationals of many countries (for example the US, Canada, the UK and Australia) can visit visa-free for up to 90 days in any 180-day period; check the Foreign Office visa table for your citizenship",
+        "Hold a passport valid for at least 3 months beyond your planned departure from the Schengen area",
+        "Germany must be your sole or main destination for a German mission to handle your application",
+        "Show the purpose and conditions of your stay, such as an invitation, hotel booking or travel itinerary",
+        "Show you can pay for your stay and your return journey",
+        "Have travel health insurance valid across the Schengen area with at least 30,000 EUR coverage"
+      ],
+      "requiredDocuments": [
+        "Valid passport (at least 2 blank pages, issued within the last 10 years)",
+        "Completed Schengen visa application form",
+        "Recent biometric passport photo",
+        "Travel health insurance certificate (minimum 30,000 EUR coverage)",
+        "Proof of accommodation or invitation from a host in Germany",
+        "Proof of sufficient funds",
+        "Flight or travel itinerary",
+        "Biometrics (fingerprints and photo) at the visa appointment"
+      ],
+      "processingTime": "Missions normally decide within 15 calendar days of a correct application, though appointment waits can be longer in peak season. You can apply up to 6 months before travel and generally no later than 15 days before.",
+      "fees": "€90 per adult; €45 for children aged 6 to under 12; free for children under 6. Some groups (such as students on study trips) are exempt, and external visa service providers may charge an extra fee.",
+      "validityDuration": "Up to 90 days within any 180-day period across the Schengen area; single, double or multiple entry depending on the visa granted",
+      "sourceUrl": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870"
+    },
+    "student_visa": {
+      "name": "National Visa for Study (Section 16b)",
+      "category": "student",
+      "eligibilityCriteria": [
+        "Be admitted to a German university or a preparatory college (Studienkolleg), including any required preparatory language course",
+        "Prove you can cover living costs for one year: at least €11,904 (€992 per month), usually through a blocked account (Sperrkonto), a formal obligation (Verpflichtungserklärung) by a person in Germany, or a scholarship",
+        "Show the language skills required for your course (German or English, depending on the language of instruction)",
+        "Have health insurance cover; statutory health insurance starts once you enrol, so travel health insurance may be needed for the period before that",
+        "The foreigners authority in Germany usually has to approve your application before the visa can be issued"
+      ],
+      "requiredDocuments": [
+        "Valid passport",
+        "Completed national visa application form (VIDEX) and signed declarations",
+        "Biometric passport photo",
+        "Admission letter (Zulassungsbescheid) from a German university or preparatory college, stating the language of instruction",
+        "Proof of language skills for the course",
+        "Proof of funds: blocked account confirmation, scholarship confirmation, or formal obligation (Verpflichtungserklärung)",
+        "Proof of health insurance",
+        "Motivation letter and CV, where your mission asks for them",
+        "Proof of accommodation in Germany, where requested",
+        "Biometrics (fingerprints and photo) at the visa appointment"
+      ],
+      "processingTime": "Roughly 4 to 12 weeks once the application is complete; it can take longer because the foreigners authority in Germany must approve the visa. Missions advise against booking flights until the visa is issued.",
+      "fees": "€75 national visa fee (non-refundable, usually paid at the appointment); waived for people funded by a public scholarship. A separate residence permit fee is charged by the local foreigners authority in Germany.",
+      "validityDuration": "The initial national visa is valid for a limited period (up to one year); after arrival, the local foreigners authority issues and extends a residence permit for study",
+      "sourceUrl": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870"
+    }
+  },
+  "PT": {
+    "schengen_visitor_visa": {
+      "name": "Schengen Visitor Visa (Short Stay)",
+      "category": "tourist_visitor",
+      "eligibilityCriteria": [
+        "Nationals of many countries (for example the US, Canada, the UK and Australia) can visit visa-free for up to 90 days in any 180-day period; check whether your citizenship needs a visa",
+        "Hold a passport valid for at least 3 months beyond your planned departure from the Schengen area",
+        "Portugal must be your main destination for a Portuguese mission to handle your application",
+        "Show the purpose of your stay, your accommodation and your return or onward travel",
+        "Show means of subsistence; Portugal's reference amounts are about €75 per entry plus €40 for each day of stay",
+        "Have travel medical insurance valid across the Schengen area with at least 30,000 EUR coverage"
+      ],
+      "requiredDocuments": [
+        "Completed and signed Schengen visa application form",
+        "Recent passport photo (35 mm x 45 mm)",
+        "Valid passport (valid at least 3 months beyond your planned departure)",
+        "Proof of legal residence, if you apply outside your country of nationality",
+        "Travel reservation (flights or itinerary)",
+        "Proof of accommodation for the whole stay, or a statement of responsibility from a host",
+        "Travel medical insurance (minimum 30,000 EUR coverage)",
+        "Proof of income and recent bank statements covering the stay",
+        "Biometrics (fingerprints and photo) at the visa appointment"
+      ],
+      "processingTime": "Decisions are normally taken within 15 calendar days of an admissible application, and can take up to 45 days if further examination is needed. Applications can be lodged from 6 months to 15 days before travel.",
+      "fees": "€90 per adult; €45 for children aged 6 to under 12; free for children under 6. External service providers may charge an extra fee.",
+      "validityDuration": "Up to 90 days within any 180-day period across the Schengen area; single, double or multiple entry depending on the visa granted",
+      "sourceUrl": "https://vistos.mne.gov.pt/en/"
+    },
+    "student_visa": {
+      "name": "Residence Visa for Higher Education Study (D4)",
+      "category": "student",
+      "eligibilityCriteria": [
+        "Be admitted to, or meet the admission criteria for, an officially recognised higher education institution in Portugal",
+        "Show means of subsistence for the study period; the benchmark is Portugal's monthly minimum wage (€920 per month in 2026), and scholarship holders are exempt from proving it",
+        "Have travel insurance covering medical expenses, emergency assistance and repatriation",
+        "Have a clean criminal record, shown with a police clearance certificate from your country of origin or residence",
+        "Portuguese authorities are consulted before a national visa is issued"
+      ],
+      "requiredDocuments": [
+        "National visa application form, completed and signed",
+        "Two passport photos",
+        "Valid passport (valid at least 3 months beyond the intended stay)",
+        "Proof of legal residence, if you apply outside your country of nationality",
+        "Travel reservation",
+        "Travel insurance covering medical expenses, emergency assistance and repatriation",
+        "Authorisation for the Portuguese immigration authority to consult your criminal record",
+        "Police clearance certificate (valid for 3 months after issue)",
+        "Admission or acceptance letter from the higher education institution in Portugal",
+        "Proof of accommodation in Portugal",
+        "Proof of means of subsistence (bank statements or scholarship letter)"
+      ],
+      "processingTime": "The legal decision period is up to 60 days after the application is lodged. National visas involve consultation with Portuguese authorities, so allow extra time.",
+      "fees": "€110 national visa fee (service provider charges may be extra), plus separate AIMA residence permit fees after arrival: about €247 at standard rates or about €186 with the 25% digital-procedure reduction, under the fee table in force since 1 March 2026",
+      "validityDuration": "The visa is valid for 4 months with two entries, during which you travel to Portugal and apply to AIMA for a residence permit for study; AIMA sets the permit period and renewal terms",
+      "sourceUrl": "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/residency"
+    }
+  },
+  "_notes": {
+    "digitalNomad": "Only tourist/visitor and student visas are seeded for Germany and Portugal, per the team's updated scope. Work visas (for example Germany's skilled worker visa and EU Blue Card, Portugal's D1) and digital nomad routes (Portugal's D8) are not included."
+  }
+}
