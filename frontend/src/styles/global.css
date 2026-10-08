@@ -1,0 +1,505 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size-base);
+  color: var(--ui-color-text);
+  background: var(--ui-color-bg);
+}
+
+a {
+  color: inherit;
+}
+
+/* ============ Nav ============ */
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ui-space-4) var(--ui-space-6);
+  background: var(--ui-color-bg);
+  position: relative;
+  z-index: 5;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-1);
+  font-family: var(--ui-font-family-display);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  color: var(--ui-color-text);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-5);
+}
+
+.nav-links a {
+  color: var(--ui-color-text);
+  text-decoration: none;
+  font-weight: var(--ui-font-weight-medium);
+  font-size: var(--ui-font-size-sm);
+}
+
+.nav-links a:hover {
+  color: var(--ui-color-primary);
+}
+
+.nav-cta {
+  display: inline-block;
+  background: var(--ui-color-primary);
+  color: var(--ui-color-primary-text-on) !important;
+  padding: var(--ui-space-2) var(--ui-space-5);
+  border-radius: var(--ui-radius-pill);
+  font-weight: var(--ui-font-weight-bold);
+  text-decoration: none !important;
+}
+
+.nav-cta:hover {
+  background: var(--ui-color-primary-hover);
+}
+
+/* ============ Layout ============ */
+
+.app-main {
+  max-width: var(--ui-max-content-width);
+  margin: 0 auto;
+  padding: 0 var(--ui-space-3);
+}
+
+.login-page,
+.registration-page,
+.dashboard-page,
+.visa-explorer-page {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--ui-space-7) var(--ui-space-3);
+}
+
+h1 {
+  font-family: var(--ui-font-family-display);
+  font-size: var(--ui-font-size-xl);
+  margin-bottom: var(--ui-space-3);
+  color: var(--ui-color-text);
+}
+
+/* ============ Hero (aurora + mountain scene) ============ */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: var(--ui-space-6) var(--ui-space-6) 0;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+}
+
+.hero-eyebrow {
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size-sm);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: var(--ui-font-weight-bold);
+  color: var(--ui-color-aurora-green);
+  margin: 0;
+}
+
+.hero-title {
+  font-family: var(--ui-font-family-display);
+  font-size: var(--ui-font-size-display);
+  line-height: 1.2;
+  color: #ffffff;
+  margin: var(--ui-space-2) 0 var(--ui-space-4);
+}
+
+.hero-subtitle {
+  font-size: var(--ui-font-size-lg);
+  color: var(--ui-color-text-muted);
+  max-width: 40ch;
+  margin: 0 0 var(--ui-space-5);
+}
+
+.hero-search {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--ui-radius-pill);
+  padding: var(--ui-space-2) var(--ui-space-2) var(--ui-space-2) var(--ui-space-5);
+  max-width: 420px;
+  margin-bottom: var(--ui-space-5);
+}
+
+.hero-search input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size-base);
+  background: transparent;
+  color: var(--ui-color-text);
+}
+
+.hero-search input::placeholder {
+  color: var(--ui-color-text-muted);
+}
+
+.hero-search button {
+  background: var(--ui-color-primary);
+  color: var(--ui-color-primary-text-on);
+  border: none;
+  border-radius: var(--ui-radius-pill);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.hero-quicklinks {
+  display: flex;
+  gap: var(--ui-space-5);
+  flex-wrap: wrap;
+  padding-bottom: var(--ui-space-8);
+}
+
+.hero-quicklink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ui-space-2);
+  text-decoration: none;
+  color: var(--ui-color-text);
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-medium);
+  text-align: center;
+  width: 78px;
+}
+
+.hero-quicklink-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--ui-radius);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ui-color-text);
+}
+
+.hero-quicklink-icon--gold {
+  border-color: var(--ui-color-aurora-gold);
+  color: var(--ui-color-aurora-gold);
+}
+.hero-quicklink-icon--green {
+  border-color: var(--ui-color-aurora-green);
+  color: var(--ui-color-aurora-green);
+}
+.hero-quicklink-icon--coral {
+  border-color: var(--ui-color-aurora-coral);
+  color: var(--ui-color-aurora-coral);
+}
+.hero-quicklink-icon--blue {
+  border-color: var(--ui-color-aurora-blue);
+  color: var(--ui-color-aurora-blue);
+}
+
+/* ============ How it helps section ============ */
+
+.wave-section {
+  background: var(--ui-color-bg-surface);
+  padding: var(--ui-space-8) 0;
+}
+
+.section-heading {
+  font-family: var(--ui-font-family-display);
+  font-size: var(--ui-font-size-xl);
+  color: var(--ui-color-text);
+  text-align: center;
+  margin-bottom: var(--ui-space-6);
+}
+
+.helps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--ui-space-5);
+}
+
+.helps-card {
+  text-align: center;
+}
+
+.helps-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--ui-radius-pill);
+  margin: 0 auto var(--ui-space-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.helps-card h3 {
+  font-size: var(--ui-font-size-base);
+  color: var(--ui-color-text);
+  margin: 0 0 var(--ui-space-2);
+}
+
+.helps-card p {
+  font-size: var(--ui-font-size-sm);
+  color: var(--ui-color-text-muted);
+  margin: 0;
+}
+
+/* ============ Feature banners (light cards on dark page) ============ */
+
+.banner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ui-space-5);
+  margin: var(--ui-space-7) 0;
+}
+
+.banner-card {
+  border-radius: var(--ui-radius-lg);
+  padding: var(--ui-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-3);
+}
+
+.banner-card--gold {
+  background: var(--ui-color-accent-gold-bg);
+  color: var(--ui-color-accent-gold-text);
+}
+
+.banner-card--coral {
+  background: var(--ui-color-accent-coral-bg);
+  color: var(--ui-color-accent-coral-text);
+}
+
+.banner-card h2 {
+  font-family: var(--ui-font-family-display);
+  font-size: var(--ui-font-size-xl);
+  margin: 0;
+}
+
+.banner-card p {
+  margin: 0;
+  font-size: var(--ui-font-size-base);
+}
+
+.banner-cta {
+  align-self: flex-start;
+  background: #241a3d;
+  color: var(--ui-color-text-on-dark);
+  border: none;
+  border-radius: var(--ui-radius-pill);
+  padding: var(--ui-space-2) var(--ui-space-5);
+  font-weight: var(--ui-font-weight-bold);
+  text-decoration: none;
+  margin-top: var(--ui-space-2);
+}
+
+/* ============ Footer ============ */
+
+.site-footer {
+  background: var(--ui-color-bg-footer);
+  color: var(--ui-color-text-on-dark);
+  padding: var(--ui-space-6) var(--ui-space-6);
+  margin-top: var(--ui-space-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--ui-space-3);
+}
+
+.site-footer .nav-brand {
+  font-size: 20px;
+}
+
+.site-footer-links {
+  display: flex;
+  gap: var(--ui-space-5);
+}
+
+.site-footer-links a {
+  color: var(--ui-color-text-on-dark);
+  text-decoration: none;
+  font-size: var(--ui-font-size-sm);
+  opacity: 0.85;
+}
+
+/* ============ Forms (auth pages) ============ */
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-1);
+  margin-bottom: var(--ui-space-3);
+}
+
+.form-field label {
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-bold);
+}
+
+.form-field input {
+  padding: var(--ui-space-2);
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius-sm);
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size-base);
+  background: var(--ui-color-bg-surface);
+  color: var(--ui-color-text);
+}
+
+.field-error {
+  color: var(--ui-color-error);
+  font-size: var(--ui-font-size-sm);
+}
+
+button,
+.button-link {
+  display: inline-block;
+  padding: var(--ui-space-2) var(--ui-space-4);
+  background: var(--ui-color-primary);
+  color: var(--ui-color-primary-text-on);
+  border: none;
+  border-radius: var(--ui-radius-pill);
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size-base);
+  font-weight: var(--ui-font-weight-bold);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover,
+.button-link:hover {
+  background: var(--ui-color-primary-hover);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-link-secondary {
+  background: transparent;
+  color: var(--ui-color-text);
+  border: 1px solid var(--ui-color-secondary-border);
+}
+
+.button-link-secondary:hover {
+  background: var(--ui-color-secondary-hover-bg);
+}
+
+.home-actions {
+  display: flex;
+  gap: var(--ui-space-3);
+  margin-top: var(--ui-space-4);
+}
+
+.error-message {
+  color: var(--ui-color-error);
+  background: var(--ui-color-error-bg);
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border-radius: var(--ui-radius-sm);
+  margin-bottom: var(--ui-space-3);
+}
+
+.success-message {
+  color: var(--ui-color-success);
+  background: var(--ui-color-success-bg);
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border-radius: var(--ui-radius-sm);
+  margin-bottom: var(--ui-space-3);
+}
+
+.placeholder-note {
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-font-size-sm);
+}
+
+.loading-message {
+  color: var(--ui-color-text-muted);
+}
+
+/* ============ Visa Explorer ============ */
+
+.visa-explorer-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-2);
+  margin-bottom: var(--ui-space-4);
+}
+
+.visa-explorer-form select {
+  background: var(--ui-color-bg-surface);
+  color: var(--ui-color-text);
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius-sm);
+  padding: var(--ui-space-2);
+}
+
+.visa-result-card {
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius);
+  padding: var(--ui-space-4);
+  background: var(--ui-color-bg-surface);
+}
+
+.visa-requirement-badge {
+  display: inline-block;
+  background: var(--ui-color-primary);
+  color: var(--ui-color-primary-text-on);
+  padding: var(--ui-space-1) var(--ui-space-3);
+  border-radius: var(--ui-radius-pill);
+  font-weight: var(--ui-font-weight-bold);
+  margin: var(--ui-space-2) 0;
+}
+
+/* ============ Responsive ============ */
+
+@media (max-width: 860px) {
+  .helps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .banner-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav-links {
+    gap: var(--ui-space-3);
+  }
+}
