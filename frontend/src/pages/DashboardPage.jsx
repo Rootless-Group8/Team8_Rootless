@@ -7,6 +7,7 @@ const sidebarLinks = [
   { to: "/dashboard", label: "Overview" },
   { to: "/visa-explorer", label: "Visa Explorer" },
   { to: "/visa-comparison", label: "Compare Visas" },
+  { to: "/cost-of-living", label: "Cost of Living" },
   { to: "/documents", label: "Documents" },
   { to: "/account", label: "Account" },
   { to: "/settings", label: "Settings" },
