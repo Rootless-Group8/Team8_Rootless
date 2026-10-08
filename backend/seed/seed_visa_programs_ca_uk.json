@@ -1,0 +1,149 @@
+{
+  "_meta": {
+    "researchedFrom": "Official sources only: canada.ca (IRCC) and gov.uk (UKVI)",
+    "lastVerified": "2026-09-16"
+  },
+  "CA": {
+    "visitor_visa": {
+      "name": "Visitor Visa (Temporary Resident Visa)",
+      "category": "tourist_visitor",
+      "eligibilityCriteria": [
+        "Hold a valid travel document (passport)",
+        "Be in good health; a medical exam may be required",
+        "Have no criminal or immigration-related convictions",
+        "Demonstrate ties to your home country (job, home, financial assets, family)",
+        "Convince an immigration officer you will leave Canada at the end of your visit",
+        "Have enough money to support your stay"
+      ],
+      "requiredDocuments": [
+        "Valid passport or travel document",
+        "Proof of financial support (bank statements, pay stubs)",
+        "Letter of invitation from a Canadian host, if applicable",
+        "Travel itinerary",
+        "Digital photo meeting IRCC specifications",
+        "Biometrics (fingerprints and photo) at a Visa Application Centre"
+      ],
+      "processingTime": "Varies by country of application. IRCC publishes current estimates by country on its processing-times tool; recent published figures include roughly 22 days for applicants from the United States and 27 days for applicants from India (as of April 2026).",
+      "fees": "CAD $100 visa fee + CAD $85 biometrics fee (approx. CAD $185 total per adult); capped at CAD $500 for a family of 5 or more applying together",
+      "validityDuration": "Up to 10 years or until passport expiry, whichever comes first; usually multiple-entry",
+      "sourceUrl": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/visitor-visa.html"
+    },
+    "study_permit": {
+      "name": "Study Permit",
+      "category": "student",
+      "eligibilityCriteria": [
+        "Have an acceptance letter from a Designated Learning Institution (DLI)",
+        "Prove sufficient funds for tuition, living costs, and return transportation",
+        "Have no criminal record; a police certificate may be required",
+        "Be in good health; a medical exam may be required",
+        "Satisfy an officer that you will leave Canada when your permit expires",
+        "A Provincial or Territorial Attestation Letter (PAL/TAL) is required for most applicants under the study-permit cap; certain doctoral and master's research programs are exempt as of January 2026"
+      ],
+      "requiredDocuments": [
+        "Letter of acceptance from a DLI",
+        "Valid passport",
+        "Proof of financial support",
+        "PAL/TAL, where required",
+        "Digital photo",
+        "Biometrics"
+      ],
+      "processingTime": "Varies by country of application; check IRCC's processing-times tool for the current estimate",
+      "fees": "CAD $150 study permit fee + CAD $85 biometrics fee, where required",
+      "validityDuration": "Length of the study program plus 90 days",
+      "sourceUrl": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html"
+    },
+    "work_permit": {
+      "name": "Work Permit",
+      "category": "work",
+      "eligibilityCriteria": [
+        "Have a valid job offer supported by a Labour Market Impact Assessment (LMIA) or an LMIA exemption for employer-specific permits, or qualify under an open work permit category",
+        "Prove you meet the requirements of the job",
+        "Have enough money for your stay",
+        "Have no serious criminal or medical inadmissibility",
+        "Convince an officer you will leave Canada when your permit expires"
+      ],
+      "requiredDocuments": [
+        "Valid passport",
+        "Job offer / LMIA number or LMIA-exemption code (employer-specific permits)",
+        "Proof of qualifications for the job",
+        "Proof of funds",
+        "Digital photo",
+        "Biometrics"
+      ],
+      "processingTime": "Varies by permit type and country of application; typically several weeks up to a few months",
+      "fees": "CAD $155 work permit fee; + CAD $100 open work permit holder fee for open permits; + CAD $85 biometrics fee. Employers may also pay a $1,000 LMIA fee or $230 compliance fee.",
+      "validityDuration": "Tied to the job offer/LMIA duration or program conditions; renewable",
+      "sourceUrl": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/permit-inside/apply.html"
+    }
+  },
+  "GB": {
+    "standard_visitor_visa": {
+      "name": "Standard Visitor Visa",
+      "category": "tourist_visitor",
+      "eligibilityCriteria": [
+        "Hold a valid passport or travel document for the whole stay",
+        "Show you will leave the UK at the end of your visit",
+        "Show you can support yourself and any dependants during the trip",
+        "Show you can pay for your return or onward journey",
+        "Show you will not live in the UK for extended periods through frequent or successive visits"
+      ],
+      "requiredDocuments": [
+        "Valid passport or travel document",
+        "Evidence of funds to support the visit",
+        "Evidence of ties to home country / return travel plans",
+        "Biometric information (fingerprints and photo) at a UKVCAS appointment"
+      ],
+      "processingTime": "Standard service aims for a decision within 3 weeks; priority and super-priority services are available for an extra fee",
+      "fees": "\u00a3135 for up to 6 months; long-term options available (2, 5, or 10 years) for frequent visitors",
+      "validityDuration": "Up to 6 months per visit; long-term visas allow repeat visits within a 2/5/10-year window",
+      "sourceUrl": "https://www.gov.uk/standard-visitor"
+    },
+    "skilled_worker_visa": {
+      "name": "Skilled Worker Visa",
+      "category": "work",
+      "eligibilityCriteria": [
+        "Have a confirmed job offer from a Home Office-licensed sponsor",
+        "Hold a Certificate of Sponsorship (CoS) for an eligible occupation",
+        "Be paid at least the minimum salary for the role, based on job type and CoS date (see gov.uk/skilled-worker-visa/your-job for current thresholds)",
+        "Meet the required knowledge of English (CEFR B2, as of 8 January 2026)"
+      ],
+      "requiredDocuments": [
+        "Valid passport",
+        "Certificate of Sponsorship reference number",
+        "Proof of knowledge of English",
+        "Proof of personal savings, where required",
+        "Biometric information"
+      ],
+      "processingTime": "3 weeks if applying from outside the UK; 8 weeks if applying from inside the UK",
+      "fees": "Application fee varies by route and visa length, plus the Immigration Health Surcharge per year of stay; see gov.uk/skilled-worker-visa/how-much-it-costs for current rates",
+      "validityDuration": "Up to 5 years per grant; extendable, and can lead to settlement after 5 years",
+      "sourceUrl": "https://www.gov.uk/skilled-worker-visa"
+    },
+    "student_visa": {
+      "name": "Student Visa",
+      "category": "student",
+      "eligibilityCriteria": [
+        "Be 16 or over",
+        "Have an unconditional offer and Confirmation of Acceptance for Studies (CAS) from a licensed student sponsor",
+        "Show you have enough money to support yourself and pay for your course",
+        "Meet the required knowledge of English",
+        "Have parental consent if you are 16 or 17"
+      ],
+      "requiredDocuments": [
+        "Valid passport",
+        "CAS reference number",
+        "Proof of funds (tuition and living costs, held for 28 consecutive days)",
+        "Proof of knowledge of English",
+        "TB test certificate, if applicable to your country",
+        "ATAS certificate, for certain postgraduate courses"
+      ],
+      "processingTime": "3 weeks if applying from outside the UK; 8 weeks if applying from inside the UK",
+      "fees": "\u00a3558 to apply from outside the UK (same fee to extend or switch from inside the UK), plus the Immigration Health Surcharge",
+      "validityDuration": "Up to 5 years for degree-level courses if you're 18 or over; up to 2 years for below-degree-level courses",
+      "sourceUrl": "https://www.gov.uk/student-visa"
+    }
+  },
+  "_notes": {
+    "digitalNomad": "Neither Canada nor the UK offers a dedicated digital nomad visa as of September 2026. Canada permits visitors to work remotely for a foreign employer/clients for up to 6 months under existing visitor rules (IRCC guidance updated 26 May 2026); the UK has no equivalent provision and remote workers typically rely on the Standard Visitor visa's general permitted activities. No separate record was seeded for this category per country to avoid duplicating the visitor-visa entry with fabricated distinctions."
+  }
+}
