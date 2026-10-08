@@ -4,3 +4,11 @@ node_modules/
 serviceAccountKey.json
 seed_cost_of_living.json
 seed_cost_of_living.py
+#Firebase credentials — never commit
+serviceAccountKey.json
+*serviceAccountKey*.json
+
+# Common
+node_modules/
+.env
+.DS_Store
