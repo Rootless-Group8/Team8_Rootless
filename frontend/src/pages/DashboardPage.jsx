@@ -1,10 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../auth/useAuth";
+import { useChecklistProgress } from "../dashboard/useChecklistProgress";
+import ProgressBar from "../components/ProgressBar";
 
 const sidebarLinks = [
   { to: "/dashboard", label: "Overview" },
   { to: "/visa-explorer", label: "Visa Explorer" },
   { to: "/visa-comparison", label: "Compare Visas" },
+  { to: "/cost-of-living", label: "Cost of Living" },
   { to: "/documents", label: "Documents" },
   { to: "/account", label: "Account" },
   { to: "/settings", label: "Settings" },
@@ -17,6 +20,7 @@ const sidebarLinks = [
 export default function DashboardPage() {
   const { user } = useAuth();
   const location = useLocation();
+  const progress = useChecklistProgress(user?.uid);
 
   return (
     <div className="dashboard-shell">
@@ -44,13 +48,25 @@ export default function DashboardPage() {
           <div className="dashboard-cards">
             <section className="dashboard-card">
               <h2>Progress</h2>
-              <p className="placeholder-note">
-                No relocation checklist started yet. Progress tracking gets built here in a
-                later sprint.
-              </p>
-              <Link to="/visa-explorer" className="dashboard-card-cta">
-                Find your visa →
-              </Link>
+              {progress.loading ? (
+                <p className="loading-message">Loading...</p>
+              ) : progress.hasChecklist ? (
+                <ProgressBar
+                  completed={progress.completed}
+                  total={progress.total}
+                  label="Relocation checklist progress"
+                />
+              ) : (
+                <>
+                  <p className="placeholder-note">
+                    No relocation checklist started yet. Progress tracking will appear here
+                    once you start one.
+                  </p>
+                  <Link to="/visa-explorer" className="dashboard-card-cta">
+                    Find your visa →
+                  </Link>
+                </>
+              )}
             </section>
 
             <section className="dashboard-card">
