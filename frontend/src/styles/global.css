@@ -79,11 +79,18 @@ a {
 
 .login-page,
 .registration-page,
-.dashboard-page,
-.visa-explorer-page {
+.visa-explorer-page,
+.cost-of-living-page {
   max-width: 480px;
   margin: 0 auto;
   padding: var(--ui-space-7) var(--ui-space-3);
+}
+
+.dashboard-shell,
+.visa-comparison-page {
+  max-width: var(--ui-max-content-width);
+  margin: 0 auto;
+  padding: var(--ui-space-6) var(--ui-space-4);
 }
 
 h1 {
@@ -490,6 +497,293 @@ button:disabled {
   margin: var(--ui-space-2) 0;
 }
 
+/* ============ Dashboard shell ============ */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--ui-space-6);
+  align-items: start;
+}
+
+.dashboard-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-1);
+  background: var(--ui-color-bg-surface);
+  border-radius: var(--ui-radius);
+  padding: var(--ui-space-3);
+  position: sticky;
+  top: var(--ui-space-4);
+}
+
+.dashboard-sidebar-link {
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border-radius: var(--ui-radius-sm);
+  color: var(--ui-color-text);
+  text-decoration: none;
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-medium);
+}
+
+.dashboard-sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ui-color-primary);
+}
+
+.dashboard-sidebar-link--active {
+  background: var(--ui-color-primary);
+  color: var(--ui-color-primary-text-on);
+}
+
+.dashboard-sidebar-link--active:hover {
+  background: var(--ui-color-primary-hover);
+  color: var(--ui-color-primary-text-on);
+}
+
+.dashboard-signed-in-as {
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-font-size-sm);
+  margin: calc(-1 * var(--ui-space-3)) 0 var(--ui-space-5);
+}
+
+.dashboard-card-cta {
+  display: inline-block;
+  margin-top: var(--ui-space-3);
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-bold);
+  color: var(--ui-color-primary);
+  text-decoration: none;
+}
+
+.dashboard-card-cta:hover {
+  text-decoration: underline;
+}
+
+/* ============ Progress bar ============ */
+
+.progress-bar-track {
+  width: 100%;
+  height: 10px;
+  border-radius: var(--ui-radius-pill);
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--ui-color-aurora-green);
+  border-radius: var(--ui-radius-pill);
+  transition: width var(--ui-transition);
+}
+
+.progress-bar-text {
+  margin: var(--ui-space-2) 0 0;
+  font-size: var(--ui-font-size-sm);
+  color: var(--ui-color-text-muted);
+}
+
+/* ============ Cost of living ============ */
+
+.cost-of-living-select {
+  margin-bottom: var(--ui-space-5);
+}
+
+.cost-of-living-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-5);
+}
+
+.cost-of-living-row-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--ui-space-1);
+  font-weight: var(--ui-font-weight-bold);
+}
+
+.cost-of-living-amount {
+  font-weight: var(--ui-font-weight-normal);
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-font-size-sm);
+}
+
+.cost-of-living-bar-track {
+  width: 100%;
+  height: 10px;
+  border-radius: var(--ui-radius-pill);
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.cost-of-living-bar-fill {
+  height: 100%;
+  background: var(--ui-color-aurora-gold);
+  border-radius: var(--ui-radius-pill);
+}
+
+.cost-of-living-note {
+  margin: var(--ui-space-1) 0 0;
+  font-size: var(--ui-font-size-sm);
+  color: var(--ui-color-text-muted);
+}
+
+.cost-of-living-na-note {
+  margin: 0;
+}
+
+.cost-of-living-source {
+  display: inline-block;
+  margin-top: var(--ui-space-1);
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-bold);
+  color: var(--ui-color-primary);
+}
+
+.dashboard-main h1 {
+  margin-bottom: var(--ui-space-5);
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ui-space-4);
+}
+
+.dashboard-card {
+  background: var(--ui-color-bg-surface);
+  border-radius: var(--ui-radius);
+  padding: var(--ui-space-4);
+}
+
+.dashboard-card h2 {
+  font-family: var(--ui-font-family-display);
+  font-size: var(--ui-font-size-lg);
+  margin: 0 0 var(--ui-space-2);
+  color: var(--ui-color-text);
+}
+
+/* ============ Visa comparison ============ */
+
+.visa-comparison-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-3);
+  margin-bottom: var(--ui-space-5);
+  max-width: 480px;
+}
+
+.comparison-slot-pickers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ui-space-3);
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--comparison-columns, 3), 1fr);
+  gap: var(--ui-space-4);
+  align-items: start;
+}
+
+.comparison-column {
+  background: var(--ui-color-bg-surface);
+  border-radius: var(--ui-radius);
+  padding: var(--ui-space-4);
+}
+
+.comparison-column h2 {
+  font-family: var(--ui-font-family-display);
+  font-size: var(--ui-font-size-lg);
+  margin: 0 0 var(--ui-space-3);
+  color: var(--ui-color-text);
+}
+
+.comparison-slot-field {
+  min-width: 0;
+}
+
+.comparison-slot-input-row {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-1);
+}
+
+.comparison-slot-input-row select {
+  flex: 1;
+  min-width: 0;
+}
+
+.comparison-slot-clear {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: var(--ui-radius-pill);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--ui-color-text);
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comparison-slot-clear:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.comparison-column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ui-space-2);
+  margin-bottom: var(--ui-space-3);
+}
+
+.comparison-column-header h2 {
+  margin: 0;
+}
+
+.comparison-column--best {
+  border: 1px solid var(--ui-color-aurora-green);
+}
+
+.comparison-best-badge {
+  background: var(--ui-color-aurora-green);
+  color: #16321f;
+  font-size: 11px;
+  font-weight: var(--ui-font-weight-bold);
+  padding: 3px 10px;
+  border-radius: var(--ui-radius-pill);
+  white-space: nowrap;
+}
+
+.comparison-start-over {
+  margin-top: var(--ui-space-4);
+}
+
+.comparison-fields {
+  margin: var(--ui-space-3) 0 0;
+}
+
+.comparison-fields dt {
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-bold);
+  color: var(--ui-color-text-muted);
+  margin-top: var(--ui-space-3);
+}
+
+.comparison-fields dt:first-child {
+  margin-top: 0;
+}
+
+.comparison-fields dd {
+  margin: var(--ui-space-1) 0 0;
+  font-size: var(--ui-font-size-base);
+}
+
 /* ============ Responsive ============ */
 
 @media (max-width: 860px) {
@@ -501,5 +795,20 @@ button:disabled {
   }
   .nav-links {
     gap: var(--ui-space-3);
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-sidebar {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+  .comparison-slot-pickers,
+  .comparison-grid {
+    grid-template-columns: 1fr;
   }
 }

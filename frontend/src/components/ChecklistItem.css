@@ -1,0 +1,91 @@
+.ui-checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ui-space-3);
+  padding: var(--ui-space-3);
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius-sm);
+  font-family: var(--ui-font-family);
+  transition: background-color var(--ui-transition, 120ms ease-in-out), opacity var(--ui-transition, 120ms ease-in-out);
+}
+
+.ui-checklist-item__checkbox {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1.5px solid var(--ui-color-border);
+  background-color: var(--ui-color-bg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-top: 2px;
+  transition: all var(--ui-transition, 120ms ease-in-out);
+}
+
+.ui-checklist-item__checkbox:hover {
+  border-color: var(--ui-color-primary);
+}
+
+.ui-checklist-item__checkbox:focus-visible {
+  outline: none;
+  box-shadow: var(--ui-focus-ring, 0 0 0 3px rgba(47, 111, 94, 0.25));
+}
+
+.ui-checklist-item__check {
+  color: var(--ui-color-text-on-dark, #ffffff);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.ui-checklist-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ui-checklist-item__title {
+  font-size: var(--ui-font-size-base);
+  font-weight: var(--ui-font-weight-medium);
+  color: var(--ui-color-text);
+  margin: 0;
+}
+
+.ui-checklist-item__description {
+  font-size: var(--ui-font-size-sm);
+  color: var(--ui-color-text-muted);
+  margin: 0;
+}
+
+.ui-checklist-item__deadline {
+  font-size: var(--ui-font-size-sm);
+  color: var(--ui-color-primary);
+  font-weight: var(--ui-font-weight-medium);
+  margin: var(--ui-space-1) 0 0 0;
+}
+
+/* Completed state */
+
+.ui-checklist-item--completed {
+  background-color: var(--ui-color-success-bg, var(--ui-color-secondary-hover-bg));
+  opacity: 0.75;
+}
+
+.ui-checklist-item--completed .ui-checklist-item__checkbox {
+  background-color: var(--ui-color-success, var(--ui-color-primary));
+  border-color: var(--ui-color-success, var(--ui-color-primary));
+}
+
+.ui-checklist-item--completed .ui-checklist-item__title,
+.ui-checklist-item--completed .ui-checklist-item__description {
+  text-decoration: line-through;
+  color: var(--ui-color-text-muted);
+}
+
+.ui-checklist-item--completed .ui-checklist-item__deadline {
+  color: var(--ui-color-text-muted);
+  text-decoration: line-through;
+}
