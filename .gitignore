@@ -1,1 +1,6 @@
-node_modules/ .env
+node_modules/
+.DS_Store
+.env
+serviceAccountKey.json
+seed_cost_of_living.json
+seed_cost_of_living.py

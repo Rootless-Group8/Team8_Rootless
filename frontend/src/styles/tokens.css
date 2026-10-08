@@ -1,0 +1,92 @@
+/**
+ * Design tokens — "northern lights" theme.
+ * Dark night-sky base, aurora palette (gold, sage green, coral, steel
+ * blue, deep purple) used as accent colors throughout. Same variable
+ * names the shared component library (Button/Field/Select/TextInput)
+ * already reads from, so those restyle automatically from this file.
+ */
+
+:root {
+  /* ---- Brand / primary action color (gold — the one that pops on dark) ---- */
+  --ui-color-primary: #e8c93d;
+  --ui-color-primary-hover: #d4b62e;
+  --ui-color-primary-active: #bfa226;
+  --ui-color-primary-text-on: #241a05;
+
+  /* ---- Aurora accent colors (used individually, not as buttons) ---- */
+  --ui-color-aurora-gold: #e8c93d;
+  --ui-color-aurora-green: #a6d785;
+  --ui-color-aurora-coral: #dd6152;
+  --ui-color-aurora-blue: #416f92;
+  --ui-color-aurora-purple: #3d2c71;
+
+  /* ---- Surfaces ---- */
+  --ui-color-bg: #0d0a1f;
+  --ui-color-bg-surface: #1c1638;
+  --ui-color-bg-footer: #050310;
+
+  /* ---- Accent surfaces (feature banners — stay light for contrast) ---- */
+  --ui-color-accent-gold-bg: #faedb8;
+  --ui-color-accent-gold-text: #6b5218;
+  --ui-color-accent-coral-bg: #f7d9d3;
+  --ui-color-accent-coral-text: #7a2f22;
+
+  /* ---- Secondary / outline buttons (light outline on dark bg) ---- */
+  --ui-color-secondary-bg: transparent;
+  --ui-color-secondary-border: rgba(255, 255, 255, 0.4);
+  --ui-color-secondary-hover-bg: rgba(255, 255, 255, 0.08);
+
+  /* ---- Feedback ---- */
+  --ui-color-error: #ff8a75;
+  --ui-color-error-bg: rgba(221, 97, 82, 0.15);
+  --ui-color-success: #b6e6a0;
+  --ui-color-success-bg: rgba(166, 215, 133, 0.15);
+
+  /* ---- Text ---- */
+  --ui-color-text: #f2ede0;
+  --ui-color-text-muted: #a29cc0;
+  --ui-color-text-on-dark: #f2ede0;
+
+  /* ---- Borders / disabled ---- */
+  --ui-color-border: rgba(255, 255, 255, 0.16);
+  --ui-color-border-focus: #e8c93d;
+  --ui-color-disabled-bg: rgba(255, 255, 255, 0.06);
+  --ui-color-disabled-text: rgba(255, 255, 255, 0.35);
+  --ui-color-disabled-border: rgba(255, 255, 255, 0.12);
+
+  /* ---- Type ---- */
+  --ui-font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ui-font-family-display: "Playfair Display", "Work Sans", serif;
+  --ui-font-size-sm: 13px;
+  --ui-font-size-base: 16px;
+  --ui-font-size-lg: 19px;
+  --ui-font-size-xl: 28px;
+  --ui-font-size-display: 42px;
+  --ui-font-weight-normal: 400;
+  --ui-font-weight-medium: 500;
+  --ui-font-weight-bold: 700;
+  --ui-line-height: 1.5;
+
+  /* ---- Spacing scale ---- */
+  --ui-space-1: 4px;
+  --ui-space-2: 8px;
+  --ui-space-3: 12px;
+  --ui-space-4: 16px;
+  --ui-space-5: 24px;
+  --ui-space-6: 32px;
+  --ui-space-7: 48px;
+  --ui-space-8: 64px;
+
+  /* ---- Shape / effects ---- */
+  --ui-radius: 12px;
+  --ui-radius-sm: 8px;
+  --ui-radius-lg: 24px;
+  --ui-radius-pill: 999px;
+  --ui-shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.35);
+  --ui-focus-ring: 0 0 0 3px rgba(232, 201, 61, 0.35);
+  --ui-error-ring: 0 0 0 3px rgba(221, 97, 82, 0.3);
+  --ui-transition: 120ms ease-in-out;
+
+  /* ---- Layout ---- */
+  --ui-max-content-width: 1120px;
+}
