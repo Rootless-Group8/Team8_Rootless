@@ -1,0 +1,19 @@
+{
+  "name": "rootless-backend-auth",
+  "version": "1.0.0",
+  "description": "Firebase Authentication integration for the Rootless backend (Sprint 2 - Member 1 Backend)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.3.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
