@@ -1,4 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "./firebase/config";
+import { useAuth } from "./auth/useAuth";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -10,13 +13,11 @@ import VisaExplorerPage from "./pages/VisaExplorerPage";
 import VisaComparisonPage from "./pages/VisaComparisonPage";
 import CostOfLivingPage from "./pages/CostOfLivingPage";
 import AccountPage from "./pages/AccountPage";
-import DocumentsPage from "./pages/DocumentsPage";
 import SettingsPage from "./pages/SettingsPage";
 import DocumentUploadPage from "./pages/DocumentUploadPage";
 import ChecklistPage from "./pages/ChecklistPage";
 
-// Placeholder data for the /checklist route, same pattern as
-// DocumentUploadPage's simulated upload — ChecklistPage itself takes
+// Placeholder data for the /checklist route — ChecklistPage itself takes
 // steps/isLoading/error as props and has no idea this data is fake.
 // Swap this for a real call to the Checklist Generator API once that
 // exists; nothing about ChecklistPage needs to change when that happens.
@@ -45,6 +46,25 @@ const sampleChecklistSteps = [
 ];
 
 export default function App() {
+  const { user } = useAuth();
+
+  // Bridges ChecklistPage's local toggle state to the two Firestore
+  // fields DashboardPage's Progress card (useChecklistProgress) actually
+  // reads. Lives here rather than inside ChecklistPage so that component
+  // stays decoupled from Firestore entirely, per its own design.
+  async function handleChecklistToggle(completedCount, total) {
+    if (!user) return;
+    try {
+      await setDoc(
+        doc(db, "users", user.uid),
+        { checklistCompleted: completedCount, checklistTotal: total },
+        { merge: true },
+      );
+    } catch (err) {
+      console.error("Failed to save checklist progress:", err);
+    }
+  }
+
   return (
     <BrowserRouter>
       <NavBar />
@@ -89,7 +109,7 @@ export default function App() {
             path="/documents"
             element={
               <ProtectedRoute>
-                <DocumentsPage />
+                <DocumentUploadPage />
               </ProtectedRoute>
             }
           />
@@ -110,18 +130,15 @@ export default function App() {
             }
           />
           <Route
-            path="/upload-test"
-            element={
-              <ProtectedRoute>
-                <DocumentUploadPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
             path="/checklist"
             element={
               <ProtectedRoute>
-                <ChecklistPage steps={sampleChecklistSteps} isLoading={false} error={null} />
+                <ChecklistPage
+                steps={sampleChecklistSteps}
+                isLoading={false}
+                error={null}
+                onToggleStep={handleChecklistToggle}
+              />
               </ProtectedRoute>
             }
           />

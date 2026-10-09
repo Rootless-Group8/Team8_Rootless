@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from './firebaseConfig';
+import { auth } from './firebase/config';
 import { fetchProfile, saveProfile } from './profileService';
 
 const COUNTRIES = [
@@ -65,7 +65,7 @@ export default function ProfileSetup() {
           // Prefill email from the Firebase Auth account for new profiles
           setForm((prev) => ({ ...prev, email: auth.currentUser.email || '' }));
         }
-      } catch (err) {
+      } catch {
         setStatus((s) => ({ ...s, message: 'Could not load your profile. Please try again.' }));
       } finally {
         setStatus((s) => ({ ...s, loading: false }));
