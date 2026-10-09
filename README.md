@@ -1,5 +1,10 @@
 ## Rootless
 
+### Getting started
+- **New to the project, or setting it up on a new machine?** → `SETUP_AND_VERIFICATION.md`
+- **Contributing code?** → `CONTRIBUTING.md` for coding standards, branching, and PR rules
+- **Wondering why something that should work doesn't, or what's been fixed/flagged recently?** → `ARCHITECTURE_NOTES.md`
+
 ### Sprint Dates:
 **Sprint 1:** 9/8/2026 - 9/10/2026 \
 **Sprint 2:** 9/15/2026 - 9/17/2026 \

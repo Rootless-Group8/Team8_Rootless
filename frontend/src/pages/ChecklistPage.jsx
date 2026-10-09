@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ProgressIndicator from '../components/ProgressIndicator';
 import ChecklistItem from '../components/ChecklistItem';
 import './ChecklistPage.css';
@@ -27,6 +27,11 @@ import './ChecklistPage.css';
  *  - isLoading (bool)   Shows a loading state instead of the list.
  *  - error     (string) Shows an error state instead of the list, e.g.
  *                        "No checklist available for this destination yet."
+ *  - onToggleStep (fn)  Optional. Called as (completedCount, total) after
+ *                        every toggle, so a parent can persist progress
+ *                        (e.g. to Firestore) without this component
+ *                        needing to know anything about where that data
+ *                        goes or in what shape.
  *
  * ---- Usage example ----
  *
@@ -51,27 +56,31 @@ import './ChecklistPage.css';
  *
  *   <ChecklistPage steps={sampleSteps} isLoading={false} error={null} />
  */
-export default function ChecklistPage({ steps, isLoading = false, error = null }) {
+export default function ChecklistPage({ steps, isLoading = false, error = null, onToggleStep }) {
   const [completedIds, setCompletedIds] = useState(() => new Set());
 
   // Re-seed local completed state whenever a new set of steps comes in
   // (e.g. once the real API call resolves after a loading state).
   useEffect(() => {
     if (steps) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- re-seeds local state from a new `steps` prop reference, a single transition tied to the dependency change, not a cascading-render pattern.
       setCompletedIds(new Set(steps.filter((s) => s.completed).map((s) => s.id)));
     }
   }, [steps]);
 
   function handleToggle(id) {
-    setCompletedIds((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        next.add(id);
-      }
-      return next;
-    });
+    // Computed outside the setState updater deliberately — updater
+    // functions should stay pure (no side effects), and React can invoke
+    // them more than once in some cases, which would risk double-firing
+    // onToggleStep's Firestore write.
+    const next = new Set(completedIds);
+    if (next.has(id)) {
+      next.delete(id);
+    } else {
+      next.add(id);
+    }
+    setCompletedIds(next);
+    onToggleStep?.(next.size, steps?.length || 0);
   }
 
   const total = steps?.length || 0;

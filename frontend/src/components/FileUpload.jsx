@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Button from './Button';
 import ProgressIndicator from './ProgressIndicator';
 import './FileUpload.css';
