@@ -48,7 +48,24 @@ function initializeFirebaseAdmin() {
     );
   }
 
-  admin.initializeApp({ credential });
+  // databaseURL and storageBucket are only required by SOME callers —
+  // eligibilityService needs admin.database(), documentService needs
+  // admin.storage(), but profileService/userService use only Firestore
+  // and never needed either. So these are passed through when present,
+  // not hard-required here: requiring them unconditionally broke a
+  // legitimately-passing test (profileService.test.js) that never set
+  // them because it never needed them. If a service that DOES need one
+  // of these is used without it configured, admin.database()/
+  // admin.storage() will throw their own clear error at that call site —
+  // same as the original behavior, just now actually configurable.
+  const databaseURL = process.env.FIREBASE_DATABASE_URL;
+  const storageBucket = process.env.FIREBASE_STORAGE_BUCKET;
+
+  const initOptions = { credential };
+  if (databaseURL) initOptions.databaseURL = databaseURL;
+  if (storageBucket) initOptions.storageBucket = storageBucket;
+
+  admin.initializeApp(initOptions);
   initialized = true;
   return admin;
 }

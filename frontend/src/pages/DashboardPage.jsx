@@ -8,6 +8,7 @@ const sidebarLinks = [
   { to: "/visa-explorer", label: "Visa Explorer" },
   { to: "/visa-comparison", label: "Compare Visas" },
   { to: "/cost-of-living", label: "Cost of Living" },
+  { to: "/checklist", label: "Checklist" },
   { to: "/documents", label: "Documents" },
   { to: "/account", label: "Account" },
   { to: "/settings", label: "Settings" },
@@ -72,10 +73,11 @@ export default function DashboardPage() {
             <section className="dashboard-card">
               <h2>Checklist</h2>
               <p className="placeholder-note">
-                Your visa checklist will show up here once you pick a pathway in Visa Explorer.
+                See the steps you need to complete for your move — currently a sample checklist
+                until the real Checklist Generator API is wired in.
               </p>
-              <Link to="/visa-comparison" className="dashboard-card-cta">
-                Compare your options →
+              <Link to="/checklist" className="dashboard-card-cta">
+                View your checklist →
               </Link>
             </section>
 
