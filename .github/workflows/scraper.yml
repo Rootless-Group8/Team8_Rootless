@@ -55,8 +55,7 @@ jobs:
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         run: |
-          node run.js --pairs CA:GB,NZ:GB,JP:GB,AU:GB,DE:GB,ES:GB,PT:GB,NL:GB,MX:GB,GB:CA,NZ:CA,JP:CA,AU:CA,DE:CA,ES:CA,PT:CA,NL:CA,MX:CA,GB:NZ,CA:NZ,JP:NZ,AU:NZ,DE:NZ,ES:NZ,PT:NZ,NL:NZ,MX:NZ,GB:JP,CA:JP,NZ:JP,AU:JP,DE:JP,ES:JP,PT:JP,NL:JP,MX:JP,GB:AU,CA:AU,NZ:AU,JP:AU,DE:AU,ES:AU,PT:AU,NL:AU,MX:AU,GB:DE,CA:DE,NZ:DE,JP:DE,AU:DE,ES:DE,PT:DE,NL:DE,MX:DE,GB:ES,CA:ES,NZ:ES,JP:ES,AU:ES,DE:ES,PT:ES,NL:ES,MX:ES,GB:PT,CA:PT,NZ:PT,JP:PT,AU:PT,DE:PT,ES:PT,NL:PT,MX:PT,GB:NL,CA:NL,NZ:NL,JP:NL,AU:NL,DE:NL,ES:NL,PT:NL,MX:NL,GB:MX,CA:MX,NZ:MX,JP:MX,AU:MX,DE:MX,ES:MX,PT:MX,NL:MX
-
+          node run.js --pairs CA:GB,NZ:GB,JP:GB,AU:GB,MX:GB,GB:CA,NZ:CA,JP:CA,AU:CA,MX:CA,GB:NZ,CA:NZ,JP:NZ,AU:NZ,MX:NZ,GB:JP,CA:JP,NZ:JP,AU:JP,MX:JP,GB:AU,CA:AU,NZ:AU,JP:AU,MX:AU,GB:MX,CA:MX,NZ:MX,JP:MX,AU:MX
       - name: Upload scrape output as a downloadable artifact
         # Backup copy of results, viewable/downloadable from the
         # Actions run page even if Firestore isn't set up yet.
