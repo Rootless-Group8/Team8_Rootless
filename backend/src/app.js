@@ -3,8 +3,9 @@ const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const documentRoutes = require('./routes/documentRoutes');
+const deadlineRoutes = require('./deadlineRoutes');
 
-function createApp() {
+function createApp({ db } = {}) {
   const app = express();
   app.use(cors());
   app.use(express.json());
@@ -14,6 +15,7 @@ function createApp() {
   app.use('/api', userRoutes);
   app.use('/api/profile', profileRoutes);
   app.use('/api/documents', documentRoutes);
+  if (db) app.use('/api/deadlines', deadlineRoutes(db));
 
   // Central error handler - never leak stack traces or internals to clients.
   // eslint-disable-next-line no-unused-vars

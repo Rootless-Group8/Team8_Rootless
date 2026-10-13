@@ -48,7 +48,7 @@ function initializeFirebaseAdmin() {
     );
   }
 
-  admin.initializeApp({ credential });
+  admin.initializeApp({ credential,databaseURL:process.env.FIREBASE_DATABASE_URL });
   initialized = true;
   return admin;
 }
