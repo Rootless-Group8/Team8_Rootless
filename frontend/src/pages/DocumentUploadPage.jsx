@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import FileUpload from '../components/FileUpload';
 import { apiFetch } from '../lib/apiClient';
 import './DocumentUploadPage.css';
@@ -14,29 +14,45 @@ const DOCUMENT_TYPES = [
   { value: 'other', label: 'Other' },
 ];
 
-/**
- * DocumentUploadPage
- * The screen where a user uploads their supporting documents
- * (passport scan, proof of funds, travel itinerary, etc.).
- *
- * Uploads go to the real backend (POST /api/documents — see
- * backend/src/routes/documentRoutes.js), which stores the file in
- * Firebase Storage and its metadata in Firestore. The FileUpload
- * component itself doesn't know or care that this changed from the
- * previous simulated version — its `onUpload(file)` contract is
- * identical either way.
- */
+function formatExpiration(isoDateString) {
+  if (!isoDateString) return null;
+  return new Date(isoDateString).toLocaleDateString();
+}
+
 export default function DocumentUploadPage() {
   // One documentType applies to the whole upload session rather than
   // per-file, since FileUpload's onUpload only receives the file itself.
   // Good enough for now; a per-file type picker would need a FileUpload
   // prop change, which felt like more scope than this fix needed.
   const [documentType, setDocumentType] = useState('passport');
+  const [expirationDate, setExpirationDate] = useState('');
+  const [documents, setDocuments] = useState([]);
+  const [loadingDocuments, setLoadingDocuments] = useState(true);
+
+  async function loadDocuments() {
+    setLoadingDocuments(true);
+    try {
+      const data = await apiFetch('/api/documents');
+      setDocuments(data?.documents || []);
+    } catch (err) {
+      console.error('Failed to load documents:', err);
+    } finally {
+      setLoadingDocuments(false);
+    }
+  }
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- canonical fetch-on-mount; loadDocuments is also reused standalone after a successful upload.
+    loadDocuments();
+  }, []);
 
   async function uploadDocument(file) {
     const formData = new FormData();
     formData.append('file', file);
     formData.append('documentType', documentType);
+    if (expirationDate) {
+      formData.append('expirationDate', expirationDate);
+    }
 
     // apiFetch handles getting the Firebase ID token and setting the
     // Authorization header; FormData as the body means the browser sets
@@ -46,6 +62,8 @@ export default function DocumentUploadPage() {
       method: 'POST',
       body: formData,
     });
+
+    await loadDocuments();
   }
 
   return (
@@ -67,6 +85,16 @@ export default function DocumentUploadPage() {
         </select>
       </div>
 
+      <div className="form-field">
+        <label htmlFor="expirationDate">Expiration date (optional)</label>
+        <input
+          id="expirationDate"
+          type="date"
+          value={expirationDate}
+          onChange={(e) => setExpirationDate(e.target.value)}
+        />
+      </div>
+
       <FileUpload
         label="Drag your documents here, or browse to upload"
         acceptedFileTypes={['application/pdf', 'image/jpeg', 'image/png']}
@@ -74,6 +102,26 @@ export default function DocumentUploadPage() {
         multiple={true}
         onUpload={uploadDocument}
       />
+
+      <h2 className="document-list-heading">Your documents</h2>
+      {loadingDocuments ? (
+        <p className="loading-message">Loading...</p>
+      ) : documents.length === 0 ? (
+        <p className="placeholder-note">No documents uploaded yet.</p>
+      ) : (
+        <ul className="document-list">
+          {documents.map((doc) => (
+            <li key={doc.id} id={`doc-${doc.id}`} className="document-list-item">
+              <span className="document-list-item__name">{doc.fileName}</span>
+              {doc.expirationDate && (
+                <span className="document-list-item__expiration">
+                  Expires {formatExpiration(doc.expirationDate)}
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
