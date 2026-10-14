@@ -1,7 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/useAuth";
 import { useChecklistProgress } from "../dashboard/useChecklistProgress";
 import ProgressBar from "../components/ProgressBar";
+import { useDocumentAlerts } from "../dashboard/useDocumentAlerts";
+import DocumentAlerts from "../components/DocumentAlerts";
 
 const sidebarLinks = [
   { to: "/dashboard", label: "Overview" },
@@ -22,6 +24,8 @@ export default function DashboardPage() {
   const { user } = useAuth();
   const location = useLocation();
   const progress = useChecklistProgress(user?.uid);
+  const navigate = useNavigate();
+  const documentAlerts = useDocumentAlerts(user?.uid);
 
   return (
     <div className="dashboard-shell">
@@ -81,14 +85,13 @@ export default function DashboardPage() {
               </Link>
             </section>
 
-            <section className="dashboard-card">
-              <h2>Alerts</h2>
-              <p className="placeholder-note">
-                Document expiration alerts will appear here once documents are on file.
-              </p>
-              <Link to="/documents" className="dashboard-card-cta">
-                Add a document →
-              </Link>
+            <section className="dashboard-card dashboard-card--alerts">
+              <DocumentAlerts
+                documents={documentAlerts.documents}
+                isLoading={documentAlerts.loading}
+                error={documentAlerts.error}
+                onViewAll={() => navigate("/documents")}
+              />
             </section>
           </div>
         </div>

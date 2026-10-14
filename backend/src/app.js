@@ -4,9 +4,8 @@ const userRoutes = require('./routes/userRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const documentRoutes = require('./routes/documentRoutes');
 const eligibilityRoutes = require('./eligibilityRoutes');
-const { initializeFirebaseAdmin } = require('./config/firebaseAdmin');
 
-function createApp() {
+function createApp({ db } = {}) {
   const app = express();
   app.use(cors());
   app.use(express.json());
@@ -17,13 +16,9 @@ function createApp() {
   app.use('/api/profile', profileRoutes);
   app.use('/api/documents', documentRoutes);
 
-  // eligibilityRoutes existed with full test coverage (src/eligibility.test.js)
-  // but was never actually mounted here — the route was unreachable over
-  // HTTP despite being fully built and tested. It expects a Realtime
-  // Database instance (uses db.ref(...), not Firestore's db.collection(...)),
-  // matching how eligibilityService.js queries countries/countryVisaPrograms/
-  // visaRequirements.
-  app.use('/api/eligibility', eligibilityRoutes(initializeFirebaseAdmin().database()));
+  if (db) {
+    app.use('/api/eligibility', eligibilityRoutes(db));
+  }
 
   // Central error handler - never leak stack traces or internals to clients.
   // eslint-disable-next-line no-unused-vars
