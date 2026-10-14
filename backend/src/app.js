@@ -4,6 +4,7 @@ const userRoutes = require('./routes/userRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const documentRoutes = require('./routes/documentRoutes');
 const checklistRoutes = require('./routes/checklistRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
 const deadlineRoutes = require('./deadlineRoutes');
 const eligibilityRoutes = require('./eligibilityRoutes');
 
@@ -18,6 +19,7 @@ function createApp({ db } = {}) {
   app.use('/api/profile', profileRoutes);
   app.use('/api/documents', documentRoutes);
   app.use('/api/checklist', checklistRoutes);
+  app.use('/api/notifications', notificationRoutes);
   if (db) app.use('/api/deadlines', deadlineRoutes(db));
 
   if (db) {
