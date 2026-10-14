@@ -1,0 +1,21 @@
+/* Shared by TextInput and Select so labels/errors look identical across both */
+
+.ui-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-1);
+  font-family: var(--ui-font-family);
+  margin-bottom: var(--ui-space-4);
+}
+
+.ui-field__label {
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-medium);
+  color: var(--ui-color-text);
+}
+
+.ui-field__error {
+  font-size: var(--ui-font-size-sm);
+  color: var(--ui-color-error);
+  margin: 0;
+}

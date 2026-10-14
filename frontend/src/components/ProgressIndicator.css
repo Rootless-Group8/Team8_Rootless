@@ -1,0 +1,43 @@
+.ui-progress {
+  font-family: var(--ui-font-family);
+  width: 100%;
+}
+
+.ui-progress__label {
+  font-size: var(--ui-font-size-sm);
+  color: var(--ui-color-text);
+  margin: 0 0 var(--ui-space-1) 0;
+}
+
+.ui-progress__track {
+  width: 100%;
+  height: 8px;
+  background-color: var(--ui-color-disabled-bg);
+  border-radius: var(--ui-radius-sm);
+  overflow: hidden;
+}
+
+.ui-progress__fill {
+  height: 100%;
+  background-color: var(--ui-color-primary);
+  border-radius: var(--ui-radius-sm);
+  transition: width var(--ui-transition);
+}
+
+.ui-progress__fill--disabled {
+  background-color: var(--ui-color-disabled-text);
+}
+
+.ui-progress__fill--indeterminate {
+  width: 40% !important;
+  animation: ui-progress-slide 1.2s ease-in-out infinite;
+}
+
+@keyframes ui-progress-slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}

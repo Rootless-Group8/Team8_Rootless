@@ -1,0 +1,38 @@
+@import './Field.css';
+
+.ui-input {
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size-base);
+  color: var(--ui-color-text);
+  background-color: var(--ui-color-bg);
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius-sm);
+  padding: var(--ui-space-2) var(--ui-space-3);
+  transition: border-color var(--ui-transition), box-shadow var(--ui-transition);
+}
+
+.ui-input::placeholder {
+  color: var(--ui-color-text-muted);
+}
+
+.ui-input:focus {
+  outline: none;
+  border-color: var(--ui-color-border-focus);
+  box-shadow: var(--ui-focus-ring);
+}
+
+.ui-input:disabled {
+  background-color: var(--ui-color-disabled-bg);
+  color: var(--ui-color-disabled-text);
+  border-color: var(--ui-color-disabled-border);
+  cursor: not-allowed;
+}
+
+.ui-input--error {
+  border-color: var(--ui-color-error);
+  background-color: var(--ui-color-error-bg);
+}
+
+.ui-input--error:focus {
+  box-shadow: var(--ui-error-ring);
+}
