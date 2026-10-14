@@ -2,6 +2,16 @@
 
 Team 8
 
+## Related docs
+
+- **SETUP_AND_VERIFICATION.md** — how to get frontend + backend running
+  from scratch, required env vars, Firebase console setup, and the
+  checklist to run after every merge to confirm things actually work
+  (not just that they compile).
+- **ARCHITECTURE_NOTES.md** — a running log of real bugs found and fixed
+  through that verification process, plus open architecture questions
+  that need team input rather than one person's unilateral fix.
+
 ## Introduction
 
 - This document lists the coding standards and conventions for the Rootless project, built with React, Node.js/Express, and Firebase. Following these keeps the code consistent and saves us from figuring out the pattern from old files every sprint.
@@ -131,6 +141,7 @@ Team 8
 - The description should cover what changed, how to test it, and anything the reviewer should know.
 - Call out anything temporary in the description, like a temporary route, placeholder logic, mock data, or a route that isn't registered in `server.js` yet.
 - If you worked around a limitation, say so in the PR and open a follow-up Jira ticket.
+- If this PR is the first use of a new Firebase product in a service (Realtime Database, Storage — Firestore and Auth are already wired), confirm `firebaseAdmin.js`'s `initializeApp()` call actually has the config that product needs (`databaseURL` for `.database()`, `storageBucket` for `.storage()`), and that the matching env var is in `.env.example`. This kind of gap doesn't fail at boot or in tests that mock Firebase — it only fails the first time that specific feature is actually called, which makes it easy to merge without noticing. Run the actual server (`npm start` or `npm run dev`) and exercise the new feature, not just the test suite, before opening the PR.
 
 ## Code Reviews
 
