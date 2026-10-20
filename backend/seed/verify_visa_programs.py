@@ -6,6 +6,11 @@ Verifies the acceptance criteria for the seeded visa program data
     (tourist/visitor and student) for the other countries.
   - Each record includes eligibility, documents, processing time,
     fee, and validity duration.
+  - processingTime is a structured object: {minDays, maxDays} as whole
+    numbers with minDays <= maxDays. The original wording is kept in
+    processingTimeNotes. If the source gave no number, both values can
+    be left null (Firebase drops nulls, so it reads back as missing);
+    that is reported as a warning, not a failure.
   - Each record cites a source URL and a lastVerified date.
   - A complete, correctly-typed record can be retrieved for every
     visa type entered.
@@ -28,7 +33,7 @@ REQUIRED_FIELDS = [
     "category",
     "eligibilityCriteria",
     "requiredDocuments",
-    "processingTime",
+    "processingTimeNotes",
     "fees",
     "validityDuration",
     "sourceUrl",
@@ -48,13 +53,60 @@ def connect_firebase(cred_path: str, db_url: str) -> None:
 def contains_placeholder(value) -> bool:
     text = str(value).lower()
     return any(marker in text for marker in PLACEHOLDER_MARKERS)
-def check_record(country: str, slug: str, record: dict) -> list[str]:
-    """Return a list of problems found with a single record (empty = clean)."""
+def check_processing_time(record: dict) -> tuple[list[str], list[str]]:
+    """Return (problems, warnings) for the structured processingTime field."""
     problems = []
+    warnings = []
+    pt = record.get("processingTime")
+
+    # Firebase doesn't store nulls, so a record seeded with null min/max
+    # comes back with no processingTime at all.
+    if pt is None:
+        warnings.append("no processingTime min/max stored (source gave no number); see processingTimeNotes")
+        return problems, warnings
+
+    if not isinstance(pt, dict):
+        problems.append(f"processingTime should be an object with minDays and maxDays, got {pt!r}")
+        return problems, warnings
+
+    lo = pt.get("minDays")
+    hi = pt.get("maxDays")
+    if lo is None and hi is None:
+        warnings.append("processingTime has no min/max values; see processingTimeNotes")
+        return problems, warnings
+
+    for name, value in (("minDays", lo), ("maxDays", hi)):
+        if value is None:
+            problems.append(f"processingTime.{name} is missing")
+        elif isinstance(value, bool) or not isinstance(value, int):
+            problems.append(f"processingTime.{name} must be a whole number, got {value!r}")
+        elif value < 0:
+            problems.append(f"processingTime.{name} can't be negative, got {value}")
+
+    if not problems and lo > hi:
+        problems.append(f"processingTime.minDays ({lo}) is greater than maxDays ({hi})")
+
+    extra = set(pt.keys()) - {"minDays", "maxDays"}
+    if extra:
+        problems.append(f"unexpected key(s) in processingTime: {sorted(extra)}")
+
+    return problems, warnings
+
+
+def check_record(country: str, slug: str, record: dict) -> tuple[list[str], list[str]]:
+    """Return (problems, warnings) for a single record (no problems = clean)."""
+    problems = []
+    warnings = []
     missing = [f for f in REQUIRED_FIELDS if f not in record or record[f] in (None, "", [])]
     if missing:
         problems.append(f"missing/empty field(s): {missing}")
+    pt_problems, pt_warnings = check_processing_time(record)
+    problems.extend(pt_problems)
+    warnings.extend(pt_warnings)
+
     for field, value in record.items():
+        if field == "processingTime":
+            continue  # numbers only, checked above
         if isinstance(value, list):
             for item in value:
                 if contains_placeholder(item):
@@ -63,7 +115,7 @@ def check_record(country: str, slug: str, record: dict) -> list[str]:
             problems.append(f"placeholder-looking text in {field}: {value!r}")
     if "sourceUrl" in record and not str(record["sourceUrl"]).startswith("http"):
         problems.append(f"sourceUrl doesn't look like a real URL: {record['sourceUrl']!r}")
-    return problems
+    return problems, warnings
 def main():
     parser = argparse.ArgumentParser(description="Verify seeded visa program data")
     parser.add_argument("--cred", required=True, help="Path to Firebase service account JSON")
@@ -96,7 +148,9 @@ def main():
         else:
             print(f"  [OK] {count} visa type(s) found: {', '.join(programs.keys())}")
         for slug, record in programs.items():
-            problems = check_record(country, slug, record)
+            problems, warnings = check_record(country, slug, record)
+            for w in warnings:
+                print(f"  [WARN] {slug}: {w}")
             if problems:
                 overall_ok = False
                 print(f"  [FAIL] {slug}:")
@@ -106,6 +160,7 @@ def main():
                 print(f"  [OK] {slug}: all required fields present, no placeholder text detected")
                 print(
                     f"       name={record['name']!r}, "
+                    f"processingTime={record.get('processingTime')!r}, "
                     f"fees={record['fees']!r}, "
                     f"lastVerified={record['lastVerified']!r}"
                 )
