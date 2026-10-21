@@ -7,8 +7,6 @@ seed_cost_of_living.py
 #Firebase credentials — never commit
 serviceAccountKey.json
 *serviceAccountKey*.json
-seed_relocation_guides.py
-seed_relocation_guides.json
 
 # Common
 node_modules/
