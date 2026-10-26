@@ -11,6 +11,7 @@ const eligibilityRoutes = require('./eligibilityRoutes');
 const costOfLivingRoutes = require('./routes/costOfLivingRoutes');
 const lifeEventRoutes = require('./routes/lifeEventRoutes');
 const deadlineRoutes = require('./deadlineRoutes');
+const reminderRoutes = require('./routes/reminderRoutes');
 const eligibilityRoutes = require('./eligibilityRoutes');
 const rankingRoutes = require('./rankingRoutes');
 
@@ -29,6 +30,7 @@ function createApp({ db } = {}) {
   app.use('/api/reminders', reminderRoutes);
   app.use('/api/life-events', lifeEventRoutes);
   if (db) app.use('/api/deadlines', deadlineRoutes(db));
+  app.use('/api/reminders', reminderRoutes);
 
   if (db) {
     // Matching Engine v2 (ranked results). Mounted before v1 so /v2 isn't
