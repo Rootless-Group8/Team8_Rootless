@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "./firebase/config";
 import { useAuth } from "./auth/useAuth";
+import { useChecklist } from "./dashboard/useChecklist";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -18,42 +19,18 @@ import DocumentUploadPage from "./pages/DocumentUploadPage";
 import ChecklistPage from "./pages/ChecklistPage";
 import AffordabilityCalculatorPage from "./pages/AffordabilityCalculatorPage";
 
-// Placeholder data for the /checklist route — ChecklistPage itself takes
-// steps/isLoading/error as props and has no idea this data is fake.
-// Swap this for a real call to the Checklist Generator API once that
-// exists; nothing about ChecklistPage needs to change when that happens.
-const sampleChecklistSteps = [
-  {
-    id: "step-1",
-    title: "Apply for your visitor visa",
-    description: "Submit your application through the official portal.",
-    deadline: "At least 30 days before arrival",
-    completed: false,
-  },
-  {
-    id: "step-2",
-    title: "Check passport validity",
-    description: "Your passport must be valid for at least 6 months past your arrival date.",
-    deadline: "Before you apply",
-    completed: true,
-  },
-  {
-    id: "step-3",
-    title: "Get travel insurance",
-    description: "Some destinations require proof of travel insurance at entry.",
-    deadline: "Before departure",
-    completed: false,
-  },
-];
-
 export default function App() {
   const { user } = useAuth();
+  const checklist = useChecklist(user?.uid);
 
-  // Bridges ChecklistPage's local toggle state to the two Firestore
-  // fields DashboardPage's Progress card (useChecklistProgress) actually
-  // reads. Lives here rather than inside ChecklistPage so that component
-  // stays decoupled from Firestore entirely, per its own design.
-  async function handleChecklistToggle(completedCount, total) {
+  // Persists a checklist toggle two places: the real per-item PATCH (via
+  // useChecklist.toggleStep, so the checklist itself stays correct), and
+  // the aggregate completed/total fields on users/{uid} that the
+  // Dashboard's Progress card (useChecklistProgress) reads — now backed
+  // by real checklist data instead of the earlier placeholder.
+  async function handleChecklistToggle({ id, completed, completedCount, total }) {
+    await checklist.toggleStep({ id, completed });
+
     if (!user) return;
     try {
       await setDoc(
@@ -135,21 +112,21 @@ export default function App() {
             element={
               <ProtectedRoute>
                 <ChecklistPage
-                steps={sampleChecklistSteps}
-                isLoading={false}
-                error={null}
-                onToggleStep={handleChecklistToggle}
-              />
+                  steps={checklist.steps}
+                  isLoading={checklist.isLoading}
+                  error={checklist.error}
+                  onToggleStep={handleChecklistToggle}
+                />
               </ProtectedRoute>
             }
           />
-          <Route 
-            path="/affordability" 
-            element={ 
-              <ProtectedRoute> 
-                <AffordabilityCalculatorPage /> 
-              </ProtectedRoute> 
-            } 
+          <Route
+            path="/affordability"
+            element={
+              <ProtectedRoute>
+                <AffordabilityCalculatorPage />
+              </ProtectedRoute>
+            }
           />
         </Routes>
       </main>
