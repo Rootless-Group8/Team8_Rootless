@@ -13,8 +13,12 @@ this data anywhere else in the app.
 Schema written:
     countryVisaPrograms/{countryIso2}/{visaSlug}: {
         name, category, eligibilityCriteria, requiredDocuments,
-        processingTime, fees, validityDuration, sourceUrl, lastVerified
+        processingTime: { minDays, maxDays },   # whole days, min <= max
+        processingTimeNotes,                    # original wording from the source
+        fees, validityDuration, sourceUrl, lastVerified
     }
+    If a source gives no number, minDays/maxDays are null in the JSON. Firebase
+    doesn't store nulls, so processingTime will be absent for that record.
 
 USAGE:
     python seed_visa_programs.py --data seed_visa_programs_ca_uk.json \
