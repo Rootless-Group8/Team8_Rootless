@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "researchedFrom": "Each destination cites the official government consular source for that country's student visa program. Where a consulate publishes consulate-specific fee/fund amounts (fees and proof-of-funds thresholds are known to vary by consulate location), that is noted in the entry rather than presented as a single universal figure.",
+    "lastVerified": "2026-10-26"
+  },
+  "MX": {
+    "temporary_resident_student_visa": {
+      "category": "student",
+      "name": "Temporary Resident Student Visa (Residente Temporal Estudiante)",
+      "eligibilityCriteria": [
+        "Program, course, training, or research lasts longer than 180 days (shorter stays may qualify for a visitor permit instead of a student visa)",
+        "Accepted by an institution within Mexico's National Educational System (public or private)",
+        "Prove economic solvency, either through qualifying income or a qualifying bank balance (see minimumRequiredFunds)",
+        "No disqualifying criminal history under Mexican immigration law",
+        "Applicants receiving a scholarship directly from the Mexican government are exempt from the economic solvency requirement"
+      ],
+      "requiredDocuments": [
+        "Completed visa application form",
+        "Valid passport (original plus a photocopy of the photo/data page)",
+        "Letter of acceptance from the institution, stating program level, course name, start and end dates, and fees",
+        "Proof of economic solvency: either qualifying monthly income or a qualifying 3-month average bank balance (ink-stamped bank statements only, electronic statements are not accepted without an original stamp)",
+        "Passport-style photograph meeting the consulate's size and background specifications",
+        "Consular fee payment (accepted payment method varies by consulate)"
+      ],
+      "fees": "Varies by consulate location; paid in cash or by the locally accepted method. Contact the nearest Mexican consulate for the current fee.",
+      "processingTimeNotes": "Not published as a fixed duration; application is in person, by interview, and issuance is subject to the interview outcome. Confirm current timing with the nearest consulate.",
+      "minimumRequiredFunds": {
+        "amount": 21760,
+        "currency": "CAD",
+        "period": "3-month average bank balance",
+        "notes": "Figures published by the Mexican Consulate General in Vancouver, for applicants proving solvency via bank statements. A qualifying monthly income of CAD $2,090 or more over the same 3-month period is accepted as an alternative to the lump-sum balance. Exact amounts can vary by consulate location."
+      },
+      "validityDuration": "Single-entry visa valid for 180 days; holder must apply to Mexico's National Migration Institute (INM) for a residence card within 30 days of entering Mexico to remain for the full program length",
+      "sourceUrl": "https://consulmex.sre.gob.mx/vancouver/index.php/es/temporary-student-resident-visa",
+      "lastVerified": "2026-10-26"
+    }
+  }
+}
