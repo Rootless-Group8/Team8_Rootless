@@ -6,6 +6,7 @@ const documentRoutes = require('./routes/documentRoutes');
 const checklistRoutes = require('./routes/checklistRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
 const eligibilityRoutes = require('./eligibilityRoutes');
+const rankingRoutes = require('./rankingRoutes');
 const { initializeFirebaseAdmin } = require('./config/firebaseAdmin');
 
 function createApp() {
@@ -27,7 +28,11 @@ function createApp() {
   // Database instance (uses db.ref(...), not Firestore's db.collection(...)),
   // matching how eligibilityService.js queries countries/countryVisaPrograms/
   // visaRequirements.
-  app.use('/api/eligibility', eligibilityRoutes(initializeFirebaseAdmin().database()));
+  const realtimeDb = initializeFirebaseAdmin().database();
+  // Matching Engine v2 (ranked results). Mounted before v1 so /v2 isn't
+  // swallowed by the v1 router; v1 stays unchanged at /api/eligibility.
+  app.use('/api/eligibility/v2', rankingRoutes(realtimeDb));
+  app.use('/api/eligibility', eligibilityRoutes(realtimeDb));
 
   // Central error handler - never leak stack traces or internals to clients.
   // eslint-disable-next-line no-unused-vars

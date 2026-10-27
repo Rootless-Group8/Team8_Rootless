@@ -25,7 +25,11 @@
         "Flight or travel itinerary",
         "Biometrics (fingerprints and photo) at the visa appointment"
       ],
-      "processingTime": "Missions normally decide within 15 calendar days of a correct application, though appointment waits can be longer in peak season. You can apply up to 6 months before travel and generally no later than 15 days before.",
+      "processingTime": {
+        "minDays": 15,
+        "maxDays": 15
+      },
+      "processingTimeNotes": "Missions normally decide within 15 calendar days of a correct application, though appointment waits can be longer in peak season. You can apply up to 6 months before travel and generally no later than 15 days before.",
       "fees": "€90 per adult; €45 for children aged 6 to under 12; free for children under 6. Some groups (such as students on study trips) are exempt, and external visa service providers may charge an extra fee.",
       "validityDuration": "Up to 90 days within any 180-day period across the Schengen area; single, double or multiple entry depending on the visa granted",
       "sourceUrl": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870"
@@ -52,7 +56,11 @@
         "Proof of accommodation in Germany, where requested",
         "Biometrics (fingerprints and photo) at the visa appointment"
       ],
-      "processingTime": "Roughly 4 to 12 weeks once the application is complete; it can take longer because the foreigners authority in Germany must approve the visa. Missions advise against booking flights until the visa is issued.",
+      "processingTime": {
+        "minDays": 28,
+        "maxDays": 84
+      },
+      "processingTimeNotes": "Roughly 4 to 12 weeks once the application is complete; it can take longer because the foreigners authority in Germany must approve the visa. Missions advise against booking flights until the visa is issued.",
       "fees": "€75 national visa fee (non-refundable, usually paid at the appointment); waived for people funded by a public scholarship. A separate residence permit fee is charged by the local foreigners authority in Germany.",
       "validityDuration": "The initial national visa is valid for a limited period (up to one year); after arrival, the local foreigners authority issues and extends a residence permit for study",
       "sourceUrl": "https://www.auswaertiges-amt.de/en/visa-service/215870-215870"
@@ -81,7 +89,11 @@
         "Proof of income and recent bank statements covering the stay",
         "Biometrics (fingerprints and photo) at the visa appointment"
       ],
-      "processingTime": "Decisions are normally taken within 15 calendar days of an admissible application, and can take up to 45 days if further examination is needed. Applications can be lodged from 6 months to 15 days before travel.",
+      "processingTime": {
+        "minDays": 15,
+        "maxDays": 45
+      },
+      "processingTimeNotes": "Decisions are normally taken within 15 calendar days of an admissible application, and can take up to 45 days if further examination is needed. Applications can be lodged from 6 months to 15 days before travel.",
       "fees": "€90 per adult; €45 for children aged 6 to under 12; free for children under 6. External service providers may charge an extra fee.",
       "validityDuration": "Up to 90 days within any 180-day period across the Schengen area; single, double or multiple entry depending on the visa granted",
       "sourceUrl": "https://vistos.mne.gov.pt/en/"
@@ -109,7 +121,11 @@
         "Proof of accommodation in Portugal",
         "Proof of means of subsistence (bank statements or scholarship letter)"
       ],
-      "processingTime": "The legal decision period is up to 60 days after the application is lodged. National visas involve consultation with Portuguese authorities, so allow extra time.",
+      "processingTime": {
+        "minDays": 60,
+        "maxDays": 60
+      },
+      "processingTimeNotes": "The legal decision period is up to 60 days after the application is lodged. National visas involve consultation with Portuguese authorities, so allow extra time.",
       "fees": "€110 national visa fee (service provider charges may be extra), plus separate AIMA residence permit fees after arrival: about €247 at standard rates or about €186 with the 25% digital-procedure reduction, under the fee table in force since 1 March 2026",
       "validityDuration": "The visa is valid for 4 months with two entries, during which you travel to Portugal and apply to AIMA for a residence permit for study; AIMA sets the permit period and renewal terms",
       "sourceUrl": "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/residency"
