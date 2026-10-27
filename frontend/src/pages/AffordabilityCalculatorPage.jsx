@@ -150,6 +150,13 @@ export default function AffordabilityCalculatorPage() {
 
   return (
     <div className="affordability-page">
+      {/* Accessibility fix: this page had no <h1> at all — FormContainer's
+          title renders as an <h2> (correct for a form embedded in a page
+          that provides its own <h1> elsewhere, same pattern LoginPage and
+          RegistrationPage already follow), but this page never added that
+          outer heading, leaving no top-level heading for screen-reader
+          users navigating by heading structure. */}
+      <h1>Affordability Calculator</h1>
       <FormContainer
         title="Affordability calculator"
         description="See whether your budget realistically covers your trip or move."

@@ -11,6 +11,13 @@ const common = {
   strokeWidth: 1.8,
   strokeLinecap: "round",
   strokeLinejoin: "round",
+  // Accessibility fix: every usage of these icons across the app pairs
+  // them with adjacent visible text (a label, a heading, or an
+  // aria-label on a parent button) — the icon itself is always
+  // redundant decoration, never the sole conveyor of information. Set
+  // here once so it applies to all 5 icons rather than repeating it at
+  // every call site.
+  "aria-hidden": "true",
 };
 
 export function PassportIcon() {
