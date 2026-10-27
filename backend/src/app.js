@@ -3,10 +3,11 @@ const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const documentRoutes = require('./routes/documentRoutes');
+const deadlineRoutes = require('./deadlineRoutes');
 const eligibilityRoutes = require('./eligibilityRoutes');
 const { initializeFirebaseAdmin } = require('./config/firebaseAdmin');
 
-function createApp() {
+function createApp({ db } = {}) {
   const app = express();
   app.use(cors());
   app.use(express.json());
@@ -16,6 +17,7 @@ function createApp() {
   app.use('/api', userRoutes);
   app.use('/api/profile', profileRoutes);
   app.use('/api/documents', documentRoutes);
+  if (db) app.use('/api/deadlines', deadlineRoutes(db));
 
   // eligibilityRoutes existed with full test coverage (src/eligibility.test.js)
   // but was never actually mounted here — the route was unreachable over
