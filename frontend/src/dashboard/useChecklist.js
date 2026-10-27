@@ -71,6 +71,7 @@ export function useChecklist(uid) {
   }, [uid, formatSteps]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- canonical fetch-on-mount; load is also reused standalone via the returned `refresh` function, so it can't be inlined into this effect body.
     load();
   }, [load]);
 
