@@ -16,6 +16,7 @@ import AccountPage from "./pages/AccountPage";
 import SettingsPage from "./pages/SettingsPage";
 import DocumentUploadPage from "./pages/DocumentUploadPage";
 import ChecklistPage from "./pages/ChecklistPage";
+import AffordabilityCalculatorPage from "./pages/AffordabilityCalculatorPage";
 
 // Placeholder data for the /checklist route — ChecklistPage itself takes
 // steps/isLoading/error as props and has no idea this data is fake.
@@ -141,6 +142,14 @@ export default function App() {
               />
               </ProtectedRoute>
             }
+          />
+          <Route 
+            path="/affordability" 
+            element={ 
+              <ProtectedRoute> 
+                <AffordabilityCalculatorPage /> 
+              </ProtectedRoute> 
+            } 
           />
         </Routes>
       </main>
