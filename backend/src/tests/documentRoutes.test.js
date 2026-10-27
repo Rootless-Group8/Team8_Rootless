@@ -86,8 +86,47 @@ describe('POST /api/documents', () => {
     expect(documentService.uploadDocument).toHaveBeenCalledWith(
         'user-a',
         expect.objectContaining({ originalname: 'passport.pdf', mimetype: 'application/pdf' }),
-        'passport'
+        'passport',
+        undefined
     );
+  });
+
+  it('passes expirationDate through to the service when provided', async () => {
+    documentService.uploadDocument.mockResolvedValue({
+      id: 'd1',
+      fileName: 'passport.pdf',
+      documentType: 'passport',
+      ownerUid: 'user-a',
+      expirationDate: '2027-03-15T00:00:00.000Z',
+    });
+
+    const res = await request(app)
+        .post('/api/documents')
+        .set('Authorization', 'Bearer user-a')
+        .field('documentType', 'passport')
+        .field('expirationDate', '2027-03-15')
+        .attach('file', pdf, { filename: 'passport.pdf', contentType: 'application/pdf' });
+
+    expect(res.status).toBe(201);
+    expect(documentService.uploadDocument).toHaveBeenCalledWith(
+        'user-a',
+        expect.objectContaining({ originalname: 'passport.pdf' }),
+        'passport',
+        '2027-03-15'
+    );
+  });
+
+  it('returns 400 for an invalid expirationDate', async () => {
+    const res = await request(app)
+        .post('/api/documents')
+        .set('Authorization', 'Bearer user-a')
+        .field('documentType', 'passport')
+        .field('expirationDate', 'not-a-date')
+        .attach('file', pdf, { filename: 'passport.pdf', contentType: 'application/pdf' });
+
+    expect(res.status).toBe(400);
+    expect(res.body.details).toHaveProperty('expirationDate');
+    expect(documentService.uploadDocument).not.toHaveBeenCalled();
   });
 
   it('returns 400 when no file is sent', async () => {
