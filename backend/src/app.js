@@ -3,6 +3,7 @@ const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const documentRoutes = require('./routes/documentRoutes');
+const checklistRoutes = require('./routes/checklistRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
 const eligibilityRoutes = require('./eligibilityRoutes');
 const { initializeFirebaseAdmin } = require('./config/firebaseAdmin');
@@ -17,6 +18,7 @@ function createApp() {
   app.use('/api', userRoutes);
   app.use('/api/profile', profileRoutes);
   app.use('/api/documents', documentRoutes);
+  app.use('/api/checklist', checklistRoutes);
   app.use('/api/notifications', notificationRoutes);
 
   // eligibilityRoutes existed with full test coverage (src/eligibility.test.js)
