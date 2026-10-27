@@ -10,57 +10,33 @@ import './ChecklistPage.css';
  * overall progress bar.
  *
  * This component does NOT fetch data itself — it expects the caller
- * (e.g. a parent page, or a hook wired to the Checklist Generator API
- * once that's ready) to pass the checklist in as `steps`, along with
- * `isLoading`/`error` while that fetch is in flight.
- *
- * Checked/unchecked state is tracked only in local state for now —
- * refreshing the page or navigating away loses it. Real persistence
- * to a backend is a separate task; when that's ready, an `onToggleStep`
- * prop can be added here without changing how this component looks
- * or behaves otherwise.
+ * to pass the checklist in as `steps`, along with `isLoading`/`error`
+ * while that fetch is in flight.
  *
  * Props:
  *  - steps     (array of { id, title, description, deadline, completed })
- *      The checklist to display. Each step's `completed` is just the
- *      starting value — this component tracks changes to it locally.
  *  - isLoading (bool)   Shows a loading state instead of the list.
- *  - error     (string) Shows an error state instead of the list, e.g.
- *                        "No checklist available for this destination yet."
- *  - onToggleStep (fn)  Optional. Called as (completedCount, total) after
- *                        every toggle, so a parent can persist progress
- *                        (e.g. to Firestore) without this component
- *                        needing to know anything about where that data
- *                        goes or in what shape.
+ *  - error     (string) Shows an error state instead of the list.
+ *  - onToggleStep (fn)  Optional. Called as ({ id, completed, completedCount, total })
+ *                        after every toggle, so a parent can persist the
+ *                        change (e.g. a real per-item API call, or an
+ *                        aggregate progress write) without this component
+ *                        needing to know anything about where that data goes.
  *
  * ---- Usage example ----
  *
  *   import ChecklistPage from './pages/ChecklistPage';
  *
- *   const sampleSteps = [
- *     {
- *       id: 'step-1',
- *       title: 'Apply for your visitor visa',
- *       description: 'Submit your application through the official portal.',
- *       deadline: 'At least 30 days before arrival',
- *       completed: false,
- *     },
- *     {
- *       id: 'step-2',
- *       title: 'Check passport validity',
- *       description: 'Your passport must be valid for at least 6 months past your arrival date.',
- *       deadline: 'Before you apply',
- *       completed: true,
- *     },
- *   ];
- *
- *   <ChecklistPage steps={sampleSteps} isLoading={false} error={null} />
+ *   <ChecklistPage
+ *     steps={realSteps}
+ *     isLoading={false}
+ *     error={null}
+ *     onToggleStep={({ id, completed }) => patchItem(id, completed)}
+ *   />
  */
 export default function ChecklistPage({ steps, isLoading = false, error = null, onToggleStep }) {
   const [completedIds, setCompletedIds] = useState(() => new Set());
 
-  // Re-seed local completed state whenever a new set of steps comes in
-  // (e.g. once the real API call resolves after a loading state).
   useEffect(() => {
     if (steps) {
       // eslint-disable-next-line react-hooks/set-state-in-effect -- re-seeds local state from a new `steps` prop reference, a single transition tied to the dependency change, not a cascading-render pattern.
@@ -69,18 +45,20 @@ export default function ChecklistPage({ steps, isLoading = false, error = null, 
   }, [steps]);
 
   function handleToggle(id) {
-    // Computed outside the setState updater deliberately — updater
-    // functions should stay pure (no side effects), and React can invoke
-    // them more than once in some cases, which would risk double-firing
-    // onToggleStep's Firestore write.
     const next = new Set(completedIds);
+    const willBeCompleted = !next.has(id);
     if (next.has(id)) {
       next.delete(id);
     } else {
       next.add(id);
     }
     setCompletedIds(next);
-    onToggleStep?.(next.size, steps?.length || 0);
+    onToggleStep?.({
+      id,
+      completed: willBeCompleted,
+      completedCount: next.size,
+      total: steps?.length || 0,
+    });
   }
 
   const total = steps?.length || 0;

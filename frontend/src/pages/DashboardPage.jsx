@@ -78,8 +78,7 @@ export default function DashboardPage() {
             <section className="dashboard-card">
               <h2>Checklist</h2>
               <p className="placeholder-note">
-                See the steps you need to complete for your move — currently a sample checklist
-                until the real Checklist Generator API is wired in.
+                See the steps you need to complete for your move, personalized based on your relocation profile.
               </p>
               <Link to="/checklist" className="dashboard-card-cta">
                 View your checklist →
