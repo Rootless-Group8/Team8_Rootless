@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "researchedFrom": "Each destination cites the official government consular source for that country's student visa program. Where a consulate publishes consulate-specific fee/fund amounts (fees and proof-of-funds thresholds are known to vary by consulate location), that is noted in the entry rather than presented as a single universal figure.",
-    "lastVerified": "2026-10-26"
+    "researchedFrom": "Each destination cites the official government consular source for that country's student visa program. Where fees vary by applicant nationality or consulate location, that is noted in the entry rather than presented as a single universal figure.",
+    "lastVerified": "2026-11-01"
   },
   "MX": {
     "temporary_resident_student_visa": {
@@ -33,6 +33,178 @@
       "validityDuration": "Single-entry visa valid for 180 days; holder must apply to Mexico's National Migration Institute (INM) for a residence card within 30 days of entering Mexico to remain for the full program length",
       "sourceUrl": "https://consulmex.sre.gob.mx/vancouver/index.php/es/temporary-student-resident-visa",
       "lastVerified": "2026-10-26"
+    }
+  },
+  "ES": {
+    "estancia_por_estudios": {
+      "category": "student",
+      "name": "Study Visa (Estancia por Estudios)",
+      "eligibilityCriteria": [
+        "Full-time enrollment (minimum 20 hours/week) at an authorized educational institution in Spain, or doctoral studies, training activities, or an approved mobility/internship/volunteer program",
+        "Required for programs longer than 90 days; shorter programs may qualify for a Schengen short-stay visa instead",
+        "Proof of financial means equivalent to 100% of Spain's IPREM per month, covering the student (plus 75% for a first accompanying family member and 50% for each additional one)",
+        "Valid health insurance with full coverage in Spain (no deductible, copayment, or coverage limit), minimum 30,000 EUR / 50,000 USD",
+        "No disqualifying health conditions under the 2005 International Health Regulations",
+        "For stays over 180 days: a criminal record certificate covering the past 5 years of residence, apostilled and translated into Spanish"
+      ],
+      "requiredDocuments": [
+        "Completed national visa application form",
+        "Valid passport (at least 1 year validity, 2 blank pages, issued within the last 10 years)",
+        "Proof of acceptance from the Spanish educational institution",
+        "Proof of payment of enrollment/tuition fees, or documentation of an exemption or exchange agreement",
+        "Proof of financial means: 3 months of personal bank statements, or a financial sponsorship letter/notarized parental support letter, or proof of a scholarship/loan covering the required amount",
+        "Health insurance certificate meeting Spain's coverage requirements",
+        "Medical certificate (issued within 90 days of application)",
+        "For stays over 180 days: FBI criminal record certificate, apostilled by the US Department of State and translated into Spanish"
+      ],
+      "fees": "As of January 1, 2026: $160 USD for US citizens, $106 USD for other nationalities; different rates apply for citizens of Australia, Bangladesh, Ethiopia, and Canada based on reciprocity. Fee is non-refundable even if the visa is denied.",
+      "processingTimeNotes": "Legal decision period is 1 month from the day after a complete application is submitted, though this can extend if an interview or additional documents are requested. Applications must be submitted between 2 and 6 months before the program start date.",
+      "minimumRequiredFunds": {
+        "amount": 600,
+        "currency": "USD",
+        "period": "per month of stay",
+        "notes": "100% of Spain's IPREM (Public Multiple Effects Income Indicator) for 2026, for a student traveling alone. Add 75% of IPREM for a first accompanying family member and 50% for each additional family member. Reduced if proof of prepaid accommodation for the full stay is provided."
+      },
+      "validityDuration": "Visa is valid for the full stay if 6 months or less. For stays longer than 6 months, the visa is valid for 365 days, after which the student must apply for a Foreigner Identity Card (TIE) within 1 month of entering Spain.",
+      "sourceUrl": "https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-estudios.aspx",
+      "lastVerified": "2026-11-01"
+    }
+  },
+  "AU": {
+    "student_visa_subclass_500": {
+      "category": "student",
+      "name": "Student Visa (Subclass 500)",
+      "eligibilityCriteria": [
+        "Hold a valid Confirmation of Enrolment (CoE) for a CRICOS-registered course; the CoE must still be valid when the visa decision is made",
+        "Satisfy the Genuine Student (GS) requirement, including a written statement on course choice, academic background, and career plans",
+        "Meet the visa's English language requirement (minimum generally IELTS 6.0 overall, lower for packaged English/foundation courses), unless exempt",
+        "Hold Overseas Student Health Cover (OSHC) for the entire visa duration, starting on the arrival date",
+        "Meet financial capacity, health, and character requirements",
+        "If under 18, have an approved student guardian arrangement",
+        "From 2 October 2026, most temporary visa holders can no longer apply for a Student visa while in Australia and must apply, and be outside Australia, when lodging and when the visa is granted, unless an exemption applies (e.g. needing up to 12 more months to finish the same course, PhD study, DFAT/Defence sponsorship, or progressing to a higher-level course)",
+        "Family members (partner and/or dependent children) generally can no longer be included in a Student visa application unless an exemption applies (e.g. PhD study, DFAT/Defence sponsorship, a foreign government scholarship, or being an eligible student from a Pacific or ASEAN country); current visa holders can no longer add family members after the visa is granted, with no exemptions to that specific rule"
+      ],
+      "requiredDocuments": [
+        "Confirmation of Enrolment (CoE) for every course in the study package",
+        "Genuine Student (GS) written responses and supporting evidence",
+        "Evidence of English language proficiency (test results, unless exempt)",
+        "Overseas Student Health Cover (OSHC) policy for an approved Australian insurer",
+        "Evidence of financial capacity (see minimumRequiredFunds)",
+        "Passport and passport-style photographs",
+        "Health examination results and character/police clearance, if requested"
+      ],
+      "fees": "Confirmed on the official Department of Home Affairs page: from AUD 2,500.00 for the primary applicant. A lower concession cost applies to eligible Pacific Island and Timor-Leste citizens, eligible ASEAN citizens, and applicants in the ELICOS and Non-Award sector. Use the Department's Visa Pricing Estimator for an exact quote, since the estimator accounts for individual circumstances this figure does not.",
+      "processingTimeNotes": "Offshore applications lodged before 14 November 2025 are processed under Ministerial Direction 111; those lodged on or after that date are processed under Ministerial Direction 115, both tiered priority systems based on the enrolling institution's visa compliance history rather than a single fixed processing time. Use the Department's visa processing time guide tool for a guide based on recently decided applications.",
+      "minimumRequiredFunds": {
+        "amount": 29710,
+        "currency": "AUD",
+        "period": "per year (living costs only, in addition to tuition and travel)",
+        "notes": "This is the published annual living-cost threshold for the primary applicant. Add approximately AUD 10,394 for an accompanying partner and AUD 4,449 for each dependent child. Figures are indexed periodically by the Department of Home Affairs; confirm the current amount on the official page."
+      },
+      "validityDuration": "Up to 6 years, in line with the enrolled course duration",
+      "sourceUrl": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "lastVerified": "2026-11-01"
+    }
+  },
+  "JP": {
+    "college_student_ryugaku_visa": {
+      "category": "student",
+      "name": "College Student Visa (Ryugaku)",
+      "eligibilityCriteria": [
+        "Enrolled in a full-time program longer than 90 days at a recognized Japanese institution (university, vocational school, or language school)",
+        "Sponsoring institution has obtained a Certificate of Eligibility (CoE) on the applicant's behalf from Japan's Immigration Services Agency",
+        "Able to demonstrate sufficient funds to cover tuition and living expenses for the program duration (see minimumRequiredFunds)",
+        "Minimum of 12 years of prior formal education for most long-term programs",
+        "For language school entrants starting April 2026 or later: proof of Japanese ability at CEFR A1 / JLPT N5 level or higher"
+      ],
+      "requiredDocuments": [
+        "Valid passport with at least one blank visa page",
+        "Completed visa application form",
+        "Passport-style photograph (specifications vary slightly by embassy/consulate)",
+        "Original Certificate of Eligibility (CoE), plus a copy",
+        "Acceptance/admission letter from the Japanese institution",
+        "Academic transcripts and certificates",
+        "Financial proof (bank statements, sponsor's income documents, or scholarship proof)",
+        "For language school entrants from April 2026: Japanese language proficiency proof (JLPT N5 or equivalent)"
+      ],
+      "fees": "Confirmed directly on MOFA's official fee page: under the amended Cabinet Order on Fees Collected by Consular Officers, effective July 1, 2026, visa applications accepted on or after that date cost approximately 15,000 yen for a single-entry visa and approximately 30,000 yen for a multiple-entry visa, paid in the local currency where the embassy/consulate is located. Fees may not be required, or may differ, depending on nationality and purpose of visit (e.g. some nationalities pay no visa fee under reciprocal arrangements). No fee is charged if the visa is not issued.",
+      "processingTimeNotes": "Certificate of Eligibility (CoE) processing generally takes 1 to 3 months (one source cites a July 2026 average of roughly 41 days), followed by 5 to 10 working days for the visa itself once the CoE is issued.",
+      "minimumRequiredFunds": {
+        "amount": 2000000,
+        "currency": "JPY",
+        "period": "for a 1-year program (in addition to tuition)",
+        "notes": "Guideline range is approximately 1,500,000 yen for a 6-month program up to 2,000,000-2,500,000 yen for a 1-year program. There is no single fixed legal amount; Immigration wants evidence the applicant (or a sponsor) can cover tuition and living costs for the full program without needing to work illegally."
+      },
+      "validityDuration": "Matches the length of the enrolled program, up to 4 years and 3 months depending on program type; renewable while enrollment continues",
+      "sourceUrl": "https://www.mofa.go.jp/j_info/visit/visa/procedure/fee.html",
+      "lastVerified": "2026-11-01"
+    }
+  },
+  "NL": {
+    "student_residence_permit": {
+      "category": "student",
+      "name": "Student Residence Permit (MVV + VVR)",
+      "eligibilityCriteria": [
+        "Unconditional admission to a program at an educational institution recognized by the IND as a sponsor",
+        "Non-EU/EEA/Swiss nationality staying longer than 90 days (EU/EEA/Swiss citizens don't need this permit at all)",
+        "Sufficient financial means for the full study period, per the IND's published monthly amounts",
+        "Valid health insurance covering the stay in the Netherlands",
+        "Application is submitted by the sponsoring institution, not the student directly; the student cannot apply on their own"
+      ],
+      "requiredDocuments": [
+        "Valid passport",
+        "Unconditional admission/enrollment confirmation from the recognized institution",
+        "Proof of sufficient financial means for the study period",
+        "Valid health insurance",
+        "Biometric data (photo and fingerprints), collected at an IND desk after arrival in the Netherlands",
+        "For nationalities requiring it: the MVV entry visa, applied for together with the residence permit by the institution"
+      ],
+      "fees": "254 EUR (2026 IND fee), typically collected by the educational institution as part of the application process rather than paid directly by the student to the IND.",
+      "processingTimeNotes": "Typically 2 to 8 weeks from when the IND receives a complete application from the sponsoring institution.",
+      "minimumRequiredFunds": {
+        "amount": 13569.24,
+        "currency": "EUR",
+        "period": "per year (approximately 1,130.77 EUR/month) for university/HBO-level study",
+        "notes": "Lower threshold of approximately 928.58 EUR/month applies for secondary or MBO-level study. Figures are the IND's published 2026 study norm and are reviewed periodically."
+      },
+      "validityDuration": "Valid for the duration of the study program plus a few extra months",
+      "sourceUrl": "https://ind.nl/en",
+      "lastVerified": "2026-11-01"
+    }
+  },
+  "NZ": {
+    "fee_paying_student_visa": {
+      "category": "student",
+      "name": "Fee Paying Student Visa",
+      "eligibilityCriteria": [
+        "Enrolled full-time in a course longer than 3 months at an approved New Zealand education provider",
+        "Tuition fees paid in full (for the Fee Paying Student Visa specifically; other student visa types like Pathway or Exchange have their own fee arrangements)",
+        "Sufficient funds for living expenses and a return ticket (see minimumRequiredFunds)",
+        "Genuine intention to study and to leave New Zealand at the end of the stay",
+        "Meets character requirements (no disqualifying criminal convictions or security concerns)",
+        "May need to meet English language requirements depending on the course and provider"
+      ],
+      "requiredDocuments": [
+        "Completed visa application form",
+        "Valid passport (valid for at least 3 months beyond the planned departure date)",
+        "Offer of place from an approved education provider",
+        "Evidence that tuition fees have been paid",
+        "Proof of funds for living expenses and their genuine source",
+        "Evidence of a return ticket, or sufficient funds to buy one",
+        "Visa/passport-style photos meeting Immigration New Zealand's specifications",
+        "Medical certificate, chest x-ray, or police certificate, if requested"
+      ],
+      "fees": "Approximately NZD 850 standard processing fee for the Fee Paying Student Visa. Confirm the current fee on the Immigration New Zealand website, as fees are reviewed periodically.",
+      "processingTimeNotes": "Around 80% of complete applications are processed within 5 weeks (average decision time roughly 3 to 5 weeks); some sources cite 20 to 25 working days as a typical range. Processing can take longer during peak intake periods.",
+      "minimumRequiredFunds": {
+        "amount": 20000,
+        "currency": "NZD",
+        "period": "per year",
+        "notes": "NZD 17,000/year applies instead for school years 1-13. A separate NZD 2,000 is required for a return airfare (or proof of funds to purchase one), on top of the living-cost figure."
+      },
+      "validityDuration": "Fee Paying Student Visa is valid for up to 4 years; other student visa types (Pathway, Exchange) have different validity rules",
+      "sourceUrl": "https://www.studywithnewzealand.govt.nz/en/plan-your-studies/visas",
+      "lastVerified": "2026-11-01"
     }
   }
 }
