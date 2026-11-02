@@ -14,6 +14,7 @@ const deadlineRoutes = require('./deadlineRoutes');
 const reminderRoutes = require('./routes/reminderRoutes');
 const eligibilityRoutes = require('./eligibilityRoutes');
 const rankingRoutes = require('./rankingRoutes');
+const costOfLivingRoutes = require('./routes/costOfLivingRoutes');
 
 function createApp({ db } = {}) {
   const app = express();
