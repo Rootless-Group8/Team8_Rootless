@@ -5,6 +5,7 @@ const profileRoutes = require('./routes/profileRoutes');
 const documentRoutes = require('./routes/documentRoutes');
 const checklistRoutes = require('./routes/checklistRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
+const reminderRoutes = require('./routes/reminderRoutes');
 const deadlineRoutes = require('./deadlineRoutes');
 const eligibilityRoutes = require('./eligibilityRoutes');
 
@@ -20,6 +21,7 @@ function createApp({ db } = {}) {
   app.use('/api/documents', documentRoutes);
   app.use('/api/checklist', checklistRoutes);
   app.use('/api/notifications', notificationRoutes);
+  app.use('/api/reminders', reminderRoutes);
   if (db) app.use('/api/deadlines', deadlineRoutes(db));
 
   if (db) {
