@@ -5,8 +5,10 @@ const profileRoutes = require('./routes/profileRoutes');
 const documentRoutes = require('./routes/documentRoutes');
 const checklistRoutes = require('./routes/checklistRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
+const reminderRoutes = require('./routes/reminderRoutes');
 const deadlineRoutes = require('./deadlineRoutes');
 const eligibilityRoutes = require('./eligibilityRoutes');
+const costOfLivingRoutes = require('./routes/costOfLivingRoutes');
 
 function createApp({ db } = {}) {
   const app = express();
@@ -20,11 +22,13 @@ function createApp({ db } = {}) {
   app.use('/api/documents', documentRoutes);
   app.use('/api/checklist', checklistRoutes);
   app.use('/api/notifications', notificationRoutes);
+  app.use('/api/reminders', reminderRoutes);
   if (db) app.use('/api/deadlines', deadlineRoutes(db));
 
   if (db) {
     app.use('/api/eligibility', eligibilityRoutes(db));
   }
+  if (db) app.use('/api/cost-of-living', costOfLivingRoutes(db));
 
   // Central error handler - never leak stack traces or internals to clients.
   // eslint-disable-next-line no-unused-vars
