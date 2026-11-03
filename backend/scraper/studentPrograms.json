@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "researchedFrom": "Each destination cites the official government consular source for that country's student visa program. Where a consulate publishes consulate-specific fee/fund amounts (fees and proof-of-funds thresholds are known to vary by consulate location), that is noted in the entry rather than presented as a single universal figure.",
-    "lastVerified": "2026-10-26"
+    "researchedFrom": "Each destination cites the official government consular source for that country's student visa program. Where fees vary by applicant nationality or consulate location, that is noted in the entry rather than presented as a single universal figure.",
+    "lastVerified": "2026-11-01"
   },
   "MX": {
     "temporary_resident_student_visa": {
@@ -33,6 +33,41 @@
       "validityDuration": "Single-entry visa valid for 180 days; holder must apply to Mexico's National Migration Institute (INM) for a residence card within 30 days of entering Mexico to remain for the full program length",
       "sourceUrl": "https://consulmex.sre.gob.mx/vancouver/index.php/es/temporary-student-resident-visa",
       "lastVerified": "2026-10-26"
+    }
+  },
+  "ES": {
+    "estancia_por_estudios": {
+      "category": "student",
+      "name": "Study Visa (Estancia por Estudios)",
+      "eligibilityCriteria": [
+        "Full-time enrollment (minimum 20 hours/week) at an authorized educational institution in Spain, or doctoral studies, training activities, or an approved mobility/internship/volunteer program",
+        "Required for programs longer than 90 days; shorter programs may qualify for a Schengen short-stay visa instead",
+        "Proof of financial means equivalent to 100% of Spain's IPREM per month, covering the student (plus 75% for a first accompanying family member and 50% for each additional one)",
+        "Valid health insurance with full coverage in Spain (no deductible, copayment, or coverage limit), minimum 30,000 EUR / 50,000 USD",
+        "No disqualifying health conditions under the 2005 International Health Regulations",
+        "For stays over 180 days: a criminal record certificate covering the past 5 years of residence, apostilled and translated into Spanish"
+      ],
+      "requiredDocuments": [
+        "Completed national visa application form",
+        "Valid passport (at least 1 year validity, 2 blank pages, issued within the last 10 years)",
+        "Proof of acceptance from the Spanish educational institution",
+        "Proof of payment of enrollment/tuition fees, or documentation of an exemption or exchange agreement",
+        "Proof of financial means: 3 months of personal bank statements, or a financial sponsorship letter/notarized parental support letter, or proof of a scholarship/loan covering the required amount",
+        "Health insurance certificate meeting Spain's coverage requirements",
+        "Medical certificate (issued within 90 days of application)",
+        "For stays over 180 days: FBI criminal record certificate, apostilled by the US Department of State and translated into Spanish"
+      ],
+      "fees": "As of January 1, 2026: $160 USD for US citizens, $106 USD for other nationalities; different rates apply for citizens of Australia, Bangladesh, Ethiopia, and Canada based on reciprocity. Fee is non-refundable even if the visa is denied.",
+      "processingTimeNotes": "Legal decision period is 1 month from the day after a complete application is submitted, though this can extend if an interview or additional documents are requested. Applications must be submitted between 2 and 6 months before the program start date.",
+      "minimumRequiredFunds": {
+        "amount": 600,
+        "currency": "USD",
+        "period": "per month of stay",
+        "notes": "100% of Spain's IPREM (Public Multiple Effects Income Indicator) for 2026, for a student traveling alone. Add 75% of IPREM for a first accompanying family member and 50% for each additional family member. Reduced if proof of prepaid accommodation for the full stay is provided."
+      },
+      "validityDuration": "Visa is valid for the full stay if 6 months or less. For stays longer than 6 months, the visa is valid for 365 days, after which the student must apply for a Foreigner Identity Card (TIE) within 1 month of entering Spain.",
+      "sourceUrl": "https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-estudios.aspx",
+      "lastVerified": "2026-11-01"
     }
   }
 }
