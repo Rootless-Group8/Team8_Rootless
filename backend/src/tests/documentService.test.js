@@ -93,6 +93,22 @@ describe('validateUploadInput', () => {
   it('rejects an unknown document type', () => {
     expect(validateUploadInput(makeFile(), 'selfie')).toHaveProperty('documentType');
   });
+
+  it('accepts a missing expirationDate (it is optional)', () => {
+    expect(validateUploadInput(makeFile(), 'passport')).toEqual({});
+    expect(validateUploadInput(makeFile(), 'passport', '')).toEqual({});
+  });
+
+  it('accepts a valid expirationDate, including one in the past', () => {
+    expect(validateUploadInput(makeFile(), 'passport', '2027-03-15')).toEqual({});
+    expect(validateUploadInput(makeFile(), 'passport', '2020-01-01')).toEqual({});
+  });
+
+  it('rejects an unparsable expirationDate', () => {
+    expect(validateUploadInput(makeFile(), 'passport', 'not-a-date')).toHaveProperty(
+      'expirationDate'
+    );
+  });
 });
 
 describe('uploadDocument', () => {
@@ -118,6 +134,22 @@ describe('uploadDocument', () => {
       expect.objectContaining({ id: 'new-doc-id', ownerUid: OWNER, documentType: 'passport' })
     );
     expect(result).not.toHaveProperty('storagePath');
+  });
+
+  it('stores a normalized ISO expirationDate when provided', async () => {
+    const result = await uploadDocument(OWNER, makeFile(), 'passport', '2027-03-15');
+
+    expect(mockDocSet).toHaveBeenCalledWith(
+      expect.objectContaining({ expirationDate: new Date('2027-03-15').toISOString() })
+    );
+    expect(result.expirationDate).toBe(new Date('2027-03-15').toISOString());
+  });
+
+  it('stores null, not undefined or empty string, when no expirationDate is given', async () => {
+    const result = await uploadDocument(OWNER, makeFile(), 'passport');
+
+    expect(mockDocSet).toHaveBeenCalledWith(expect.objectContaining({ expirationDate: null }));
+    expect(result.expirationDate).toBeNull();
   });
 
   it('removes the uploaded file if the Firestore write fails', async () => {

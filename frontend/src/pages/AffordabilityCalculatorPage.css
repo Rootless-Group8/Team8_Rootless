@@ -1,0 +1,75 @@
+.affordability-page {
+  font-family: var(--ui-font-family);
+  max-width: 560px;
+  margin: 0 auto;
+  padding: var(--ui-space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-4);
+}
+
+.affordability-results {
+  min-height: 40px;
+}
+
+.affordability-result-card {
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius);
+  padding: var(--ui-space-4);
+  background-color: var(--ui-color-bg-surface, var(--ui-color-bg));
+}
+
+.affordability-result-card h2 {
+  font-size: var(--ui-font-size-lg);
+  font-weight: var(--ui-font-weight-bold);
+  color: var(--ui-color-text);
+  margin: 0 0 var(--ui-space-3) 0;
+}
+
+.affordability-breakdown-list {
+  list-style: none;
+  margin: 0 0 var(--ui-space-3) 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-1);
+}
+
+.affordability-breakdown-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--ui-font-size-base);
+  color: var(--ui-color-text);
+  padding: var(--ui-space-1) 0;
+}
+
+.affordability-total {
+  font-size: var(--ui-font-size-lg);
+  font-weight: var(--ui-font-weight-bold);
+  color: var(--ui-color-text);
+  margin: 0 0 var(--ui-space-2) 0;
+}
+
+.affordability-verdict {
+  font-size: var(--ui-font-size-base);
+  font-weight: var(--ui-font-weight-medium);
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border-radius: var(--ui-radius-sm);
+  margin: 0;
+}
+
+.affordability-verdict--covered {
+  color: var(--ui-color-success, var(--ui-color-primary));
+  background-color: var(--ui-color-success-bg, var(--ui-color-secondary-hover-bg));
+}
+
+.affordability-verdict--short {
+  color: var(--ui-color-error, #c0392b);
+  background-color: var(--ui-color-error-bg, #fdecea);
+}
+
+.affordability-disclaimer {
+  font-size: var(--ui-font-size-sm);
+  color: var(--ui-color-text-muted);
+  margin: var(--ui-space-3) 0 0 0;
+}

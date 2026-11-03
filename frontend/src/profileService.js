@@ -1,46 +1,31 @@
-import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
-import { db, auth } from "./firebase/config";
+import { apiFetch } from "./lib/apiClient";
 
-// Profiles are stored as one document per user, keyed by their Firebase
-// Auth uid, in a top-level "profiles" collection: profiles/{uid}.
-// This is what lets Firestore security rules restrict each user to
-// only their own document (see firestore.rules).
+// Calls the real Express backend (backend/src/routes/profileRoutes.js),
+// which reads/writes the profile at users/{uid}.profile via Firebase
+// Admin SDK. This used to write directly to a separate profiles/{uid}
+// Firestore collection with the client SDK — that was from an early
+// scaffold, before the real backend API existed, and meant a saved
+// profile was invisible to anything reading users/{uid}.profile,
+// including the Checklist Generator API.
 
-function requireCurrentUser() {
-  const user = auth.currentUser;
-  if (!user) {
-    throw new Error('You must be logged in to do this.');
-  }
-  return user;
-}
-
+/**
+ * Fetches the current user's relocation profile.
+ * Returns null if they haven't completed profile setup yet.
+ */
 export async function fetchProfile() {
-  const user = requireCurrentUser();
-  const profileRef = doc(db, 'profiles', user.uid);
-  const snapshot = await getDoc(profileRef);
-
-  if (!snapshot.exists()) {
-    return null; // no profile yet, caller treats this as "new user"
-  }
-
-  return { id: snapshot.id, ...snapshot.data() };
+  const data = await apiFetch("/api/profile");
+  return data.profile;
 }
 
+/**
+ * Creates or updates the current user's relocation profile.
+ * Supports partial updates — only fields present in profileData are
+ * validated and saved, matching the backend's PATCH behavior.
+ */
 export async function saveProfile(profileData) {
-  const user = requireCurrentUser();
-  const profileRef = doc(db, 'profiles', user.uid);
-
-  // merge: true means this works for both first-time create and later
-  // updates without needing separate create/update functions.
-  await setDoc(
-    profileRef,
-    {
-      ...profileData,
-      updatedAt: serverTimestamp(),
-    },
-    { merge: true }
-  );
-
-  const snapshot = await getDoc(profileRef);
-  return { id: snapshot.id, ...snapshot.data() };
+  const data = await apiFetch("/api/profile", {
+    method: "PATCH",
+    json: profileData,
+  });
+  return data.profile;
 }
