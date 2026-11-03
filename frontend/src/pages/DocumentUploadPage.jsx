@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import FileUpload from '../components/FileUpload';
+import Select from '../components/Select';
+import TextInput from '../components/TextInput';
 import { apiFetch } from '../lib/apiClient';
 import './DocumentUploadPage.css';
 
@@ -74,26 +76,19 @@ export default function DocumentUploadPage() {
         files up to 10MB.
       </p>
 
-      <div className="form-field">
-        <label htmlFor="documentType">Document type</label>
-        <select id="documentType" value={documentType} onChange={(e) => setDocumentType(e.target.value)}>
-          {DOCUMENT_TYPES.map((t) => (
-            <option key={t.value} value={t.value}>
-              {t.label}
-            </option>
-          ))}
-        </select>
-      </div>
+      <Select
+        label="Document type"
+        value={documentType}
+        onChange={setDocumentType}
+        options={DOCUMENT_TYPES}
+      />
 
-      <div className="form-field">
-        <label htmlFor="expirationDate">Expiration date (optional)</label>
-        <input
-          id="expirationDate"
-          type="date"
-          value={expirationDate}
-          onChange={(e) => setExpirationDate(e.target.value)}
-        />
-      </div>
+      <TextInput
+        label="Expiration date (optional)"
+        type="date"
+        value={expirationDate}
+        onChange={setExpirationDate}
+      />
 
       <FileUpload
         label="Drag your documents here, or browse to upload"
