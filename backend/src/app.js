@@ -9,6 +9,7 @@ const reminderRoutes = require('./routes/reminderRoutes');
 const deadlineRoutes = require('./deadlineRoutes');
 const eligibilityRoutes = require('./eligibilityRoutes');
 const costOfLivingRoutes = require('./routes/costOfLivingRoutes');
+const lifeEventRoutes = require('./routes/lifeEventRoutes');
 
 function createApp({ db } = {}) {
   const app = express();
@@ -23,6 +24,7 @@ function createApp({ db } = {}) {
   app.use('/api/checklist', checklistRoutes);
   app.use('/api/notifications', notificationRoutes);
   app.use('/api/reminders', reminderRoutes);
+  app.use('/api/life-events', lifeEventRoutes);
   if (db) app.use('/api/deadlines', deadlineRoutes(db));
 
   if (db) {
