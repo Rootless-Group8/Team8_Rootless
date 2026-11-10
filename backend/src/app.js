@@ -3,6 +3,8 @@ const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const documentRoutes = require('./routes/documentRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
+const reminderRoutes = require('./routes/reminderRoutes');
 const checklistRoutes = require('./routes/checklistRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
 const reminderRoutes = require('./routes/reminderRoutes');
@@ -24,6 +26,8 @@ function createApp({ db } = {}) {
   app.use('/api', userRoutes);
   app.use('/api/profile', profileRoutes);
   app.use('/api/documents', documentRoutes);
+  app.use('/api/notifications', notificationRoutes);
+  app.use('/api/reminders', reminderRoutes);
   app.use('/api/checklist', checklistRoutes);
   app.use('/api/notifications', notificationRoutes);
   app.use('/api/reminders', reminderRoutes);

@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { createApp } = require('./app');
+const { startReminderScheduler } = require('./jobs/reminderScheduler');
 const { initializeFirebaseAdmin } = require('./config/firebaseAdmin');
 const { startReminderScheduler } = require('./jobs/reminderScheduler');
 
