@@ -10,6 +10,9 @@ const deadlineRoutes = require('./deadlineRoutes');
 const eligibilityRoutes = require('./eligibilityRoutes');
 const costOfLivingRoutes = require('./routes/costOfLivingRoutes');
 const lifeEventRoutes = require('./routes/lifeEventRoutes');
+const deadlineRoutes = require('./deadlineRoutes');
+const eligibilityRoutes = require('./eligibilityRoutes');
+const rankingRoutes = require('./rankingRoutes');
 
 function createApp({ db } = {}) {
   const app = express();
@@ -28,6 +31,9 @@ function createApp({ db } = {}) {
   if (db) app.use('/api/deadlines', deadlineRoutes(db));
 
   if (db) {
+    // Matching Engine v2 (ranked results). Mounted before v1 so /v2 isn't
+    // swallowed by the v1 router; v1 stays unchanged at /api/eligibility.
+    app.use('/api/eligibility/v2', rankingRoutes(db));
     app.use('/api/eligibility', eligibilityRoutes(db));
   }
   if (db) app.use('/api/cost-of-living', costOfLivingRoutes(db));
