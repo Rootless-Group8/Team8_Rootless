@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "researchedFrom": "Multiple current newcomer-guide sources per section, cited individually below. No government-equivalent single source exists for these four topics combined, so each section cites its own best source rather than one umbrella citation.",
+    "lastVerified": "2026-10-19"
+  },
+  "CA": {
+    "housing": {
+      "summary": "Securing a rental without Canadian credit history is common for newcomers and very possible with the right documents.",
+      "tips": [
+        "Bring a valid passport plus your immigration document (work permit, study permit, or PR confirmation/COPR) \u2014 landlords want proof of legal status to rent to you.",
+        "Compensate for having no Canadian credit history with an employment letter showing income at least 2.5-3x the monthly rent, or 3-6 months of bank statements showing steady funds.",
+        "Offering extra months of rent upfront (where provincial law allows) or a Canadian co-signer/guarantor can replace a credit check entirely.",
+        "Budget total housing costs at or below roughly 35% of gross income, per Financial Consumer Agency of Canada guidance.",
+        "\"Key money\" or unofficial \"furniture fees\" charged outside a licensed agent are illegal in every province \u2014 report these to your provincial rental tribunal."
+      ],
+      "sourceUrl": "https://unifysocial.ca/blog/how-to-rent-your-first-apartment-in-canada-as-a-newcomer-with-no-credit-history"
+    },
+    "healthcare": {
+      "summary": "Public healthcare is run separately by each province, and most (though not all) require a waiting period before coverage starts.",
+      "tips": [
+        "Ontario eliminated its waiting period in 2020 \u2014 OHIP coverage is immediate once your application is approved.",
+        "Most other provinces, including British Columbia, still require up to a 3-month wait after you establish residency before provincial coverage begins.",
+        "Apply for your provincial health card the week you arrive \u2014 the wait period is calculated from your residency start date, not your application date.",
+        "Buy private travel/newcomer health insurance to cover the gap in provinces with a waiting period; refugees and protected persons are covered immediately nationwide through the federal Interim Federal Health Program.",
+        "Provincial coverage doesn't include dental, vision, or prescription drugs by default \u2014 most residents carry separate private or employer coverage for those."
+      ],
+      "sourceUrl": "https://moneyabroadguide.com/health-insurance-newcomers-canada-2026/"
+    },
+    "banking": {
+      "summary": "Major Canadian banks have dedicated newcomer programs and will open an account with far less documentation than is typically required back home.",
+      "tips": [
+        "You need one primary ID (passport, PR card, or Canadian driver's licence) and one secondary ID (work/study permit, SIN card, or a card from a financial institution abroad).",
+        "A Social Insurance Number (SIN) is NOT required to open a basic chequing account \u2014 you can add it later, and it's only needed for interest-bearing accounts.",
+        "The major banks (RBC, TD, Scotiabank, BMO, CIBC) all offer newcomer packages that waive monthly fees for your first year, typically for anyone within 5 years of landing as a PR or holding a valid work/study permit.",
+        "Newcomer credit cards are available with no Canadian credit history required, usually with an initial limit of $500\u2013$2,000 \u2014 the fastest way to start building a Canadian credit file.",
+        "Some banks (RBC, Scotiabank) let you open an account online before you even arrive in Canada."
+      ],
+      "sourceUrl": "https://www.moneymapcanada.com/blog/newcomer-bank-account-canada"
+    },
+    "transport": {
+      "summary": "Most Canadian cities run their own public transit system with a monthly pass \u2014 costs vary by city, but there's a usable national average.",
+      "tips": [
+        "The national average cost of a monthly public transit pass is about CAD $103, though this varies significantly by city (Toronto and Vancouver run higher, smaller cities lower).",
+        "Most transit systems now use app-based or tap-card ticketing (e.g., Toronto's PRESTO, Vancouver's Compass Card) \u2014 set this up in your first week rather than paying per ride.",
+        "A monthly pass is usually cheaper than paying per trip if you'll be commuting regularly \u2014 check your city's transit authority website for current exact fares.",
+        "Many employers offer a pre-tax transit benefit or reimbursement \u2014 ask HR during onboarding."
+      ],
+      "sourceUrl": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Canada"
+    }
+  }
+}
