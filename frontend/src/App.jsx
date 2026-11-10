@@ -18,6 +18,7 @@ import SettingsPage from "./pages/SettingsPage";
 import DocumentUploadPage from "./pages/DocumentUploadPage";
 import ChecklistPage from "./pages/ChecklistPage";
 import AffordabilityCalculatorPage from "./pages/AffordabilityCalculatorPage";
+import CommunityTipsPage from "./pages/CommunityTipsPage";
 
 export default function App() {
   const { user } = useAuth();
@@ -127,6 +128,14 @@ export default function App() {
                 <AffordabilityCalculatorPage />
               </ProtectedRoute>
             }
+          />
+          <Route 
+            path="/community-tips" 
+            element={ 
+              <ProtectedRoute> 
+                <CommunityTipsPage /> 
+              </ProtectedRoute> 
+            } 
           />
         </Routes>
       </main>
