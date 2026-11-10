@@ -60,7 +60,8 @@ function sendError(res, err) {
  */
 router.post('/', handleUpload, async (req, res) => {
   const documentType = req.body && req.body.documentType;
-  const errors = validateUploadInput(req.file, documentType);
+  const expirationDate = req.body && req.body.expirationDate;
+  const errors = validateUploadInput(req.file, documentType, expirationDate);
 
   if (Object.keys(errors).length > 0) {
     return res.status(400).json({
@@ -71,7 +72,7 @@ router.post('/', handleUpload, async (req, res) => {
   }
 
   try {
-    const document = await uploadDocument(req.firebaseUser.uid, req.file, documentType);
+    const document = await uploadDocument(req.firebaseUser.uid, req.file, documentType, expirationDate);
     return res.status(201).json({ document });
   } catch (err) {
     return sendError(res, err);

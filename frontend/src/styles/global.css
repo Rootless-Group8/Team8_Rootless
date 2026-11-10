@@ -664,6 +664,10 @@ button:disabled {
   color: var(--ui-color-text);
 }
 
+.dashboard-card--alerts {
+  background: none;
+  padding: 0;
+}
 /* ============ Visa comparison ============ */
 
 .visa-comparison-form {

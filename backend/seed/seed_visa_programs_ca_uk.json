@@ -23,7 +23,11 @@
         "Digital photo meeting IRCC specifications",
         "Biometrics (fingerprints and photo) at a Visa Application Centre"
       ],
-      "processingTime": "Varies by country of application. IRCC publishes current estimates by country on its processing-times tool; recent published figures include roughly 22 days for applicants from the United States and 27 days for applicants from India (as of April 2026).",
+      "processingTime": {
+        "minDays": 22,
+        "maxDays": 27
+      },
+      "processingTimeNotes": "Varies by country of application. IRCC publishes current estimates by country on its processing-times tool; recent published figures include roughly 22 days for applicants from the United States and 27 days for applicants from India (as of April 2026).",
       "fees": "CAD $100 visa fee + CAD $85 biometrics fee (approx. CAD $185 total per adult); capped at CAD $500 for a family of 5 or more applying together",
       "validityDuration": "Up to 10 years or until passport expiry, whichever comes first; usually multiple-entry",
       "sourceUrl": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/visitor-visa.html"
@@ -47,7 +51,11 @@
         "Digital photo",
         "Biometrics"
       ],
-      "processingTime": "Varies by country of application; check IRCC's processing-times tool for the current estimate",
+      "processingTime": {
+        "minDays": null,
+        "maxDays": null
+      },
+      "processingTimeNotes": "Varies by country of application; check IRCC's processing-times tool for the current estimate",
       "fees": "CAD $150 study permit fee + CAD $85 biometrics fee, where required",
       "validityDuration": "Length of the study program plus 90 days",
       "sourceUrl": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html"
@@ -70,7 +78,11 @@
         "Digital photo",
         "Biometrics"
       ],
-      "processingTime": "Varies by permit type and country of application; typically several weeks up to a few months",
+      "processingTime": {
+        "minDays": null,
+        "maxDays": null
+      },
+      "processingTimeNotes": "Varies by permit type and country of application; typically several weeks up to a few months",
       "fees": "CAD $155 work permit fee; + CAD $100 open work permit holder fee for open permits; + CAD $85 biometrics fee. Employers may also pay a $1,000 LMIA fee or $230 compliance fee.",
       "validityDuration": "Tied to the job offer/LMIA duration or program conditions; renewable",
       "sourceUrl": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/permit-inside/apply.html"
@@ -93,7 +105,11 @@
         "Evidence of ties to home country / return travel plans",
         "Biometric information (fingerprints and photo) at a UKVCAS appointment"
       ],
-      "processingTime": "Standard service aims for a decision within 3 weeks; priority and super-priority services are available for an extra fee",
+      "processingTime": {
+        "minDays": 21,
+        "maxDays": 21
+      },
+      "processingTimeNotes": "Standard service aims for a decision within 3 weeks; priority and super-priority services are available for an extra fee",
       "fees": "\u00a3135 for up to 6 months; long-term options available (2, 5, or 10 years) for frequent visitors",
       "validityDuration": "Up to 6 months per visit; long-term visas allow repeat visits within a 2/5/10-year window",
       "sourceUrl": "https://www.gov.uk/standard-visitor"
@@ -114,7 +130,11 @@
         "Proof of personal savings, where required",
         "Biometric information"
       ],
-      "processingTime": "3 weeks if applying from outside the UK; 8 weeks if applying from inside the UK",
+      "processingTime": {
+        "minDays": 21,
+        "maxDays": 56
+      },
+      "processingTimeNotes": "3 weeks if applying from outside the UK; 8 weeks if applying from inside the UK",
       "fees": "Application fee varies by route and visa length, plus the Immigration Health Surcharge per year of stay; see gov.uk/skilled-worker-visa/how-much-it-costs for current rates",
       "validityDuration": "Up to 5 years per grant; extendable, and can lead to settlement after 5 years",
       "sourceUrl": "https://www.gov.uk/skilled-worker-visa"
@@ -137,7 +157,11 @@
         "TB test certificate, if applicable to your country",
         "ATAS certificate, for certain postgraduate courses"
       ],
-      "processingTime": "3 weeks if applying from outside the UK; 8 weeks if applying from inside the UK",
+      "processingTime": {
+        "minDays": 21,
+        "maxDays": 56
+      },
+      "processingTimeNotes": "3 weeks if applying from outside the UK; 8 weeks if applying from inside the UK",
       "fees": "\u00a3558 to apply from outside the UK (same fee to extend or switch from inside the UK), plus the Immigration Health Surcharge",
       "validityDuration": "Up to 5 years for degree-level courses if you're 18 or over; up to 2 years for below-degree-level courses",
       "sourceUrl": "https://www.gov.uk/student-visa"

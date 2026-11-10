@@ -55,7 +55,7 @@ function sanitizeFileName(name) {
  * @param {object} file multer file object (originalname, mimetype, size, buffer)
  * @param {string} documentType
  */
-function validateUploadInput(file, documentType) {
+function validateUploadInput(file, documentType, expirationDate) {
   const errors = {};
 
   if (!file || !file.buffer || file.size === 0) {
@@ -70,6 +70,17 @@ function validateUploadInput(file, documentType) {
 
   if (!DOCUMENT_TYPES.includes(documentType)) {
     errors.documentType = `documentType must be one of: ${DOCUMENT_TYPES.join(', ')}.`;
+  }
+
+  // Optional — not every document has a meaningful expiration. When
+  // provided, it just needs to be a real date; a date in the past is
+  // allowed (someone might be uploading an already-expired passport
+  // they're in the process of renewing).
+  if (expirationDate !== undefined && expirationDate !== null && expirationDate !== '') {
+    const parsed = new Date(expirationDate);
+    if (Number.isNaN(parsed.getTime())) {
+      errors.expirationDate = 'expirationDate must be a valid date (e.g. 2027-03-15).';
+    }
   }
 
   return errors;
@@ -88,6 +99,7 @@ function toPublicDocument(id, data) {
     size: data.size,
     uploadedAt: data.uploadedAt,
     ownerUid: data.ownerUid,
+    expirationDate: data.expirationDate || null,
   };
 }
 
@@ -127,7 +139,7 @@ async function loadOwnedDocument(uid, documentId) {
  * @param {string} documentType
  * @returns {Promise<object>} public document metadata
  */
-async function uploadDocument(uid, file, documentType) {
+async function uploadDocument(uid, file, documentType, expirationDate) {
   const docRef = getDb().collection(DOCUMENTS_COLLECTION).doc();
   const fileName = sanitizeFileName(file.originalname);
   const storagePath = `users/${uid}/documents/${docRef.id}_${fileName}`;
@@ -147,6 +159,8 @@ async function uploadDocument(uid, file, documentType) {
     size: file.size,
     storagePath,
     uploadedAt: new Date().toISOString(),
+    // Normalized to ISO or null to remove guessing date format
+    expirationDate: expirationDate ? new Date(expirationDate).toISOString() : null,
   };
 
   try {
