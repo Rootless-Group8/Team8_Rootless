@@ -3,6 +3,8 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/config";
 import { getAuthErrorMessage } from "./authErrors";
 import { useNavigate } from "react-router-dom";
+import TextInput from "../components/TextInput";
+import Button from "../components/Button";
 
 export default function LoginPage() {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -10,8 +12,7 @@ export default function LoginPage() {
   const [submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
 
-  function handleChange(e) {
-    const { name, value } = e.target;
+  function updateField(name, value) {
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
@@ -53,33 +54,27 @@ export default function LoginPage() {
       )}
 
       <form onSubmit={handleSubmit} noValidate>
-        <div className="form-field">
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            value={form.email}
-            onChange={handleChange}
-            autoComplete="email"
-          />
-        </div>
+        <TextInput
+          label="Email"
+          type="email"
+          value={form.email}
+          onChange={(v) => updateField("email", v)}
+          autoComplete="email"
+        />
 
-        <div className="form-field">
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            value={form.password}
-            onChange={handleChange}
-            autoComplete="current-password"
-          />
-        </div>
+        <TextInput
+          label="Password"
+          type="password"
+          value={form.password}
+          onChange={(v) => updateField("password", v)}
+          autoComplete="current-password"
+        />
 
-        <button type="submit" disabled={submitting}>
-          {submitting ? "Logging in..." : "Log in"}
-        </button>
+        <Button
+          type="submit"
+          label={submitting ? "Logging in..." : "Log in"}
+          disabled={submitting}
+        />
       </form>
     </div>
   );

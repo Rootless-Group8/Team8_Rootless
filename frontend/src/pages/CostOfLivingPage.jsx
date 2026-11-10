@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ref, get } from "firebase/database";
 import { rtdb } from "../firebase/config";
+import Select from "../components/Select";
 
 const CATEGORY_LABELS = {
   rent: "Rent",
@@ -33,8 +34,8 @@ export default function CostOfLivingPage() {
   }, []);
 
   const countryOptions = Object.entries(countries)
-    .map(([code, c]) => ({ code, name: c.name }))
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .map(([code, c]) => ({ value: code, label: c.name }))
+    .sort((a, b) => a.label.localeCompare(b.label));
 
   async function handleDestinationChange(code) {
     setDestination(code);
@@ -82,20 +83,14 @@ export default function CostOfLivingPage() {
       <h1>Cost of Living</h1>
       <p>See a monthly cost breakdown for a destination before you commit to moving there.</p>
 
-      <div className="form-field cost-of-living-select">
-        <label htmlFor="destination">Destination country</label>
-        <select
-          id="destination"
+      <div className="cost-of-living-select">
+        <Select
+          label="Destination country"
+          placeholder="Select a country"
           value={destination}
-          onChange={(e) => handleDestinationChange(e.target.value)}
-        >
-          <option value="">Select a country</option>
-          {countryOptions.map((c) => (
-            <option key={c.code} value={c.code}>
-              {c.name}
-            </option>
-          ))}
-        </select>
+          onChange={handleDestinationChange}
+          options={countryOptions}
+        />
       </div>
 
       {status === "loading" && <p className="loading-message">Loading cost data...</p>}
