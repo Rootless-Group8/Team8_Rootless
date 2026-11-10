@@ -139,7 +139,11 @@ h1 {
   font-family: var(--ui-font-family-display);
   font-size: var(--ui-font-size-display);
   line-height: 1.2;
-  color: #ffffff;
+  /* Was hardcoded #ffffff — not a contrast failure (19.44:1, even
+     higher than the token below), but a design-token consistency
+     issue: every other text element in the app uses the warm cream
+     --ui-color-text, not pure white. */
+  color: var(--ui-color-text);
   margin: var(--ui-space-2) 0 var(--ui-space-4);
 }
 
@@ -161,6 +165,17 @@ h1 {
   padding: var(--ui-space-2) var(--ui-space-2) var(--ui-space-2) var(--ui-space-5);
   max-width: 420px;
   margin-bottom: var(--ui-space-5);
+}
+
+/* Accessibility fix: the input's own `outline: none` below removed the
+   only focus indicator this field had, with no replacement anywhere —
+   a keyboard user tabbing here previously saw zero visual change on
+   focus (WCAG 2.4.7). :focus-within highlights the whole pill instead
+   of the input alone, since the input has no border of its own for an
+   inner outline to attach to meaningfully. */
+.hero-search:focus-within {
+  box-shadow: var(--ui-focus-ring);
+  border-color: var(--ui-color-border-focus);
 }
 
 .hero-search input {
@@ -273,7 +288,14 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  /* CRITICAL FIX: was `color: #ffffff` — these icons sit on 4 different
+     aurora background colors (gold/green/coral/blue, set per-item via
+     inline style in HomePage.jsx). White measured 1.63:1 on gold and
+     1.66:1 on green — both fail even the lenient 3:1 non-text/icon
+     threshold (WCAG 1.4.11). --ui-color-bg-surface passes comfortably
+     against all 4 (10.52 / 10.38 / 4.84 / 3.2), computed and verified
+     rather than guessed. */
+  color: var(--ui-color-bg-surface);
 }
 
 .helps-card h3 {
@@ -420,16 +442,6 @@ button:hover,
 button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-}
-
-.button-link-secondary {
-  background: transparent;
-  color: var(--ui-color-text);
-  border: 1px solid var(--ui-color-secondary-border);
-}
-
-.button-link-secondary:hover {
-  background: var(--ui-color-secondary-hover-bg);
 }
 
 .home-actions {

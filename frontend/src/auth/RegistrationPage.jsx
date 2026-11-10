@@ -3,6 +3,8 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { auth, db } from "../firebase/config";
 import { getAuthErrorMessage } from "./authErrors";
+import TextInput from "../components/TextInput";
+import Button from "../components/Button";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MIN_PASSWORD_LENGTH = 8; // Firebase's own minimum is 6 — we enforce 8 ourselves client-side
@@ -19,8 +21,7 @@ export default function RegistrationPage() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  function handleChange(e) {
-    const { name, value } = e.target;
+  function updateField(name, value) {
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
@@ -106,63 +107,46 @@ export default function RegistrationPage() {
       )}
 
       <form onSubmit={handleSubmit} noValidate>
-        <div className="form-field">
-          <label htmlFor="fullName">Full name</label>
-          <input
-            id="fullName"
-            name="fullName"
-            type="text"
-            value={form.fullName}
-            onChange={handleChange}
-            autoComplete="name"
-          />
-          {errors.fullName && <span className="field-error">{errors.fullName}</span>}
-        </div>
+        <TextInput
+          label="Full name"
+          value={form.fullName}
+          onChange={(v) => updateField("fullName", v)}
+          autoComplete="name"
+          error={errors.fullName}
+        />
 
-        <div className="form-field">
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            value={form.email}
-            onChange={handleChange}
-            autoComplete="email"
-          />
-          {errors.email && <span className="field-error">{errors.email}</span>}
-        </div>
+        <TextInput
+          label="Email"
+          type="email"
+          value={form.email}
+          onChange={(v) => updateField("email", v)}
+          autoComplete="email"
+          error={errors.email}
+        />
 
-        <div className="form-field">
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            value={form.password}
-            onChange={handleChange}
-            autoComplete="new-password"
-          />
-          {errors.password && <span className="field-error">{errors.password}</span>}
-        </div>
+        <TextInput
+          label="Password"
+          type="password"
+          value={form.password}
+          onChange={(v) => updateField("password", v)}
+          autoComplete="new-password"
+          error={errors.password}
+        />
 
-        <div className="form-field">
-          <label htmlFor="confirmPassword">Confirm password</label>
-          <input
-            id="confirmPassword"
-            name="confirmPassword"
-            type="password"
-            value={form.confirmPassword}
-            onChange={handleChange}
-            autoComplete="new-password"
-          />
-          {errors.confirmPassword && (
-            <span className="field-error">{errors.confirmPassword}</span>
-          )}
-        </div>
+        <TextInput
+          label="Confirm password"
+          type="password"
+          value={form.confirmPassword}
+          onChange={(v) => updateField("confirmPassword", v)}
+          autoComplete="new-password"
+          error={errors.confirmPassword}
+        />
 
-        <button type="submit" disabled={submitting}>
-          {submitting ? "Creating account..." : "Create account"}
-        </button>
+        <Button
+          type="submit"
+          label={submitting ? "Creating account..." : "Create account"}
+          disabled={submitting}
+        />
       </form>
     </div>
   );

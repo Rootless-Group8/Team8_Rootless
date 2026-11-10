@@ -1,0 +1,60 @@
+.relocation-guides-page {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--ui-space-7) var(--ui-space-3);
+}
+
+.relocation-guides-select {
+  margin-bottom: var(--ui-space-5);
+}
+
+.relocation-guides-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ui-space-2);
+  margin-bottom: var(--ui-space-4);
+}
+
+.relocation-guides-tab {
+  padding: var(--ui-space-2) var(--ui-space-4);
+  border-radius: var(--ui-radius-pill);
+  background: transparent;
+  color: var(--ui-color-text);
+  border: 1px solid var(--ui-color-border);
+  font-weight: var(--ui-font-weight-medium);
+}
+
+.relocation-guides-tab:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.relocation-guides-tab--active {
+  background: var(--ui-color-primary);
+  color: var(--ui-color-primary-text-on, #241a05);
+  border-color: var(--ui-color-primary);
+}
+
+.relocation-guides-panel {
+  background: var(--ui-color-bg-surface);
+  border-radius: var(--ui-radius);
+  padding: var(--ui-space-4);
+}
+
+.relocation-guides-summary {
+  font-weight: var(--ui-font-weight-bold);
+  margin: 0 0 var(--ui-space-3);
+}
+
+.relocation-guides-tips {
+  margin: 0 0 var(--ui-space-3);
+  padding-left: var(--ui-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-2);
+}
+
+.relocation-guides-source {
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-bold);
+  color: var(--ui-color-primary);
+}
