@@ -12,6 +12,7 @@ const sidebarLinks = [
   { to: "/cost-of-living", label: "Cost of Living" },
   { to: "/affordability", label: "Affordability Calculator" },
   { to: "/checklist", label: "Checklist" },
+  { to: "/community-tips", label: "Community Tips" },
   { to: "/documents", label: "Documents" },
   { to: "/account", label: "Account" },
   { to: "/settings", label: "Settings" },
@@ -78,8 +79,7 @@ export default function DashboardPage() {
             <section className="dashboard-card">
               <h2>Checklist</h2>
               <p className="placeholder-note">
-                See the steps you need to complete for your move — currently a sample checklist
-                until the real Checklist Generator API is wired in.
+                See the steps you need to complete for your move, personalized based on your relocation profile.
               </p>
               <Link to="/checklist" className="dashboard-card-cta">
                 View your checklist →

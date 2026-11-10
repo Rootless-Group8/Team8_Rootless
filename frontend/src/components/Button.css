@@ -17,7 +17,14 @@
 /* Primary: solid fill */
 .ui-btn--primary {
   background-color: var(--ui-color-primary);
-  color: #ffffff;
+  /* CRITICAL FIX: was `color: #ffffff` — white text on this gold
+     background measures 1.63:1 contrast, a severe WCAG failure (needs
+     4.5:1). This affected every primary button in the app (Log in,
+     Create account, Compare, Save Profile, etc.) — the single most
+     common interactive element in the whole product. The correct
+     token, already used correctly for this exact text-on-gold pairing
+     everywhere else (e.g. .nav-cta), measures 10.49:1. */
+  color: var(--ui-color-primary-text-on);
 }
 .ui-btn--primary:hover:not(:disabled) {
   background-color: var(--ui-color-primary-hover);
