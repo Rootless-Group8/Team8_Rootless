@@ -20,6 +20,10 @@ Schema written:
     If a source gives no number, minDays/maxDays are null in the JSON. Firebase
     doesn't store nulls, so processingTime will be absent for that record.
 
+Later countries use the same script with their own data file:
+seed_visa_programs_de_pt.json (Germany/Portugal) and
+seed_visa_programs_mx_es.json (Mexico/Spain, TM08-92).
+
 USAGE:
     python seed_visa_programs.py --data seed_visa_programs_ca_uk.json \
         --cred serviceAccountKey.json \
