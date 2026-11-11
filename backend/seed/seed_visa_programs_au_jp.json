@@ -1,0 +1,146 @@
+{
+  "_meta": {
+    "researchedFrom": "Australia: Department of Home Affairs pages on immi.homeaffairs.gov.au (Visitor visa subclass 600 Tourist stream, Student visa subclass 500, and the visa processing times guide, read 2026-11-10). Japan: Ministry of Foreign Affairs pages on mofa.go.jp (visa exemption list, visa processing time, validity, visa fees effective 1 July 2026, JAPAN eVISA, Student visa), the Embassy of Japan in the United States (short-term visit document list and USD fee table), and the Immigration Services Agency of Japan on moj.go.jp/isa (Certificate of Eligibility and permission to work part-time).",
+    "lastVerified": "2026-11-10",
+    "notFullyVerified": [
+      "AU/student_visa processingTime: Home Affairs only publishes processing times per education sector, so the Higher Education Sector figures (50% within 25 days, 90% within 7 months) are used; 7 months is converted to 213 days",
+      "JP/temporary_visitor_visa and JP/student_visa fees: MOFA gives approximate yen amounts and says fees are paid in local currency, so the USD figures come from the Embassy of Japan in the United States and other embassies will charge different local amounts",
+      "JP/student_visa validityDuration: the 28 hours per week part-time work limit is the standard limit under Japan's permission to engage in activity other than that permitted, but the ISA application page that was read does not state the number of hours"
+    ]
+  },
+  "AU": {
+    "visitor_visa": {
+      "name": "Visitor Visa (Subclass 600) - Tourist Stream",
+      "category": "tourist_visitor",
+      "eligibilityCriteria": [
+        "Passport holders of some countries (for example the US, Canada, the UK and Japan) may be able to use an Electronic Travel Authority (subclass 601) or eVisitor (subclass 651) instead; check Home Affairs' visa options for your citizenship",
+        "Intend to visit Australia only, for tourism, a cruise or visiting family and friends, and not for business or medical treatment",
+        "Have, or have access to, enough money to support yourself during your stay",
+        "Not work in Australia (study or training of up to 3 months is allowed)",
+        "Be outside Australia when you apply and when the visa is decided",
+        "Be a genuine visitor who intends to stay temporarily and obey the visa conditions and stay period",
+        "Meet Australia's health and character requirements, and have paid back or arranged to pay back any debt to the Australian Government"
+      ],
+      "requiredDocuments": [
+        "Online application through ImmiAccount",
+        "Passport pages showing your photo, personal details, and issue and expiry dates",
+        "National identity card, if you have one, and proof of any change of name",
+        "Proof you have enough money for your stay and to leave Australia, such as 3 months of itemised personal bank statements, pay slips, tax records or credit card statements",
+        "Invitation letter from a relative or friend in Australia, if you are visiting them",
+        "Proof you have reasons to return home, such as a letter from your employer, proof of study, family ties, or property in your home country",
+        "Military service records, if applicable, and a police certificate if requested",
+        "Birth certificate showing both parents' names, for applicants under 18"
+      ],
+      "processingTime": {
+        "minDays": 21,
+        "maxDays": 31
+      },
+      "processingTimeNotes": "Home Affairs' processing times guide (checked 2026-11-10) shows 50% of Tourist stream applications processed within 21 days and 90% within 31 days. It is a guide based on recently decided applications, not a guarantee, and incomplete applications take longer.",
+      "fees": "From AUD $250 base application charge. A lower charge applies to eligible Pacific Island and Timor-Leste citizens from 1 July 2026. Health checks, police certificates and biometrics may cost extra.",
+      "validityDuration": "Stay period is set on the grant letter case by case; generally 3 months, and up to 12 months in some circumstances. Can be granted for single or multiple entry. The visa cannot be extended in Australia.",
+      "sourceUrl": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/visitor-600/tourist-stream-overseas"
+    },
+    "student_visa": {
+      "name": "Student Visa (Subclass 500)",
+      "category": "student",
+      "eligibilityCriteria": [
+        "Be enrolled in a full-time course registered on CRICOS and hold a valid Confirmation of Enrolment (CoE) for every intended course when you apply and when the visa is decided",
+        "Be 6 years or older, and have adequate welfare arrangements if you are under 18",
+        "Be a genuine student who understands that study is the primary reason for the visa",
+        "Have enough money for travel, 12 months of living costs (see minimumRequiredFunds), course fees and any school costs for children",
+        "Hold Overseas Student Health Cover (OSHC) for the whole stay, starting from the day you arrive, unless an exception applies",
+        "Meet English language requirements, or fall into an exemption category",
+        "Apply from outside Australia, unless you hold an eligible visa and meet an exemption (rules in force from 2 October 2026)",
+        "Not bring partners or children to Australia unless an exemption applies (rules in force from 2 October 2026)",
+        "Meet Australia's health and character requirements and, if 18 or older, sign the Australian Values Statement"
+      ],
+      "requiredDocuments": [
+        "Online application through ImmiAccount",
+        "Valid passport and identity documents",
+        "Confirmation of Enrolment (CoE) for each course, or a letter of support or AASES form if exempt",
+        "Answers to the Genuine Student questions (in English, up to 150 words each) with supporting documents",
+        "English language test results, if required",
+        "Evidence of financial capacity, such as bank transaction statements showing the history of funds, or proof of parents' or partner's annual income",
+        "Evidence of Overseas Student Health Cover (OSHC)",
+        "Welfare arrangements and parental consent, for students under 18",
+        "Polio vaccination certificate, if you travelled from or spent time in a country at risk of polio",
+        "Biometrics and health exams, if requested"
+      ],
+      "processingTime": {
+        "minDays": 25,
+        "maxDays": 213
+      },
+      "processingTimeNotes": "Home Affairs' processing times guide (checked 2026-11-10) shows 50% of Higher Education Sector applications processed within 25 days and 90% within 7 months. Times vary by education sector, and applications lodged outside Australia are prioritised under Ministerial Direction 115. Lodge well before your course start date.",
+      "fees": "From AUD $2,500 base application charge, with an extra charge for each family member who applies. Lower charges apply to eligible Pacific Island, Timor-Leste and ASEAN citizens and some ELICOS and Non-Award applicants. Health checks, police certificates and biometrics may cost extra.",
+      "validityDuration": "Up to 6 years, in line with your enrolment; the type and length of your course determine the grant period. You can travel in and out of Australia while the visa is valid and work up to 48 hours a fortnight while your course is in session (no limit for master's by research and doctoral students).",
+      "sourceUrl": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "minimumRequiredFunds": {
+        "amount": 29710,
+        "currency": "AUD",
+        "period": "12 months of living costs",
+        "notes": "Living cost figure for the student alone; add AUD $10,394 for a partner and AUD $4,449 for each child, plus the first 12 months of course fees and travel costs. Alternatively, show that your parents or partner earned at least AUD $87,856 in the 12 months before you apply (AUD $102,500 if family members come with you)."
+      }
+    }
+  },
+  "JP": {
+    "temporary_visitor_visa": {
+      "name": "Temporary Visitor Visa (Short-Term Stay)",
+      "category": "tourist_visitor",
+      "eligibilityCriteria": [
+        "Nationals of 74 visa-exempt countries and regions (for example the US, Canada, the UK and Australia) can visit without a visa, usually for up to 90 days; check MOFA's visa exemption list for your citizenship",
+        "For stays of up to 90 days for tourism, visiting friends or relatives, business (without pay), conferences or short study, with no paid activities in Japan",
+        "Apply at the Japanese embassy or consulate covering your place of residence; a visa cannot be applied for inside Japan",
+        "Residents of Australia, Brazil, Cambodia, Canada, Saudi Arabia, South Africa, Taiwan, the UK and the US can apply online through JAPAN eVISA for a single-entry tourism visa",
+        "Show the purpose of the trip and that you can pay for it, with a detailed travel plan and return flight"
+      ],
+      "requiredDocuments": [
+        "Visa application form, signed by the applicant",
+        "Valid passport",
+        "One recent passport-type photo",
+        "Proof of lawful residence in the country where you apply, if you are not a citizen of it",
+        "Detailed travel itinerary with dates, activities, locations and accommodation in Japan",
+        "Flight itinerary covering the whole trip, including the return flight",
+        "Recent bank statement (at least one month), or a guarantor's ID and bank statement if someone else is paying",
+        "Letter of invitation and letter of guarantee, if visiting relatives or friends or for business"
+      ],
+      "processingTime": {
+        "minDays": 7,
+        "maxDays": 7
+      },
+      "processingTimeNotes": "MOFA says visas are issued 5 working days (about 7 calendar days) from the day after the application is received if there are no problems. If the embassy sends the application to MOFA in Tokyo for further examination, it may take more than a month, and processing can be slower in busy periods.",
+      "fees": "From 1 July 2026, about 15,000 yen for a single-entry visa and about 30,000 yen for a multiple-entry visa, paid in local currency (for example USD $101 single entry and USD $201 double or multiple entry at the Embassy of Japan in the US). No fee is charged if the visa is not issued, and some nationalities are exempt or pay different amounts.",
+      "validityDuration": "A single-entry visa must be used within 3 months of issue; on landing you are given a period of stay of 15, 30 or 90 days (up to 90 days). Extensions are allowed only in exceptional humanitarian cases.",
+      "sourceUrl": "https://www.mofa.go.jp/j_info/visit/visa/index.html"
+    },
+    "student_visa": {
+      "name": "Student Visa (Status of Residence: Student)",
+      "category": "student",
+      "eligibilityCriteria": [
+        "Accepted to study at a Japanese university, junior college, college of technology, high school, vocational school, Japanese language school or equivalent institution",
+        "Hold a Certificate of Eligibility (COE) for the Student status, applied for by a proxy in Japan (usually the school) at a regional immigration services bureau",
+        "Show that you, or a sponsor, can pay tuition and living costs for the stay (expense support statement submitted with the COE application)",
+        "Apply at the Japanese embassy or consulate covering your place of residence after the COE is issued",
+        "Applications without a COE are possible but need many more supporting documents and can take several months"
+      ],
+      "requiredDocuments": [
+        "Valid passport",
+        "One visa application form",
+        "One photograph meeting the specified standard",
+        "Certificate of Eligibility (original or one copy, or a printed or displayed copy of an electronic COE)",
+        "For the COE application in Japan: COE application form, photo, expense support documents and a confirmation form completed by the school",
+        "Other documents depending on your nationality; check the Japanese embassy or consulate in your area"
+      ],
+      "processingTime": {
+        "minDays": 37,
+        "maxDays": 97
+      },
+      "processingTimeNotes": "The Immigration Services Agency's standard processing period for a Certificate of Eligibility is 1 to 3 months (about 30 to 90 days). After the COE is issued, the embassy or consulate normally issues the visa within 5 working days (about 7 days), so the total is roughly 37 to 97 days. Without a COE the visa can take several months.",
+      "fees": "Charged at the standard visa fee, about 15,000 yen for a single-entry visa from 1 July 2026, paid in local currency (for example USD $101 at the Embassy of Japan in the US). No fee is charged for the COE application, and some nationalities are exempt or pay different amounts.",
+      "validityDuration": "The visa must be used within 3 months of issue. The period of stay is set individually by the Minister of Justice, up to 4 years and 3 months. Part-time work requires separate permission to engage in activity other than that permitted (generally up to 28 hours per week).",
+      "sourceUrl": "https://www.mofa.go.jp/j_info/visit/visa/long/visa6.html"
+    }
+  },
+  "_notes": {
+    "digitalNomad": "Only tourist/visitor and student visas are seeded for Australia and Japan, per the team's updated scope. Work visas and digital nomad routes (for example Japan's Designated Activities (Digital Nomad) status) are not included."
+  }
+}

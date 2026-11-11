@@ -2,7 +2,7 @@
 verify_visa_programs.py
 Verifies the acceptance criteria for the seeded visa program data
 (Canada/UK from TM08-21, Germany/Portugal from Sprint 4, Mexico/Spain
-from TM08-92):
+from TM08-92, Australia/Japan from TM08-101):
   - At least 3 visa types are documented for CA and GB, and at least 2
     (tourist/visitor and student) for the other countries.
   - Each record includes eligibility, documents, processing time,
@@ -46,7 +46,7 @@ PLACEHOLDER_MARKERS = ["lorem ipsum", "todo", "tbd", "xxx", "placeholder", "n/a"
 # CA/GB were seeded with 3 visa types; later countries only get tourist + student.
 MIN_VISA_TYPES = {"CA": 3, "GB": 3}
 DEFAULT_MIN_VISA_TYPES = 2
-DEFAULT_COUNTRIES = ["CA", "GB", "DE", "PT", "MX", "ES"]
+DEFAULT_COUNTRIES = ["CA", "GB", "DE", "PT", "MX", "ES", "AU", "JP"]
 def connect_firebase(cred_path: str, db_url: str) -> None:
     if not firebase_admin._apps:
         cred = credentials.Certificate(cred_path)
@@ -125,7 +125,7 @@ def main():
         "--countries",
         nargs="+",
         default=DEFAULT_COUNTRIES,
-        help="Country codes to check (default: CA GB DE PT MX ES)",
+        help="Country codes to check (default: CA GB DE PT MX ES AU JP)",
     )
     args = parser.parse_args()
     connect_firebase(args.cred, args.db_url)
