@@ -3,6 +3,7 @@ const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const documentRoutes = require('./routes/documentRoutes');
+const monitoringRoutes = require('./routes/monitoringRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
 const reminderRoutes = require('./routes/reminderRoutes');
 const checklistRoutes = require('./routes/checklistRoutes');
@@ -44,6 +45,7 @@ function createApp({ db } = {}) {
     app.use('/api/eligibility', eligibilityRoutes(db));
   }
   if (db) app.use('/api/cost-of-living', costOfLivingRoutes(db));
+  app.use('/api/monitoring', monitoringRoutes);
 
   // Central error handler - never leak stack traces or internals to clients.
   // eslint-disable-next-line no-unused-vars
