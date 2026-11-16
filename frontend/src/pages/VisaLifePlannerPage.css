@@ -1,0 +1,104 @@
+.visa-life-planner-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--ui-space-7) var(--ui-space-3);
+}
+
+.visa-life-planner-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--ui-space-3);
+  margin-bottom: var(--ui-space-5);
+}
+
+.visa-life-planner-form {
+  margin-bottom: var(--ui-space-5);
+  padding: var(--ui-space-4);
+  background: var(--ui-color-bg-surface);
+  border-radius: var(--ui-radius);
+}
+
+.visa-life-planner-form-actions {
+  display: flex;
+  gap: var(--ui-space-3);
+  margin-top: var(--ui-space-3);
+}
+
+.visa-life-planner-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-3);
+}
+
+.visa-life-planner-card {
+  background: var(--ui-color-bg-surface);
+  border-radius: var(--ui-radius);
+  padding: var(--ui-space-4);
+}
+
+.visa-life-planner-card h3 {
+  margin: var(--ui-space-2) 0 var(--ui-space-1);
+}
+
+.visa-life-planner-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.visa-life-planner-type {
+  display: inline-block;
+  padding: var(--ui-space-1) var(--ui-space-3);
+  border-radius: var(--ui-radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ui-color-text);
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-medium);
+}
+
+.visa-life-planner-status {
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-medium);
+  padding: var(--ui-space-1) var(--ui-space-3);
+  border-radius: var(--ui-radius-pill);
+}
+
+.visa-life-planner-status--upcoming {
+  background: rgba(240, 200, 80, 0.15);
+  color: var(--ui-color-primary, #f0c850);
+}
+
+.visa-life-planner-status--completed {
+  background: rgba(100, 200, 120, 0.15);
+  color: #7fd99a;
+}
+
+.visa-life-planner-status--cancelled {
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 0.6;
+}
+
+.visa-life-planner-date {
+  margin: 0 0 var(--ui-space-2);
+  opacity: 0.8;
+}
+
+.visa-life-planner-meta {
+  margin: 0 0 var(--ui-space-2);
+  font-size: var(--ui-font-size-sm);
+  opacity: 0.7;
+}
+
+.visa-life-planner-notes {
+  margin: 0 0 var(--ui-space-3);
+  line-height: 1.5;
+}
+
+.visa-life-planner-card-actions {
+  display: flex;
+  gap: var(--ui-space-2);
+}
