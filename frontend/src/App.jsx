@@ -19,6 +19,7 @@ import DocumentUploadPage from "./pages/DocumentUploadPage";
 import ChecklistPage from "./pages/ChecklistPage";
 import AffordabilityCalculatorPage from "./pages/AffordabilityCalculatorPage";
 import CommunityTipsPage from "./pages/CommunityTipsPage";
+import VisaLifePlannerPage from "./pages/VisaLifePlannerPage";
 
 export default function App() {
   const { user } = useAuth();
@@ -135,6 +136,14 @@ export default function App() {
               <ProtectedRoute> 
                 <CommunityTipsPage /> 
               </ProtectedRoute> 
+            } 
+          />
+          <Route 
+            path="/life-planner" 
+            element={
+              <ProtectedRoute>
+                <VisaLifePlannerPage />
+              </ProtectedRoute>
             } 
           />
         </Routes>
