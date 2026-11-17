@@ -1,0 +1,142 @@
+{
+  "_meta": {
+    "researchedFrom": "Mexico: Mexican consulate pages on consulmex.sre.gob.mx (Presidio visitor visa page, San Diego 2026 student visa sheet, Vancouver student visa page). Spain: Spanish consulate pages on exteriores.gob.es (Miami Schengen visa page, Los Angeles study visa page, updated March 2026). The student records keep the slugs and content seeded earlier from studentPrograms.json, brought up to the shared schema with structured processing times.",
+    "lastVerified": "2026-11-03",
+    "notFullyVerified": [
+      "MX/visitor_visa processingTime: the Presidio page gives no processing time, so the 1 to 10 business day range comes from other Mexican consulates (New York, Chicago, Atlanta), converted to 1 to 14 calendar days",
+      "MX/temporary_resident_student_visa processingTime: taken from the San Diego consulate's 2026 sheet (up to 10 business days, converted to 14 calendar days); the cited Vancouver page does not publish a processing time"
+    ]
+  },
+  "MX": {
+    "visitor_visa": {
+      "name": "Visitor Visa without Permission to Conduct Remunerated Activities",
+      "category": "tourist_visitor",
+      "eligibilityCriteria": [
+        "Nationals of many countries (for example the US and Canada) can visit Mexico visa-free for up to 180 days; check whether your citizenship needs a visa",
+        "For stays of up to 180 days with no paid work in Mexico, such as tourism, business meetings, short courses or visiting family",
+        "Hold a valid passport; if you are not a citizen of the country where you apply, show proof of legal stay there",
+        "Show official documents proving at least one of: ties to your place of residence, economic solvency, an invitation from a public or private organisation, or another qualifying purpose such as scientific research or a federally sponsored event"
+      ],
+      "requiredDocuments": [
+        "Completed visa application form",
+        "Valid passport (original)",
+        "Proof of legal stay in the country of application, if you are not a citizen of that country",
+        "Supporting documents for your category: proof of ties to your place of residence, proof of economic solvency, or an invitation letter",
+        "Consular fee payment",
+        "Biometrics and an interview at the consulate appointment"
+      ],
+      "processingTime": {
+        "minDays": 1,
+        "maxDays": 14
+      },
+      "processingTimeNotes": "Mexican consulates generally process visitor visas within 1 to 10 business days after the interview (about 1 to 14 calendar days). The Presidio page does not state a time, so this range comes from other consulates' published guidance; confirm with the consulate handling your application.",
+      "fees": "USD $54 consular fee for processing and issuing the visa (Presidio consulate). Fees are set under Mexico's Federal Rights Law and can differ by consulate and nationality.",
+      "validityDuration": "Allows stays of up to 180 days; entry is still subject to approval by an immigration officer at the port of entry",
+      "sourceUrl": "https://consulmex.sre.gob.mx/presidio/index.php/visas/30-visas/151-without-permission"
+    },
+    "temporary_resident_student_visa": {
+      "name": "Temporary Resident Student Visa (Residente Temporal Estudiante)",
+      "category": "student",
+      "eligibilityCriteria": [
+        "Program, course, training, or research lasts longer than 180 days (shorter stays may qualify for a visitor permit instead of a student visa)",
+        "Accepted by an institution within Mexico's National Educational System (public or private)",
+        "Prove economic solvency, either through qualifying income or a qualifying bank balance (see minimumRequiredFunds)",
+        "No disqualifying criminal history under Mexican immigration law",
+        "Applicants receiving a scholarship directly from the Mexican government are exempt from the economic solvency requirement"
+      ],
+      "requiredDocuments": [
+        "Completed visa application form",
+        "Valid passport (original plus a photocopy of the photo/data page)",
+        "Letter of acceptance from the institution, stating program level, course name, start and end dates, and fees",
+        "Proof of economic solvency: either qualifying monthly income or a qualifying 3-month average bank balance (ink-stamped bank statements only, electronic statements are not accepted without an original stamp)",
+        "Passport-style photograph meeting the consulate's size and background specifications",
+        "Consular fee payment (accepted payment method varies by consulate)"
+      ],
+      "processingTime": {
+        "minDays": 1,
+        "maxDays": 14
+      },
+      "processingTimeNotes": "The San Diego consulate's 2026 guidance says processing may take up to 10 business days (about 14 calendar days) after the in-person interview, and issuance is not guaranteed. The Vancouver consulate does not publish a fixed duration; confirm current timing with the nearest consulate.",
+      "fees": "Varies by consulate location; for example, the San Diego consulate charges a non-refundable USD $56 processing fee (cash only) in 2026. Contact the nearest Mexican consulate for the current fee.",
+      "validityDuration": "Single-entry visa valid for 180 days; holder must apply to Mexico's National Migration Institute (INM) for a residence card within 30 days of entering Mexico to remain for the full program length",
+      "sourceUrl": "https://consulmex.sre.gob.mx/vancouver/index.php/es/temporary-student-resident-visa",
+      "minimumRequiredFunds": {
+        "amount": 21760,
+        "currency": "CAD",
+        "period": "3-month average bank balance",
+        "notes": "Figures published by the Mexican Consulate General in Vancouver, for applicants proving solvency via bank statements. A qualifying monthly income of CAD $2,090 or more over the same 3-month period is accepted as an alternative to the lump-sum balance. Exact amounts can vary by consulate location."
+      }
+    }
+  },
+  "ES": {
+    "schengen_visitor_visa": {
+      "name": "Schengen Visitor Visa (Short Stay)",
+      "category": "tourist_visitor",
+      "eligibilityCriteria": [
+        "Nationals of many countries (for example the US, Canada, the UK and Australia) can visit visa-free for up to 90 days in any 180-day period; a visa is needed only if your citizenship is on the EU visa-required list",
+        "Spain must be your only or main destination for a Spanish consulate to handle your application",
+        "Apply at the consulate covering the place where you legally reside",
+        "Show the purpose of your trip, enough money for the stay, and that you intend to leave the Schengen area before the visa expires",
+        "Have travel medical insurance valid across the Schengen area with at least 30,000 EUR coverage"
+      ],
+      "requiredDocuments": [
+        "Completed Schengen visa application form",
+        "Recent passport photo",
+        "Valid passport (issued within the last 10 years, valid at least 3 months beyond departure, with at least 2 blank pages)",
+        "Proof of residence in the consulate's district",
+        "Travel medical insurance (minimum 30,000 EUR coverage)",
+        "Documents showing the purpose of the trip, such as flight and accommodation bookings or an invitation",
+        "Proof of financial means for the stay",
+        "Proof of intent to leave, such as a return ticket",
+        "Visa fee payment"
+      ],
+      "processingTime": {
+        "minDays": 15,
+        "maxDays": 45
+      },
+      "processingTimeNotes": "The legal decision period is 15 calendar days from the day after the application is submitted, extendable to 45 calendar days if an interview or additional documents are requested. Applications can be lodged between 6 months and 15 days before travel.",
+      "fees": "USD $94 for applicants over 12; USD $47 for children aged 6 to 11; free for children aged 5 and under (Miami consulate; other consulates publish fees in their local currency). The fee is not refunded if the visa is refused.",
+      "validityDuration": "Up to 90 days within any 180-day period across the Schengen area",
+      "sourceUrl": "https://exteriores.gob.es/Consulados/miami/en/ServiciosConsulares/Paginas/Consular/Visados-Schengen.aspx"
+    },
+    "estancia_por_estudios": {
+      "name": "Study Visa (Estancia por Estudios)",
+      "category": "student",
+      "eligibilityCriteria": [
+        "Full-time enrollment (minimum 20 hours/week) at an authorized educational institution in Spain, or doctoral studies, training activities, or an approved mobility/internship/volunteer program",
+        "Required for programs longer than 90 days; shorter programs may qualify for a Schengen short-stay visa instead",
+        "Proof of financial means equivalent to 100% of Spain's IPREM per month, covering the student (plus 75% for a first accompanying family member and 50% for each additional one)",
+        "Valid health insurance with full coverage in Spain (no deductible, copayment, or coverage limit), minimum 30,000 EUR / 50,000 USD",
+        "No disqualifying health conditions under the 2005 International Health Regulations",
+        "For stays over 180 days: a criminal record certificate covering the past 5 years of residence, apostilled and translated into Spanish"
+      ],
+      "requiredDocuments": [
+        "Completed national visa application form",
+        "Valid passport (at least 1 year validity, 2 blank pages, issued within the last 10 years)",
+        "Proof of acceptance from the Spanish educational institution",
+        "Proof of payment of enrollment/tuition fees, or documentation of an exemption or exchange agreement",
+        "Proof of financial means: 3 months of personal bank statements, or a financial sponsorship letter/notarized parental support letter, or proof of a scholarship/loan covering the required amount",
+        "Health insurance certificate meeting Spain's coverage requirements",
+        "Medical certificate (issued within 90 days of application)",
+        "For stays over 180 days: FBI criminal record certificate, apostilled by the US Department of State and translated into Spanish"
+      ],
+      "processingTime": {
+        "minDays": 30,
+        "maxDays": 30
+      },
+      "processingTimeNotes": "Legal decision period is 1 month from the day after a complete application is submitted, though this can extend if an interview or additional documents are requested. The consulate advises allowing at least 4 weeks from submission to visa collection. Applications must be submitted between 2 and 6 months before the program start date.",
+      "fees": "As of January 1, 2026: $160 USD for US citizens, $106 USD for other nationalities; different rates apply for citizens of Australia, Bangladesh, Ethiopia, and Canada based on reciprocity. Fee is non-refundable even if the visa is denied.",
+      "validityDuration": "Visa is valid for the full stay if 6 months or less. For stays longer than 6 months, the visa is valid for 365 days, after which the student must apply for a Foreigner Identity Card (TIE) within 1 month of entering Spain.",
+      "sourceUrl": "https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-estudios.aspx",
+      "minimumRequiredFunds": {
+        "amount": 600,
+        "currency": "USD",
+        "period": "per month of stay",
+        "notes": "100% of Spain's IPREM (Public Multiple Effects Income Indicator) for 2026, for a student traveling alone. Add 75% of IPREM for a first accompanying family member and 50% for each additional family member. Reduced if proof of prepaid accommodation for the full stay is provided."
+      }
+    }
+  },
+  "_notes": {
+    "digitalNomad": "Only tourist/visitor and student visas are seeded for Mexico and Spain, per the team's updated scope. Work visas and digital nomad routes (for example Spain's digital nomad visa) are not included."
+  }
+}
