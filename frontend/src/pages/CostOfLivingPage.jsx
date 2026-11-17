@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ref, get } from "firebase/database";
 import { rtdb } from "../firebase/config";
 import Select from "../components/Select";
+import SourceCitation from "../components/SourceCitation";
 
 const CATEGORY_LABELS = {
   rent: "Rent",
@@ -144,16 +145,12 @@ export default function CostOfLivingPage() {
                   <p className="cost-of-living-note">{category.note}</p>
                 )}
 
-                {category.sourceUrl && (
-                  <a
-                    href={category.sourceUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="cost-of-living-source"
-                  >
-                    Source
-                  </a>
-                )}
+                {/* costOfLiving/{iso2}/categories/{key} has no lastVerifiedAt
+                    field in the current schema (see seed_cost_of_living.py) —
+                    SourceCitation just omits the verified-date half of the
+                    line until that field exists. Adding it is a follow-up,
+                    not something this retrofit can fabricate. */}
+                <SourceCitation sourceUrl={category.sourceUrl} />
               </div>
             );
           })}
