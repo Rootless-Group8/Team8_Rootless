@@ -1,0 +1,32 @@
+.source-citation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0;
+  margin: var(--ui-space-2) 0 0;
+  font-size: var(--ui-font-size-sm);
+  color: var(--ui-color-text-muted);
+}
+
+.source-citation-verified {
+  color: var(--ui-color-text-muted);
+}
+
+.source-citation-sep {
+  color: var(--ui-color-text-muted);
+}
+
+.source-citation-link {
+  font-weight: var(--ui-font-weight-bold);
+}
+
+.source-citation-na {
+  font-style: italic;
+  color: var(--ui-color-text-muted);
+}
+
+/* For contexts (e.g. inside a <dd>) that already provide their own
+   top spacing, so the citation doesn't double up on margin. */
+.source-citation--flush {
+  margin-top: 0;
+}

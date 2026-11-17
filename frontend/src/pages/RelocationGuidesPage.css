@@ -52,9 +52,3 @@
   flex-direction: column;
   gap: var(--ui-space-2);
 }
-
-.relocation-guides-source {
-  font-size: var(--ui-font-size-sm);
-  font-weight: var(--ui-font-weight-bold);
-  color: var(--ui-color-primary);
-}
