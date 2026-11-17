@@ -6,18 +6,22 @@ const documentRoutes = require('./routes/documentRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
 const reminderRoutes = require('./routes/reminderRoutes');
 const checklistRoutes = require('./routes/checklistRoutes');
-const notificationRoutes = require('./routes/notificationRoutes');
-const reminderRoutes = require('./routes/reminderRoutes');
 const deadlineRoutes = require('./deadlineRoutes');
-const eligibilityRoutes = require('./eligibilityRoutes');
-const costOfLivingRoutes = require('./routes/costOfLivingRoutes');
-const lifeEventRoutes = require('./routes/lifeEventRoutes');
-const deadlineRoutes = require('./deadlineRoutes');
-const reminderRoutes = require('./routes/reminderRoutes');
 const eligibilityRoutes = require('./eligibilityRoutes');
 const rankingRoutes = require('./rankingRoutes');
 const costOfLivingRoutes = require('./routes/costOfLivingRoutes');
+const lifeEventRoutes = require('./routes/lifeEventRoutes');
 
+// FIXED: this file previously had FIVE duplicate `const ... = require(...)`
+// declarations (notificationRoutes, reminderRoutes, deadlineRoutes,
+// eligibilityRoutes, costOfLivingRoutes each required twice) and matching
+// duplicate app.use() mounts (notifications x2, reminders x3). Redeclaring
+// a const in the same scope is a SyntaxError in JavaScript — this file
+// could not even be parsed by Node, meaning the backend has been
+// completely unbootable. This predates the branch merge that brought
+// backend and frontend work together; it was already broken on the
+// backend branch's own HEAD. Deduplicated everything below, keeping
+// exactly one require and one mount per route.
 function createApp({ db } = {}) {
   const app = express();
   app.use(cors());
@@ -31,11 +35,8 @@ function createApp({ db } = {}) {
   app.use('/api/notifications', notificationRoutes);
   app.use('/api/reminders', reminderRoutes);
   app.use('/api/checklist', checklistRoutes);
-  app.use('/api/notifications', notificationRoutes);
-  app.use('/api/reminders', reminderRoutes);
   app.use('/api/life-events', lifeEventRoutes);
   if (db) app.use('/api/deadlines', deadlineRoutes(db));
-  app.use('/api/reminders', reminderRoutes);
 
   if (db) {
     // Matching Engine v2 (ranked results). Mounted before v1 so /v2 isn't

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { ref, get } from "firebase/database";
 import { rtdb } from "../firebase/config";
+import Select from "../components/Select";
+import Button from "../components/Button";
 
 // NOTE on scope: the sprint story describes this as comparing "2-3 visa
 // types side by side" fed by a multi-select on the Visa Explorer results
@@ -48,8 +50,8 @@ export default function VisaComparisonPage() {
   }, []);
 
   const countryOptions = Object.entries(countries)
-    .map(([code, data]) => ({ code, name: data.name }))
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .map(([code, data]) => ({ value: code, label: data.name }))
+    .sort((a, b) => a.label.localeCompare(b.label));
 
   async function fetchSlot(index, passportCode, destinationCode) {
     setSlots((prev) => {
@@ -149,6 +151,13 @@ export default function VisaComparisonPage() {
     setDuplicateWarning("");
   }
 
+  function handleNationalityChange(value) {
+    setNationality(value);
+    setHasCompared(false);
+    setDuplicateWarning("");
+    setSlots([{ ...EMPTY_SLOT }, { ...EMPTY_SLOT }, { ...EMPTY_SLOT }]);
+  }
+
   const activeSlots = slots.filter((s) => s.destination);
   const canSubmit = nationality && activeSlots.length >= 2;
 
@@ -180,47 +189,26 @@ export default function VisaComparisonPage() {
       <p>Pick your passport country and 2-3 destinations to compare side by side.</p>
 
       <form onSubmit={handleCompareSubmit} className="visa-comparison-form">
-        <div className="form-field">
-          <label htmlFor="nationality">Passport country</label>
-          <select
-            id="nationality"
-            value={nationality}
-            onChange={(e) => {
-              setNationality(e.target.value);
-              setHasCompared(false);
-              setDuplicateWarning("");
-              setSlots([{ ...EMPTY_SLOT }, { ...EMPTY_SLOT }, { ...EMPTY_SLOT }]);
-            }}
-          >
-            <option value="">Select a country</option>
-            {countryOptions.map((c) => (
-              <option key={c.code} value={c.code}>
-                {c.name}
-              </option>
-            ))}
-          </select>
-        </div>
+        <Select
+          label="Passport country"
+          placeholder="Select a country"
+          value={nationality}
+          onChange={handleNationalityChange}
+          options={countryOptions}
+        />
 
         <div className="comparison-slot-pickers">
           {slots.map((slot, index) => (
-            <div className="form-field comparison-slot-field" key={index}>
-              <label htmlFor={`destination-${index}`}>Destination {index + 1}</label>
+            <div className="comparison-slot-field" key={index}>
               <div className="comparison-slot-input-row">
-                <select
-                  id={`destination-${index}`}
+                <Select
+                  label={`Destination ${index + 1}`}
+                  placeholder={index < 2 ? "Select a country" : "Optional"}
                   value={slot.destination}
-                  onChange={(e) => handleSlotChange(index, e.target.value)}
+                  onChange={(v) => handleSlotChange(index, v)}
+                  options={countryOptions.filter((c) => c.value !== nationality)}
                   disabled={!nationality}
-                >
-                  <option value="">{index < 2 ? "Select a country" : "Optional"}</option>
-                  {countryOptions
-                    .filter((c) => c.code !== nationality)
-                    .map((c) => (
-                      <option key={c.code} value={c.code}>
-                        {c.name}
-                      </option>
-                    ))}
-                </select>
+                />
                 {slot.destination && (
                   <button
                     type="button"
@@ -243,9 +231,7 @@ export default function VisaComparisonPage() {
         )}
 
         {!hasCompared && (
-          <button type="submit" disabled={!canSubmit}>
-            Compare
-          </button>
+          <Button type="submit" label="Compare" disabled={!canSubmit} />
         )}
       </form>
 
@@ -325,9 +311,13 @@ export default function VisaComparisonPage() {
             })}
           </div>
 
-          <button type="button" className="button-link-secondary comparison-start-over" onClick={handleStartOver}>
-            Start over
-          </button>
+          <Button
+            type="button"
+            label="Start over"
+            onClick={handleStartOver}
+            variant="secondary"
+            className="comparison-start-over"
+          />
         </>
       )}
     </div>

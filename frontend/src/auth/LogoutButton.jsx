@@ -2,6 +2,7 @@ import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/config";
 import { useNavigate } from "react-router-dom";
+import Button from "../components/Button";
 
 // Drop this into a navbar/header wherever a logged-in user should see a
 // logout option.
@@ -21,8 +22,11 @@ export default function LogoutButton() {
   }
 
   return (
-    <button onClick={handleLogout} disabled={loggingOut}>
-      {loggingOut ? "Logging out..." : "Log out"}
-    </button>
+    <Button
+      label={loggingOut ? "Logging out..." : "Log out"}
+      onClick={handleLogout}
+      disabled={loggingOut}
+      variant="secondary"
+    />
   );
 }

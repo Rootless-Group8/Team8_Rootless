@@ -13,6 +13,12 @@ import './TextInput.css';
  *  - disabled     (bool)      Disables the field
  *  - error        (string)    Error message; when set, field shows invalid state
  *  - type         (string)    Input type, e.g. 'text', 'email', 'password'. Default: 'text'
+ *  - autoComplete (string)    Passed through to the native input (e.g. 'email',
+ *                             'current-password', 'new-password') — needed for
+ *                             browser password managers to work correctly on
+ *                             login/signup forms. Optional; omitted entirely
+ *                             from the DOM when not provided, same as before
+ *                             this prop existed.
  *
  * ---- Usage example ----
  *
@@ -36,6 +42,7 @@ export default function TextInput({
   disabled = false,
   error = '',
   type = 'text',
+  autoComplete,
 }) {
   const hasError = Boolean(error);
   const inputId = React.useId();
@@ -56,6 +63,7 @@ export default function TextInput({
         disabled={disabled}
         onChange={(e) => onChange(e.target.value)}
         aria-invalid={hasError}
+        autoComplete={autoComplete}
       />
       {hasError && <p className="ui-field__error">{error}</p>}
     </div>
