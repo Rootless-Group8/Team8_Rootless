@@ -1,0 +1,73 @@
+{
+  "_meta": {
+    "researchedFrom": "Each destination cites the official government consular source for that country's student visa program. Where fees vary by applicant nationality or consulate location, that is noted in the entry rather than presented as a single universal figure.",
+    "lastVerified": "2026-11-01"
+  },
+  "MX": {
+    "temporary_resident_student_visa": {
+      "category": "student",
+      "name": "Temporary Resident Student Visa (Residente Temporal Estudiante)",
+      "eligibilityCriteria": [
+        "Program, course, training, or research lasts longer than 180 days (shorter stays may qualify for a visitor permit instead of a student visa)",
+        "Accepted by an institution within Mexico's National Educational System (public or private)",
+        "Prove economic solvency, either through qualifying income or a qualifying bank balance (see minimumRequiredFunds)",
+        "No disqualifying criminal history under Mexican immigration law",
+        "Applicants receiving a scholarship directly from the Mexican government are exempt from the economic solvency requirement"
+      ],
+      "requiredDocuments": [
+        "Completed visa application form",
+        "Valid passport (original plus a photocopy of the photo/data page)",
+        "Letter of acceptance from the institution, stating program level, course name, start and end dates, and fees",
+        "Proof of economic solvency: either qualifying monthly income or a qualifying 3-month average bank balance (ink-stamped bank statements only, electronic statements are not accepted without an original stamp)",
+        "Passport-style photograph meeting the consulate's size and background specifications",
+        "Consular fee payment (accepted payment method varies by consulate)"
+      ],
+      "fees": "Varies by consulate location; paid in cash or by the locally accepted method. Contact the nearest Mexican consulate for the current fee.",
+      "processingTimeNotes": "Not published as a fixed duration; application is in person, by interview, and issuance is subject to the interview outcome. Confirm current timing with the nearest consulate.",
+      "minimumRequiredFunds": {
+        "amount": 21760,
+        "currency": "CAD",
+        "period": "3-month average bank balance",
+        "notes": "Figures published by the Mexican Consulate General in Vancouver, for applicants proving solvency via bank statements. A qualifying monthly income of CAD $2,090 or more over the same 3-month period is accepted as an alternative to the lump-sum balance. Exact amounts can vary by consulate location."
+      },
+      "validityDuration": "Single-entry visa valid for 180 days; holder must apply to Mexico's National Migration Institute (INM) for a residence card within 30 days of entering Mexico to remain for the full program length",
+      "sourceUrl": "https://consulmex.sre.gob.mx/vancouver/index.php/es/temporary-student-resident-visa",
+      "lastVerified": "2026-10-26"
+    }
+  },
+  "ES": {
+    "estancia_por_estudios": {
+      "category": "student",
+      "name": "Study Visa (Estancia por Estudios)",
+      "eligibilityCriteria": [
+        "Full-time enrollment (minimum 20 hours/week) at an authorized educational institution in Spain, or doctoral studies, training activities, or an approved mobility/internship/volunteer program",
+        "Required for programs longer than 90 days; shorter programs may qualify for a Schengen short-stay visa instead",
+        "Proof of financial means equivalent to 100% of Spain's IPREM per month, covering the student (plus 75% for a first accompanying family member and 50% for each additional one)",
+        "Valid health insurance with full coverage in Spain (no deductible, copayment, or coverage limit), minimum 30,000 EUR / 50,000 USD",
+        "No disqualifying health conditions under the 2005 International Health Regulations",
+        "For stays over 180 days: a criminal record certificate covering the past 5 years of residence, apostilled and translated into Spanish"
+      ],
+      "requiredDocuments": [
+        "Completed national visa application form",
+        "Valid passport (at least 1 year validity, 2 blank pages, issued within the last 10 years)",
+        "Proof of acceptance from the Spanish educational institution",
+        "Proof of payment of enrollment/tuition fees, or documentation of an exemption or exchange agreement",
+        "Proof of financial means: 3 months of personal bank statements, or a financial sponsorship letter/notarized parental support letter, or proof of a scholarship/loan covering the required amount",
+        "Health insurance certificate meeting Spain's coverage requirements",
+        "Medical certificate (issued within 90 days of application)",
+        "For stays over 180 days: FBI criminal record certificate, apostilled by the US Department of State and translated into Spanish"
+      ],
+      "fees": "As of January 1, 2026: $160 USD for US citizens, $106 USD for other nationalities; different rates apply for citizens of Australia, Bangladesh, Ethiopia, and Canada based on reciprocity. Fee is non-refundable even if the visa is denied.",
+      "processingTimeNotes": "Legal decision period is 1 month from the day after a complete application is submitted, though this can extend if an interview or additional documents are requested. Applications must be submitted between 2 and 6 months before the program start date.",
+      "minimumRequiredFunds": {
+        "amount": 600,
+        "currency": "USD",
+        "period": "per month of stay",
+        "notes": "100% of Spain's IPREM (Public Multiple Effects Income Indicator) for 2026, for a student traveling alone. Add 75% of IPREM for a first accompanying family member and 50% for each additional family member. Reduced if proof of prepaid accommodation for the full stay is provided."
+      },
+      "validityDuration": "Visa is valid for the full stay if 6 months or less. For stays longer than 6 months, the visa is valid for 365 days, after which the student must apply for a Foreigner Identity Card (TIE) within 1 month of entering Spain.",
+      "sourceUrl": "https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-estudios.aspx",
+      "lastVerified": "2026-11-01"
+    }
+  }
+}

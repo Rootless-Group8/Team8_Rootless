@@ -12,6 +12,11 @@ import './Button.css';
  *  - variant    ('primary' | 'secondary')  Visual style. Default: 'primary'
  *  - disabled   (bool)              Disables interaction + shows disabled state
  *  - type       ('button' | 'submit' | 'reset')  HTML button type. Default: 'button'
+ *  - className  (string)  Optional extra class(es) appended alongside the
+ *                         button's own styling — for layout concerns only
+ *                         (e.g. margin in a specific context), never for
+ *                         overriding the button's own look. Omit unless a
+ *                         specific layout genuinely needs it.
  *
  * ---- Usage example ----
  *
@@ -27,11 +32,12 @@ export default function Button({
   variant = 'primary',
   disabled = false,
   type = 'button',
+  className = '',
 }) {
   return (
     <button
       type={type}
-      className={`ui-btn ui-btn--${variant}`}
+      className={`ui-btn ui-btn--${variant}${className ? ` ${className}` : ''}`}
       onClick={onClick}
       disabled={disabled}
     >

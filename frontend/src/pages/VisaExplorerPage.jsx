@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { ref, get } from "firebase/database";
 import { rtdb } from "../firebase/config";
+import Select from "../components/Select";
+import Button from "../components/Button";
 
 export default function VisaExplorerPage() {
   const [countries, setCountries] = useState({});
@@ -30,8 +32,8 @@ export default function VisaExplorerPage() {
   }, []);
 
   const countryOptions = Object.entries(countries)
-    .map(([code, data]) => ({ code, name: data.name }))
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .map(([code, data]) => ({ value: code, label: data.name }))
+    .sort((a, b) => a.label.localeCompare(b.label));
 
   async function handleSearch(e) {
     e.preventDefault();
@@ -71,41 +73,23 @@ export default function VisaExplorerPage() {
       <p>Select your passport country and where you want to go.</p>
 
       <form onSubmit={handleSearch} className="visa-explorer-form">
-        <div className="form-field">
-          <label htmlFor="nationality">Passport country</label>
-          <select
-            id="nationality"
-            value={nationality}
-            onChange={(e) => setNationality(e.target.value)}
-          >
-            <option value="">Select a country</option>
-            {countryOptions.map((c) => (
-              <option key={c.code} value={c.code}>
-                {c.name}
-              </option>
-            ))}
-          </select>
-        </div>
+        <Select
+          label="Passport country"
+          placeholder="Select a country"
+          value={nationality}
+          onChange={setNationality}
+          options={countryOptions}
+        />
 
-        <div className="form-field">
-          <label htmlFor="destination">Destination country</label>
-          <select
-            id="destination"
-            value={destination}
-            onChange={(e) => setDestination(e.target.value)}
-          >
-            <option value="">Select a country</option>
-            {countryOptions.map((c) => (
-              <option key={c.code} value={c.code}>
-                {c.name}
-              </option>
-            ))}
-          </select>
-        </div>
+        <Select
+          label="Destination country"
+          placeholder="Select a country"
+          value={destination}
+          onChange={setDestination}
+          options={countryOptions}
+        />
 
-        <button type="submit" disabled={!nationality || !destination}>
-          Check requirements
-        </button>
+        <Button type="submit" label="Check requirements" disabled={!nationality || !destination} />
       </form>
 
       <div aria-live="polite" className="visa-explorer-result">
