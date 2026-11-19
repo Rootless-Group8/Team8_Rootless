@@ -6,24 +6,28 @@ const documentRoutes = require('./routes/documentRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
 const reminderRoutes = require('./routes/reminderRoutes');
 const checklistRoutes = require('./routes/checklistRoutes');
-const notificationRoutes = require('./routes/notificationRoutes');
-const reminderRoutes = require('./routes/reminderRoutes');
 const deadlineRoutes = require('./deadlineRoutes');
 const eligibilityRoutes = require('./eligibilityRoutes');
 const costOfLivingRoutes = require('./routes/costOfLivingRoutes');
 const lifeEventRoutes = require('./routes/lifeEventRoutes');
-const deadlineRoutes = require('./deadlineRoutes');
-const reminderRoutes = require('./routes/reminderRoutes');
-const eligibilityRoutes = require('./eligibilityRoutes');
 const rankingRoutes = require('./rankingRoutes');
-const costOfLivingRoutes = require('./routes/costOfLivingRoutes');
 
 function createApp({ db } = {}) {
   const app = express();
   app.use(cors());
   app.use(express.json());
 
-  app.get('/health', (req, res) => res.status(200).json({ status: 'ok' }));
+  // Health check used by the hosting provider and the deploy pipeline. It is
+  // public and never touches Firebase, so it only reports that the process is
+  // up. RENDER_GIT_COMMIT is set by Render; the pipeline compares it to the
+  // commit it just deployed to confirm the new version is the one serving.
+  app.get('/health', (req, res) =>
+    res.status(200).json({
+      status: 'ok',
+      commit: process.env.RENDER_GIT_COMMIT || null,
+      uptimeSeconds: Math.round(process.uptime()),
+    })
+  );
 
   app.use('/api', userRoutes);
   app.use('/api/profile', profileRoutes);
@@ -31,11 +35,8 @@ function createApp({ db } = {}) {
   app.use('/api/notifications', notificationRoutes);
   app.use('/api/reminders', reminderRoutes);
   app.use('/api/checklist', checklistRoutes);
-  app.use('/api/notifications', notificationRoutes);
-  app.use('/api/reminders', reminderRoutes);
   app.use('/api/life-events', lifeEventRoutes);
   if (db) app.use('/api/deadlines', deadlineRoutes(db));
-  app.use('/api/reminders', reminderRoutes);
 
   if (db) {
     // Matching Engine v2 (ranked results). Mounted before v1 so /v2 isn't

@@ -1,0 +1,104 @@
+name: Backend CI/CD
+
+# Every push and pull request runs the Jest suite.
+# A push to main (i.e. a merged pull request) that passes the tests is then
+# deployed to production automatically. See backend/DEPLOYMENT.md.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test
+    # A PR from a branch in this repo is already tested by its push event, so
+    # only run on pull_request for PRs from forks. Every push is still tested.
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # A newer push to the same branch makes the older test run pointless.
+    concurrency:
+      group: backend-test-${{ github.ref }}
+      cancel-in-progress: true
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check that the server entry points parse
+        run: |
+          node --check src/app.js
+          node --check src/server.js
+
+      # Firebase Admin is mocked inside the tests, so no credentials or
+      # secrets are needed (or provided) here.
+      - name: Run Jest
+        run: npm test -- --ci
+
+  deploy:
+    name: Deploy to production
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # Never run two production deploys at once, and never cancel one midway.
+    concurrency:
+      group: production-deploy
+      cancel-in-progress: false
+    environment:
+      name: production
+      url: ${{ vars.PRODUCTION_URL }}
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      # Firebase credentials live only in Render, which is where the server
+      # runs. GitHub only needs what it takes to trigger and check a deploy.
+      - name: Verify deploy configuration is present
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
+        run: |
+          missing=0
+          for name in RENDER_DEPLOY_HOOK_URL PRODUCTION_URL; do
+            if [ -z "${!name}" ]; then
+              echo "::error::${name} is not set for the 'production' environment."
+              missing=1
+            fi
+          done
+          [ "$missing" -eq 0 ] || exit 1
+
+      - name: Trigger Render deploy of this commit
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          # Pinning ref to this commit means we deploy exactly what was tested.
+          code="$(curl -sS -o /tmp/deploy-response.json -w '%{http_code}' \
+            -X POST "${RENDER_DEPLOY_HOOK_URL}&ref=${GITHUB_SHA}")"
+          case "$code" in
+            200) echo "Render accepted the deploy." ;;
+            202) echo "Another deploy is running; Render queued this one." ;;
+            *)   echo "::error::Render deploy hook returned HTTP ${code}."; cat /tmp/deploy-response.json; exit 1 ;;
+          esac
+
+      - name: Wait for the new version to report healthy
+        env:
+          PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
+        run: bash .github/scripts/wait-for-health.sh "$PRODUCTION_URL" "$GITHUB_SHA" 600

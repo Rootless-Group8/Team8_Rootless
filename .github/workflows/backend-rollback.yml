@@ -1,0 +1,84 @@
+name: Backend rollback
+
+# Manual only. Redeploys a previous commit to production.
+# Run it from the Actions tab: "Backend rollback" > "Run workflow", and paste
+# the commit SHA of the last good release. See backend/DEPLOYMENT.md.
+#
+# This rebuilds that commit, so it takes about as long as a normal deploy.
+# For the fastest rollback use the Rollback button on the Render dashboard's
+# Deploys page instead.
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: "Commit SHA to redeploy (7 to 40 hex characters)"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  rollback:
+    name: Redeploy ${{ inputs.commit_sha }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    concurrency:
+      group: production-deploy
+      cancel-in-progress: false
+    environment:
+      name: production
+      url: ${{ vars.PRODUCTION_URL }}
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve and validate the commit
+        id: commit
+        env:
+          INPUT_SHA: ${{ inputs.commit_sha }}
+        run: |
+          if ! [[ "$INPUT_SHA" =~ ^[0-9a-fA-F]{7,40}$ ]]; then
+            echo "::error::'${INPUT_SHA}' is not a valid commit SHA."
+            exit 1
+          fi
+          full="$(git rev-parse --verify "${INPUT_SHA}^{commit}")"
+          if ! git merge-base --is-ancestor "$full" origin/main; then
+            echo "::error::${full} is not on main. Only commits that were merged to main can be rolled back to."
+            exit 1
+          fi
+          echo "sha=${full}" >> "$GITHUB_OUTPUT"
+          echo "Rolling back to ${full}"
+
+          # Commits from before the CI/CD pipeline have a /health endpoint that
+          # does not report a commit, so the health check cannot match on SHA.
+          # For those, it waits for a healthy response with no commit field.
+          if git show "${full}:backend/src/app.js" 2>/dev/null | grep -q RENDER_GIT_COMMIT; then
+            echo "expect=${full}" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::${full:0:7} predates commit reporting in /health. The health check will confirm a healthy version without a commit field instead of matching the SHA."
+            echo "expect=none" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger Render deploy of that commit
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          TARGET_SHA: ${{ steps.commit.outputs.sha }}
+        run: |
+          code="$(curl -sS -o /tmp/deploy-response.json -w '%{http_code}' \
+            -X POST "${RENDER_DEPLOY_HOOK_URL}&ref=${TARGET_SHA}")"
+          case "$code" in
+            200) echo "Render accepted the rollback deploy." ;;
+            202) echo "Another deploy is running; Render queued this one." ;;
+            *)   echo "::error::Render deploy hook returned HTTP ${code}."; cat /tmp/deploy-response.json; exit 1 ;;
+          esac
+
+      - name: Wait for the rolled-back version to report healthy
+        env:
+          PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
+          EXPECTED: ${{ steps.commit.outputs.expect }}
+        run: bash .github/scripts/wait-for-health.sh "$PRODUCTION_URL" "$EXPECTED" 600
