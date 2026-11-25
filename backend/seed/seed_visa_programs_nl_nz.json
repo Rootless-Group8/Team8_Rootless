@@ -1,0 +1,164 @@
+{
+  "_meta": {
+    "researchedFrom": "Netherlands: Netherlands Worldwide (netherlandsworldwide.nl: Schengen visa step-by-step plan, waiting times, visa costs, family/friends checklist, consular fees 2026), the IND (ind.nl: study residence permit page, fees, required income amounts, MVV exemptions) and EU Home Affairs for the shared Schengen rules. New Zealand: Immigration New Zealand (immigration.govt.nz: Visitor Visa, Fee Paying Student Visa and NZeTA pages, visitor and student wait-time pages, student fund requirements, International Visitor Levy page, and the fee and levy table with rates from 1 October 2024).",
+    "lastVerified": "2026-11-24",
+    "notFullyVerified": [
+      "NL/student_residence_permit processingTime.minDays: the 14 days comes from IND sponsor guidance ('The IND will try to decide on the application within two weeks' for recognised sponsors), which was only seen in search snippets of IND brochures; the fetched IND study page gives only the 60-day legal decision period",
+      "NL/student_residence_permit processingTime.maxDays: 60 is the legal decision period; the IND says it can be extended but does not say by how long",
+      "NL/student_residence_permit fees: the IND fee table lists EUR 254.00 without naming the year (IND fees change every 1 January); treated as the 2026 fee because it was the live figure in November 2026",
+      "NL/student_residence_permit requiredDocuments: the IND does not publish a full student checklist (the educational institution holds it), so the list is drawn from the stated conditions",
+      "NL/schengen_visitor_visa processingTime.minDays: 15 is the EU normal processing period; Netherlands Worldwide gives an average of 18 to 21 calendar days for the Netherlands",
+      "NL/schengen_visitor_visa requiredDocuments: taken from the Netherlands Worldwide checklist for visiting family or friends; tourism and business checklists differ slightly",
+      "NZ fees: the visa pages show only the totals (from NZD $441 and from NZD $850); the split into application fee, immigration levy and IVL comes from INZ's fee table with rates from 1 October 2024, whose totals match the live pages",
+      "NZ/fee_paying_student_visa fees: the IVL page names 'Student visas (excluding dependent child category)' rather than this visa by name; the $100 difference between the $750 fee-plus-levy and the $850 total supports it applying",
+      "NZ processingTime: INZ publishes weeks counted in working days; converted at 7 calendar days per week, so public holidays can add a few days. Wait-time pages are updated weekly and were read on 2026-11-24",
+      "NZ/fee_paying_student_visa processingTime.maxDays: 42 is the slowest provider type's 80% figure from the wait-times page, not the 35 days (80% within 5 weeks) shown on the visa page",
+      "NZ/fee_paying_student_visa minimumRequiredFunds: INZ gives no effective date for the living-cost amounts, and the NZD $20,000 a year applies to tertiary study only (school students need NZD $17,000 a year)"
+    ]
+  },
+  "NL": {
+    "schengen_visitor_visa": {
+      "name": "Schengen Visa (Short Stay, Type C)",
+      "category": "tourist_visitor",
+      "eligibilityCriteria": [
+        "Needed by nationals of countries on the Schengen visa list who plan to visit the Netherlands (tourism, family or friends, business) for up to 90 days in any 180-day period; whether you need one depends on your nationality",
+        "You usually apply in the country where you live, through a VFS Global or TLScontact application centre or a Dutch embassy or consulate-general; you can apply up to 6 months before the trip and at least 15 days before travel",
+        "Your passport must have been issued in the last 10 years, be valid for at least 3 months after you leave the Schengen area, and have at least 2 empty visa pages",
+        "Show at least EUR 55 per day of stay for travel and living costs (this also applies to minors), from your own funds or a sponsor's",
+        "Have travel medical insurance valid in all Schengen countries for the whole stay, with at least EUR 30,000 cover including hospital care, emergency treatment and repatriation",
+        "Show ties to your country of residence (for example employment, studies, property or family), and legal residence there if you are not a national of that country"
+      ],
+      "requiredDocuments": [
+        "Completed and signed online Schengen visa application form (printed, with its unique code)",
+        "Passport issued within the last 10 years, valid at least 3 months after leaving the Schengen area, with at least 2 empty visa pages",
+        "Recent colour passport photo, 3.5 cm x 4.5 cm, light background (not needed when applying through an external service provider)",
+        "Proof of legal residence in the country where you apply (passport, residence permit, visa or work permit)",
+        "Proof of ties to your country of residence (employer statement with 3 months of bank statements or payslips, business registration or tax return, proof of enrolment, or similar)",
+        "Proof of funds of at least EUR 55 per day: 3 months of bank statements and recent payslips, or a sponsorship form from the person paying",
+        "Proof of accommodation for the whole trip (hotel booking, rental agreement, or a sponsorship/private accommodation form from your host)",
+        "Travel reservation to and from the Schengen area in your name (a paid ticket is not required)",
+        "Travel medical insurance valid in all Schengen countries with at least EUR 30,000 cover",
+        "When visiting family or friends: a copy of the host's Dutch passport or ID card, or valid Dutch residence permit",
+        "For minors travelling without one or both parents: birth certificate extract, signed consent form and a copy of the non-travelling parent's passport"
+      ],
+      "processingTime": {
+        "minDays": 15,
+        "maxDays": 45
+      },
+      "processingTimeNotes": "EU Home Affairs: the normal processing time is 15 days, which may be extended to up to 45 days if more examination or documents are needed. Netherlands Worldwide gives an average of 18 to 21 calendar days for a Schengen visa for the Netherlands, counted from the day the Consular Service Organisation receives the documents, and says some applications can take up to 45 calendar days. All figures are already calendar days. minDays uses the 15-day normal period, the same approach as the Spain record.",
+      "fees": "EUR 90 for adults; EUR 45 for children aged 6 to 11; free for children under 6 (Netherlands Worldwide, consular fees 2026). Some groups are exempt, such as certain students, teachers and researchers, and applicants covered by visa facilitation agreements. VFS Global or TLScontact also charge a service fee, which varies by location and is payable even when the visa fee is waived.",
+      "validityDuration": "Up to 90 days within any 180-day period across the Schengen area; the validity and number of entries on the visa sticker are set by the consulate for each application",
+      "sourceUrl": "https://www.netherlandsworldwide.nl/visa-the-netherlands/step-by-step-schengen-visa"
+    },
+    "student_residence_permit": {
+      "name": "Residence Permit for Study at a University or University of Applied Sciences (with MVV)",
+      "category": "student",
+      "eligibilityCriteria": [
+        "For non-EU/EEA/Swiss students who want to study in the Netherlands for more than 90 days at a university (WO) or university of applied sciences (HBO)",
+        "Your educational institution must be a sponsor recognised by the IND; the institution applies on your behalf and pays the fee, and you cannot apply yourself",
+        "Be enrolled in a full-time study programme and make enough progress, earning at least 50% of the credits in each study year",
+        "Meet the income requirement: in 2026, at least EUR 1,130.77 per month for higher professional education (HBO) or university",
+        "Most nationalities also need an MVV (provisional residence permit/entry visa), applied for together with the residence permit; nationals of Australia, Canada, Japan, Monaco, New Zealand, Vatican City, the United Kingdom, the United States, South Korea, Switzerland and EU/EEA countries are exempt",
+        "Your passport must be valid for at least another 6 months",
+        "You may need a tuberculosis (TB) test at the public health service (GGD) within 3 months of receiving the residence permit, if the institution indicated one when applying"
+      ],
+      "requiredDocuments": [
+        "Valid passport (valid for at least another 6 months)",
+        "Proof of admission to and enrolment in a full-time programme at an IND-recognised sponsor institution",
+        "Proof of sufficient means of support (2026: at least EUR 1,130.77 per month for HBO or university), confirmed to the IND by the institution",
+        "Other documents on the educational institution's own list (the IND says the institution has the list you need)",
+        "Legalised official foreign documents, translated into Dutch, English, French or German where required",
+        "TB test at the GGD after arrival, if the institution indicated one"
+      ],
+      "processingTime": {
+        "minDays": 14,
+        "maxDays": 60
+      },
+      "processingTimeNotes": "The IND must take a decision within 60 days and can extend the decision period if it takes longer to decide (the length of an extension is not stated). For recognised sponsors in the accelerated procedure, the IND will try to decide within two weeks (converted to 14 calendar days). After approval, you collect the MVV at the Dutch embassy or consulate within 3 months of the decision; the MVV is valid for 90 days.",
+      "fees": "EUR 254 for a first application for study, all education levels (IND fee table, current in November 2026). The educational institution pays it, and it is not refunded if the application is refused. IND fees change every 1 January.",
+      "validityDuration": "Valid for the length of the study programme plus 3 months, up to a maximum of 5 years (a preparatory year counts as part of the study). The MVV entry visa is valid for 90 days. Students may work up to 16 hours a week, or full-time in June, July and August, only with a work permit (TWV) obtained by the employer.",
+      "sourceUrl": "https://ind.nl/en/residence-permits/study/student-residence-permit-for-university-or-higher-professional-education",
+      "minimumRequiredFunds": {
+        "amount": 1130.77,
+        "currency": "EUR",
+        "period": "per month of stay",
+        "notes": "IND required income amounts for a student paying for their own stay at higher professional education (HBO) or university, valid 1 January to 31 December 2026. For secondary or MBO education it is EUR 928.58 per month. Different gross-income thresholds apply when a person in the Netherlands funds the study."
+      }
+    }
+  },
+  "NZ": {
+    "visitor_visa": {
+      "name": "Visitor Visa",
+      "category": "tourist_visitor",
+      "eligibilityCriteria": [
+        "Needed if your passport is from a country without visa-waiver status with New Zealand. Citizens of visa waiver countries can usually travel on a New Zealand Electronic Travel Authority (NZeTA) instead: from NZD $17 plus the NZD $100 International Visitor Levy where it applies, valid for 2 years, for visits of up to 3 months at a time (6 months for UK citizens). Australian citizens need neither a visa nor an NZeTA",
+        "Be a genuine visitor to New Zealand and intend to leave at the end of your visit",
+        "Have at least NZD $1,000 for each month of your stay, or NZD $400 a month if your accommodation is already paid for; an acceptable sponsor can meet this instead",
+        "Show you can leave New Zealand at the end of your stay, with an onward ticket or proof you can buy one; the ticket money must be in addition to your living funds",
+        "Be in good health; you may be asked for a chest X-ray or medical examination",
+        "Be of good character; you may be asked for police certificates"
+      ],
+      "requiredDocuments": [
+        "High-quality scan of your passport information page, plus pages with previous visas or stamps if relevant",
+        "One acceptable photo",
+        "Proof of funds (at least NZD $1,000 a month, or NZD $400 a month if accommodation is prepaid), or sponsor forms and the sponsor's sharing ID if sponsored",
+        "Proof of genuine visit plans",
+        "Proof of onward travel (a ticket out of New Zealand or evidence you can buy one)",
+        "Police certificates, chest X-ray or medical examination, if requested",
+        "Documents for any partner or dependent children included in the application",
+        "English translations of any documents not in English"
+      ],
+      "processingTime": {
+        "minDays": 11,
+        "maxDays": 14
+      },
+      "processingTimeNotes": "The Visitor Visa page states 80% of applications are processed within 2 weeks. INZ's visitor visa wait-times page (applications processed in the last 4 weeks, updated weekly, read 2026-11-24) gives an average of 1.5 weeks (50% of applications) and most completed within 2 weeks (80%), counted in working days. Converted at 7 calendar days per week: minDays 10.5 rounded up to 11, maxDays 14. Public holidays can add a few days, and about 20% of applications take longer.",
+      "fees": "From NZD $441 per applicant: a NZD $300 application fee plus a NZD $41 immigration levy, plus the non-refundable NZD $100 International Visitor Conservation and Tourism Levy (IVL), per INZ's fee table with rates from 1 October 2024. Applicants in the Pacific band pay a lower NZD $175 application fee.",
+      "validityDuration": "A multiple-entry visa allows stays of up to 6 months in each 12-month period; a single-entry visa allows up to 9 months in an 18-month period. The overall maximum is 9 months in any 18-month period.",
+      "sourceUrl": "https://www.immigration.govt.nz/visas/visitor-visa/"
+    },
+    "fee_paying_student_visa": {
+      "name": "Fee Paying Student Visa",
+      "category": "student",
+      "eligibilityCriteria": [
+        "For international students paying their own tuition (including with help from family, a loan or a partial scholarship) for full-time study at an approved New Zealand education provider that has signed the Education (Pastoral Care of Tertiary and International Learners) Code of Practice 2021",
+        "Have an offer of place from the provider (an unconditional offer before approval) and show tuition fees are paid for 1 course or 1 year, whichever is shorter; offshore applicants can pay after approval in principle, before the visa is issued",
+        "Show enough money for living costs: NZD $20,000 a year for tertiary or other non-compulsory study of 1 year or more, or NZD $1,667 a month for shorter study; school students (Years 1 to 13) need NZD $17,000 a year or NZD $1,417 a month. A sponsor, financial undertaking, scholarship or the Funds Transfer Scheme can be used instead",
+        "Have an onward ticket or money to buy one, in addition to your living funds",
+        "Hold acceptable travel and health insurance for the whole time you are on the visa (PhD students are exempt)",
+        "Be in good health (a chest X-ray may be required, for example if staying more than 6 months) and of good character (police certificates if you are 17 or older and will spend 24 months or more in New Zealand)",
+        "Children under 10 must be accompanied by a parent or legal guardian, unless living in an NZQA-approved school hostel"
+      ],
+      "requiredDocuments": [
+        "High-quality scan of your passport information page (passport valid for at least 3 months after your planned departure)",
+        "One acceptable photo",
+        "Offer of place from an approved education provider, or confirmation of enrolment for returning students",
+        "Evidence that tuition fees are paid, that you can pay them, or that you are exempt",
+        "Evidence of living-cost funds from a genuine source, or a sponsor's sharing ID",
+        "Financial Undertaking for a Student (INZ 1014), if you have a guarantor",
+        "Evidence of onward travel (a ticket or funds to buy one)",
+        "Chest X-ray or medical examination certificates, if required",
+        "Police certificates, if required",
+        "Evidence of guardianship arrangements, if accompanied by a parent or guardian",
+        "Certified English translations of any non-English police or medical certificates"
+      ],
+      "processingTime": {
+        "minDays": 7,
+        "maxDays": 42
+      },
+      "processingTimeNotes": "The Fee Paying Student Visa page states 80% of applications are processed within 5 weeks. INZ's student visa wait-times page (applications processed in the last 4 weeks, updated weekly, read 2026-11-24) gives average (50%) and most-completed-within (80%) times in working days by provider type: Schools 1 week / 2 weeks; Universities 2 / 4 weeks; Polytechnics and Institutes of Technology 3 / 6 weeks; Private Training Establishments 3 / 6 weeks. Converted at 7 calendar days per week: minDays is the fastest average (Schools, 7), maxDays the slowest 80% figure (42). INZ strongly encourages students to apply at least 3 months before travel.",
+      "fees": "From NZD $850 per applicant: a NZD $485 application fee plus a NZD $265 immigration levy, plus the non-refundable NZD $100 International Visitor Conservation and Tourism Levy (IVL), per INZ's fee table with rates from 1 October 2024. Applicants in the Pacific band pay a lower NZD $270 application fee.",
+      "validityDuration": "Up to 4 years, normally for the period of study paid for or until the passport expires if sooner. Allows travel in and out of New Zealand while valid, and part-time work of up to 25 hours a week during study plus full-time work in scheduled holidays, depending on visa conditions.",
+      "sourceUrl": "https://www.immigration.govt.nz/visas/fee-paying-student-visa/",
+      "minimumRequiredFunds": {
+        "amount": 20000,
+        "currency": "NZD",
+        "period": "per year",
+        "notes": "INZ living-cost requirement for tertiary, English language or other non-compulsory study of 1 year or more; NZD $1,667 per month for shorter study. School students (Years 1 to 13) need NZD $17,000 per year or NZD $1,417 per month. Prepaid accommodation can be deducted, and a sponsor, financial undertaking (INZ 1014), scholarship or the Funds Transfer Scheme can be used instead. Onward travel money is required in addition."
+      }
+    }
+  },
+  "_notes": {
+    "digitalNomad": "Only tourist/visitor and student visas are seeded for the Netherlands and New Zealand, per the team's updated scope. Work visas and digital nomad routes are not included."
+  }
+}
