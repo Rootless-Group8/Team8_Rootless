@@ -13,6 +13,7 @@ const sidebarLinks = [
   { to: "/affordability", label: "Affordability Calculator" },
   { to: "/checklist", label: "Checklist" },
   { to: "/community-tips", label: "Community Tips" },
+  { to: "/life-planner", label: "Visa Life Planner" },
   { to: "/documents", label: "Documents" },
   { to: "/account", label: "Account" },
   { to: "/settings", label: "Settings" },
