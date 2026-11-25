@@ -145,12 +145,10 @@ export default function CostOfLivingPage() {
                   <p className="cost-of-living-note">{category.note}</p>
                 )}
 
-                {/* costOfLiving/{iso2}/categories/{key} has no lastVerifiedAt
-                    field in the current schema (see seed_cost_of_living.py) —
-                    SourceCitation just omits the verified-date half of the
-                    line until that field exists. Adding it is a follow-up,
-                    not something this retrofit can fabricate. */}
-                <SourceCitation sourceUrl={category.sourceUrl} />
+                <SourceCitation
+                  lastVerifiedAt={category.lastVerifiedAt}
+                  sourceUrl={category.sourceUrl}
+                />
               </div>
             );
           })}

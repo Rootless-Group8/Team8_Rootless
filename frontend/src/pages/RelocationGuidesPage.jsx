@@ -138,14 +138,10 @@ export default function RelocationGuidesPage() {
                   <li key={i}>{tip}</li>
                 ))}
               </ul>
-              {/* relocationGuides/{iso2}/{section} has no lastVerifiedAt
-                  field in the current schema (see seed_relocation_guides.py
-                  — only a _meta.lastVerified for the whole seed batch, which
-                  isn't written to RTDB) — SourceCitation just omits the
-                  verified-date half of the line until a per-section field
-                  exists. Adding it is a follow-up, not something this
-                  retrofit can fabricate. */}
-              <SourceCitation sourceUrl={activeSectionData.sourceUrl} />
+              <SourceCitation
+                lastVerifiedAt={activeSectionData.lastVerifiedAt}
+                sourceUrl={activeSectionData.sourceUrl}
+              />
             </div>
           )}
         </div>

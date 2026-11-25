@@ -7,11 +7,19 @@ pattern as seed_cost_of_living.py / seed_visa_programs.py.
 
 Schema written:
     relocationGuides/{countryIso2}: {
-        housing:    { summary, tips, sourceUrl },
-        healthcare: { summary, tips, sourceUrl },
-        banking:    { summary, tips, sourceUrl },
-        transport:  { summary, tips, sourceUrl }
+        housing:    { summary, tips, sourceUrl, lastVerifiedAt },
+        healthcare: { summary, tips, sourceUrl, lastVerifiedAt },
+        banking:    { summary, tips, sourceUrl, lastVerifiedAt },
+        transport:  { summary, tips, sourceUrl, lastVerifiedAt }
     }
+
+`lastVerifiedAt` is a ms-epoch timestamp (TM08-122), one per section —
+matching how `requirements/{nationality}/{destination}` already carries
+one per record — since each section cites its own source and can be
+re-researched independently of the others (see this file's own
+`_meta.researchedFrom` note). It's required per section (see
+build_updates below); the UI's shared SourceCitation component
+(TM08-112) renders it directly next to that section's source link.
 
 USAGE:
     python seed_relocation_guides.py --data seed_relocation_guides.json \
@@ -57,6 +65,8 @@ def build_updates(seed_data: dict) -> dict:
             data = record[section]
             if not data.get("summary") or not data.get("tips"):
                 sys.exit(f"{country_code}/{section} is missing summary or tips")
+            if not isinstance(data.get("lastVerifiedAt"), int):
+                sys.exit(f"{country_code}/{section} is missing a numeric lastVerifiedAt")
 
         updates[f"relocationGuides/{country_code}"] = record
     return updates
