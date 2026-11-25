@@ -2,7 +2,6 @@
 // their arrival date using the visa's processing time.
 
 const DAY_MS = 24 * 60 * 60 * 1000;
-const DAYS_PER_UNIT = { day: 1, week: 7, month: 30 };
 
 class DeadlineError extends Error {
   constructor(status, message) {
@@ -30,19 +29,22 @@ function startOfTodayUtc(now) {
   return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
 }
 
-// Reads the number out of text like "4 to 12 weeks", "2-3 months" or "30 days".
-// Returns the longest end of the range in days (worst case), or null if it can't be read.
-function parseProcessingTime(text) {
-  if (typeof text !== 'string') return null;
-  const match = text
-    .toLowerCase()
-    .match(/(\d+(?:\.\d+)?)\s*(?:(?:to|-|–)\s*(\d+(?:\.\d+)?))?\s*(day|week|month)s?\b/);
-  if (!match) return null;
+// Reads the structured { minDays, maxDays } processing time stored in the seed data
+// (TM08-57). Returns { minDays, maxDays } as whole days, or null when the visa has
+// no usable numbers (for example the Canada study and work permits, where the
+// source gives no figure and Firebase drops the null values).
+// If only maxDays is stored, minDays falls back to it, same as the impact engine.
+function readProcessingDays(processingTime) {
+  if (!processingTime || typeof processingTime !== 'object') return null;
+  const { minDays, maxDays } = processingTime;
+  if (!isWholeDays(maxDays)) return null;
+  const min = isWholeDays(minDays) ? minDays : maxDays;
+  if (min > maxDays) return null;
+  return { minDays: min, maxDays };
+}
 
-  const low = parseFloat(match[1]);
-  const high = match[2] ? parseFloat(match[2]) : low;
-  const longest = Math.max(low, high);
-  return Math.ceil(longest * DAYS_PER_UNIT[match[3]]);
+function isWholeDays(value) {
+  return Number.isInteger(value) && value >= 0;
 }
 
 // Country keys in the database are uppercase codes like CA and GB (same as eligibilityService)
@@ -93,20 +95,25 @@ async function getDeadlines(db, { arrivalDate, country, visaType } = {}, now = n
     country: countryKey,
     visaType: visaKey,
     arrivalDate: toIsoDate(arrival),
-    processingTime: visa.processingTime ?? null,
+    processingTime: null,
+    processingTimeNotes: visa.processingTimeNotes ?? null,
     deadlines: [],
     warnings: [],
   };
 
-  const processingDays = parseProcessingTime(visa.processingTime);
-  if (processingDays === null) {
+  const processing = readProcessingDays(visa.processingTime);
+  if (processing === null) {
+    // No made-up default here: telling someone a specific apply-by date we can't
+    // back up is worse than telling them to check the official source.
     result.warnings.push(
       'Could not read the processing time for this visa, so no apply-by deadline was calculated.'
     );
     return result;
   }
+  result.processingTime = processing;
 
-  const applyBy = new Date(arrival.getTime() - processingDays * DAY_MS);
+  // Count back the longest processing time (worst case), matching the impact engine.
+  const applyBy = new Date(arrival.getTime() - processing.maxDays * DAY_MS);
   result.deadlines.push({
     name: 'Latest date to apply',
     date: toIsoDate(applyBy),
@@ -121,4 +128,4 @@ async function getDeadlines(db, { arrivalDate, country, visaType } = {}, now = n
   return result;
 }
 
-module.exports = { getDeadlines, parseProcessingTime, DeadlineError };
+module.exports = { getDeadlines, readProcessingDays, DeadlineError };
