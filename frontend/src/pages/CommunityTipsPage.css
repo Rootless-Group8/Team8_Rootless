@@ -1,23 +1,30 @@
 .community-tips-page {
-  max-width: 560px;
+  max-width: 640px;
   margin: 0 auto;
   padding: var(--ui-space-7) var(--ui-space-3);
 }
 
-.community-tips-select {
+.community-tips-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--ui-space-3);
   margin-bottom: var(--ui-space-5);
 }
 
-.community-tips-header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--ui-space-3);
-  margin-bottom: var(--ui-space-4);
+.community-tips-header-row h1 {
+  margin: 0 0 var(--ui-space-1);
 }
 
-.community-tips-header-row h2 {
-  margin: 0;
+.community-tips-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ui-space-3);
+  margin-bottom: var(--ui-space-5);
+}
+
+.community-tips-filters .form-field {
+  flex: 1 1 160px;
 }
 
 .community-tips-form {
@@ -25,6 +32,12 @@
   padding: var(--ui-space-4);
   background: var(--ui-color-bg-surface);
   border-radius: var(--ui-radius);
+}
+
+.community-tips-form-actions {
+  display: flex;
+  gap: var(--ui-space-3);
+  margin-top: var(--ui-space-3);
 }
 
 .community-tips-list {
@@ -42,6 +55,10 @@
   padding: var(--ui-space-4);
 }
 
+.community-tips-card h3 {
+  margin: var(--ui-space-2) 0 var(--ui-space-1);
+}
+
 .community-tips-card-header {
   display: flex;
   align-items: center;
@@ -49,7 +66,7 @@
   margin-bottom: var(--ui-space-2);
 }
 
-.community-tips-category {
+.community-tips-topic {
   display: inline-block;
   padding: var(--ui-space-1) var(--ui-space-3);
   border-radius: var(--ui-radius-pill);
@@ -62,6 +79,12 @@
 .community-tips-date {
   font-size: var(--ui-font-size-sm);
   color: var(--ui-color-text-muted, var(--ui-color-text));
+  opacity: 0.7;
+}
+
+.community-tips-location {
+  margin: 0 0 var(--ui-space-2);
+  font-size: var(--ui-font-size-sm);
   opacity: 0.7;
 }
 
@@ -81,6 +104,7 @@
   font-weight: var(--ui-font-weight-medium);
 }
 
-.community-tips-helpful {
-  opacity: 0.7;
+.community-tips-card-actions {
+  display: flex;
+  gap: var(--ui-space-2);
 }
