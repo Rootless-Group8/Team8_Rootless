@@ -1,0 +1,66 @@
+{
+  "_meta": {
+    "researchedFrom": "Numbeo national averages (country-level, not city-specific) and gov.uk for the UK's Immigration Health Surcharge",
+    "lastVerified": "2026-10-06"
+  },
+  "CA": {
+    "currency": "CAD",
+    "period": "month",
+    "categories": {
+      "rent": {
+        "amount": 1587,
+        "note": "1-bedroom apartment outside city centre, national average",
+        "sourceUrl": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Canada",
+        "lastVerifiedAt": 1791244800000
+      },
+      "utilities": {
+        "amount": 210,
+        "note": "Basic utilities (electricity, heating, cooling, water, garbage) for an 85m\u00b2 apartment",
+        "sourceUrl": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Canada",
+        "lastVerifiedAt": 1791244800000
+      },
+      "transport": {
+        "amount": 103,
+        "note": "Regular monthly public transport pass, national average",
+        "sourceUrl": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Canada",
+        "lastVerifiedAt": 1791244800000
+      },
+      "healthcare": {
+        "amount": null,
+        "note": "Canada provides universal public healthcare (covered provincially) with no standard monthly consumer cost for residents. Newcomers may need private travel/supplemental insurance during a province's waiting period (commonly 0-3 months) \u2014 cost varies too much by provider and province to show a single sourced figure here.",
+        "sourceUrl": null,
+        "lastVerifiedAt": 1791244800000
+      }
+    }
+  },
+  "GB": {
+    "currency": "GBP",
+    "period": "month",
+    "categories": {
+      "rent": {
+        "amount": 820,
+        "note": "1-bedroom apartment outside city centre, national average",
+        "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=United+Kingdom",
+        "lastVerifiedAt": 1791244800000
+      },
+      "utilities": {
+        "amount": 241,
+        "note": "Basic utilities (electricity, heating, cooling, water, garbage) for a 915 sq ft apartment",
+        "sourceUrl": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+Kingdom",
+        "lastVerifiedAt": 1791244800000
+      },
+      "transport": {
+        "amount": 77,
+        "note": "Regular monthly public transport pass, national average",
+        "sourceUrl": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+Kingdom",
+        "lastVerifiedAt": 1791244800000
+      },
+      "healthcare": {
+        "amount": 86,
+        "note": "Monthly equivalent of the UK's Immigration Health Surcharge (\u00a31,035/year for most adult visa holders). In reality this is paid as one upfront lump sum for your full visa duration, not billed monthly \u2014 shown here as a monthly equivalent purely for comparison against the other categories.",
+        "sourceUrl": "https://www.gov.uk/healthcare-immigration-application/pay-for-nhs-treatment",
+        "lastVerifiedAt": 1791244800000
+      }
+    }
+  }
+}

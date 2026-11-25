@@ -3,6 +3,7 @@ import { ref, get } from "firebase/database";
 import { rtdb } from "../firebase/config";
 import Select from "../components/Select";
 import Button from "../components/Button";
+import SourceCitation from "../components/SourceCitation";
 
 // NOTE on scope: the sprint story describes this as comparing "2-3 visa
 // types side by side" fed by a multi-select on the Visa Explorer results
@@ -287,21 +288,13 @@ export default function VisaComparisonPage() {
                         </dd>
                         <dt>Notes</dt>
                         <dd>{slot.result.notes || "—"}</dd>
-                        <dt>Last verified</dt>
+                        <dt>Last verified &amp; source</dt>
                         <dd>
-                          {slot.result.lastVerifiedAt
-                            ? new Date(slot.result.lastVerifiedAt).toLocaleDateString()
-                            : "unknown"}
-                        </dd>
-                        <dt>Source</dt>
-                        <dd>
-                          {slot.result.sourceUrl ? (
-                            <a href={slot.result.sourceUrl} target="_blank" rel="noreferrer">
-                              Link
-                            </a>
-                          ) : (
-                            "—"
-                          )}
+                          <SourceCitation
+                            lastVerifiedAt={slot.result.lastVerifiedAt}
+                            sourceUrl={slot.result.sourceUrl}
+                            className="source-citation--flush"
+                          />
                         </dd>
                       </dl>
                     </>

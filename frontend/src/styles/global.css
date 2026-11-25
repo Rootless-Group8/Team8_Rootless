@@ -645,14 +645,6 @@ button:disabled {
   margin: 0;
 }
 
-.cost-of-living-source {
-  display: inline-block;
-  margin-top: var(--ui-space-1);
-  font-size: var(--ui-font-size-sm);
-  font-weight: var(--ui-font-weight-bold);
-  color: var(--ui-color-primary);
-}
-
 .dashboard-main h1 {
   margin-bottom: var(--ui-space-5);
 }

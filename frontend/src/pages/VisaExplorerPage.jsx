@@ -3,6 +3,7 @@ import { ref, get } from "firebase/database";
 import { rtdb } from "../firebase/config";
 import Select from "../components/Select";
 import Button from "../components/Button";
+import SourceCitation from "../components/SourceCitation";
 
 export default function VisaExplorerPage() {
   const [countries, setCountries] = useState({});
@@ -128,19 +129,7 @@ export default function VisaExplorerPage() {
                 <strong>Notes:</strong> {result.notes}
               </p>
             )}
-            <p className="placeholder-note">
-              Last verified:{" "}
-              {result.lastVerifiedAt
-                ? new Date(result.lastVerifiedAt).toLocaleDateString()
-                : "unknown"}
-            </p>
-            {result.sourceUrl && (
-              <p>
-                <a href={result.sourceUrl} target="_blank" rel="noreferrer">
-                  Source
-                </a>
-              </p>
-            )}
+            <SourceCitation lastVerifiedAt={result.lastVerifiedAt} sourceUrl={result.sourceUrl} />
           </div>
         )}
       </div>

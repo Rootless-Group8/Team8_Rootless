@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ref, get } from "firebase/database";
 import { rtdb } from "../firebase/config";
 import Select from "../components/Select";
+import SourceCitation from "../components/SourceCitation";
 
 const CATEGORY_LABELS = {
   rent: "Rent",
@@ -144,16 +145,10 @@ export default function CostOfLivingPage() {
                   <p className="cost-of-living-note">{category.note}</p>
                 )}
 
-                {category.sourceUrl && (
-                  <a
-                    href={category.sourceUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="cost-of-living-source"
-                  >
-                    Source
-                  </a>
-                )}
+                <SourceCitation
+                  lastVerifiedAt={category.lastVerifiedAt}
+                  sourceUrl={category.sourceUrl}
+                />
               </div>
             );
           })}
