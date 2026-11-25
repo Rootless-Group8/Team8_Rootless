@@ -6,17 +6,12 @@ const documentRoutes = require('./routes/documentRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
 const reminderRoutes = require('./routes/reminderRoutes');
 const checklistRoutes = require('./routes/checklistRoutes');
-const notificationRoutes = require('./routes/notificationRoutes');
-const reminderRoutes = require('./routes/reminderRoutes');
 const deadlineRoutes = require('./deadlineRoutes');
 const eligibilityRoutes = require('./eligibilityRoutes');
 const costOfLivingRoutes = require('./routes/costOfLivingRoutes');
 const lifeEventRoutes = require('./routes/lifeEventRoutes');
-const deadlineRoutes = require('./deadlineRoutes');
-const reminderRoutes = require('./routes/reminderRoutes');
-const eligibilityRoutes = require('./eligibilityRoutes');
 const rankingRoutes = require('./rankingRoutes');
-const costOfLivingRoutes = require('./routes/costOfLivingRoutes');
+const communityTipRoutes = require('./routes/communityTipRoutes');
 
 function createApp({ db } = {}) {
   const app = express();
@@ -31,11 +26,9 @@ function createApp({ db } = {}) {
   app.use('/api/notifications', notificationRoutes);
   app.use('/api/reminders', reminderRoutes);
   app.use('/api/checklist', checklistRoutes);
-  app.use('/api/notifications', notificationRoutes);
-  app.use('/api/reminders', reminderRoutes);
   app.use('/api/life-events', lifeEventRoutes);
+  app.use('/api/community-tips', communityTipRoutes);
   if (db) app.use('/api/deadlines', deadlineRoutes(db));
-  app.use('/api/reminders', reminderRoutes);
 
   if (db) {
     // Matching Engine v2 (ranked results). Mounted before v1 so /v2 isn't
